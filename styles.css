@@ -77,11 +77,11 @@ footer {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 th, td {
-    padding: 10px;
+    padding: 2px;
     text-align: center;
     border: 1px solid rgba(19, 16, 16, 0.914);
 }
@@ -92,3 +92,14 @@ th {
 
 /* Style the header cells differently if needed */
 /* th:nth-child(1) { background-color: #ccc; } */
+
+
+@media (max-width: 768px) {
+    header {
+        font-size: 1.5em; /* Adjust header font size for smaller screens */
+    }
+
+    table {
+        font-size: 0.8em; /* Adjust table font size for smaller screens */
+    }
+}
