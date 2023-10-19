@@ -5,7 +5,7 @@ body {
 }
 
 header {
-    background-color: rgb(13, 125, 169);
+    background-color: rgb(29, 119, 155);
     color: white;
     padding: 1rem;
     text-align: center;
@@ -34,7 +34,7 @@ main {
 }
 
 footer {
-    background-color: #333;
+    background-color: rgb(29, 119, 155);
     color: white;
     text-align: center;
     padding: 1rem;
@@ -48,4 +48,20 @@ footer {
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 5px;
+}
+
+/* Additional styles for fixtures page */
+.fixtures {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.fixtures ul {
+    list-style: none;
+    padding: 0;
+}
+
+.fixtures li {
+    margin-bottom: 10px;
 }
