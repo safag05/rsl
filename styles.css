@@ -7,12 +7,12 @@ body {
 header {
     background-color: rgb(29, 119, 155);
     color: white;
-    padding: 1rem;
+    padding: .1rem;
     text-align: center;
 }
 
 header h1 {
-    font-size: 1.5em; /* You can adjust the font size as needed */
+    font-size: 1em; /* You can adjust the font size as needed */
 }
 
 nav ul {
