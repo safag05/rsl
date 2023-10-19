@@ -42,3 +42,10 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* Additional styles for teams page */
+.teams {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}
