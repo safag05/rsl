@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+	
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="css/styles.css" />
+		<link rel="stylesheet" href="css/responsive.css" />
+	</head>
+
+	<body>
+		
+		<h2>Resizing this window, you'll see different views, simulating smartphone portrait or landspcape orientation. Original table is <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vR9A5Lmeo7nX6TsT9JLnDJdgpzUNobkRKnUucO_buk5FKTdyvdZPy-OKbZXSZrtSxoLZcACEuUziJgU/pubhtml">this spreadsheet</a></h2>
+
+		<div class="break"></div>
+
+		<div class="desktop_table">
+			<h1>Desktop table</h1>
+		</div>
+
+	</body>
+
+	<script src="../lib/gshtmltable.js"></script>
+	<script>
+		drawTables({
+            url: "https://script.google.com/macros/s/AKfycbyNRd76QYsb6vqBMXdgRpuGVAP5bxUhXStpS8lLpElIABQDtIFyRLCkozfeQh6q0XU-/exec",
+            desktop_container: ".desktop_table",
+            responsive_container: ".null"			
+		});
+	</script>
+</html>
