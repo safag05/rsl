@@ -9,6 +9,10 @@ header {
     color: white;
     padding: .1rem;
     text-align: center;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow to the header */
+    z-index: 1000; /* Ensure the header appears above other elements */
 }
 
 header h1 {
