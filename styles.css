@@ -9,16 +9,15 @@ header {
     color: white;
     padding: .1rem;
     text-align: center;
-    height: 2.5cm;
 }
 
 header h1 {
-    font-size: 1em; /* You can adjust the font size as needed */
-    height: 2mm;
+    font-size: 1em; 
 }
 
 nav ul {
     list-style: none;
+    font-size: .99em; 
 }
 
 nav ul li {
