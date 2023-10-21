@@ -5,7 +5,7 @@ body {
 }
 
 header {
-    background-color: rgba(29, 119, 155, 0.681);
+    background-color: rgb(29, 119, 155);
     color: white;
     padding: .1rem;
     text-align: center;
@@ -51,8 +51,8 @@ footer {
 
 /* Additional styles for teams page */
 .teams {
-    background-color: #f9f9f9;
-    padding: 20px;
+    background-color: #fcf7f7;
+    padding: 10px;
     border-radius: 5px;
 }
 
