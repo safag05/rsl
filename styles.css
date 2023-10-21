@@ -59,7 +59,7 @@ footer {
 /* Additional styles for fixtures page */
 .fixtures th[colspan] {
     background-color: #eef8fb;
-    padding: 20px;
+    padding: 10px;
     border-radius: 5px;
 }
 
