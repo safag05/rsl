@@ -74,6 +74,11 @@ footer {
 
 .fixtures h2 {
     text-align: center;
+    background-color: #d2e7ed;
+}
+
+.fixtures table {
+    text-align: center;
     background-color: #eef8fb;
 }
 
