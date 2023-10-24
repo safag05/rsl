@@ -49,6 +49,10 @@ footer {
     width: 100%;
 }
 
+.disclaimer {
+    color: #a2b9a2;
+}
+
 /* Additional styles for teams page */
 .teams {
     background-color: #fcf7f7;
