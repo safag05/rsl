@@ -57,7 +57,15 @@ footer {
 .teams {
     background-color: #fcf7f7;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 15px;
+}
+
+/* Additional styles for pointss page */
+.pointss {
+    background-color: #d2edee;
+    padding: 15px;
+    border-radius: 30px;
+    margin-bottom: 20px;
 }
 
 /* Additional styles for fixtures page */
