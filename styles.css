@@ -57,14 +57,14 @@ footer {
 .teams {
     background-color: #fcf7f7;
     padding: 10px;
-    border-radius: 15px;
+    border-radius: 40px;
 }
 
 /* Additional styles for pointss page */
 .pointss {
     background-color: #d2edee;
     padding: 15px;
-    border-radius: 30px;
+    border-radius: 40px;
     margin-bottom: 20px;
 }
 
@@ -72,7 +72,7 @@ footer {
 .fixtures th[colspan] {
     background-color: #eef8fb;
     padding: 11px;
-    border-radius: 5px;
+    border-radius: 40px;
 }
 
 .fixtures ul {
@@ -87,7 +87,7 @@ footer {
 .fixtures h2 {
     text-align: center;
     background-color: #d2e7ed;
-    border-radius: 10px;
+    border-radius: 40px;
 }
 
 .fixtures table {
@@ -99,7 +99,7 @@ footer {
 .points {
     background-color: #fcf7f7;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 40px;
     overflow-x: auto; /* Add horizontal scrollbar if needed */
 }
 
