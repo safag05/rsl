@@ -100,6 +100,22 @@ footer {
     background-color: #b1e2ef;
 }
 
+.current h2 {
+    text-align: center;
+    background-color: #1dc211;
+    border-radius: 40px;
+}
+
+.currenttable th {
+    text-align: center;
+    background-color: #49d83e;
+}
+
+.currenttable tr {
+    text-align: center;
+    background-color: #7bec73;
+}
+
 .done h2 {
     text-align: center;
     background-color: #e32323;
