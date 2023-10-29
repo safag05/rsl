@@ -97,8 +97,18 @@ footer {
 
 .done h2 {
     text-align: center;
-    background-color: #d63d2c;
+    background-color: #a82e20;
     border-radius: 40px;
+}
+
+.donetable th {
+    text-align: center;
+    background-color: #c13e30;
+}
+
+.donetable tr {
+    text-align: center;
+    background-color: #f6513f;
 }
 
 /* Additional styles for points page */
