@@ -95,6 +95,12 @@ footer {
     background-color: #eef8fb;
 }
 
+.done h2 {
+    text-align: center;
+    background-color: #d63d2c;
+    border-radius: 40px;
+}
+
 /* Additional styles for points page */
 .points {
     background-color: #fcf7f7;
