@@ -68,6 +68,9 @@ footer {
     margin-bottom: 20px;
 }
 
+
+
+
 /* Additional styles for fixtures page */
 .fixtures th[colspan] {
     background-color: #84c7db;
@@ -100,6 +103,7 @@ footer {
     background-color: #b1e2ef;
 }
 
+/* Use class when on current week on the fixture.html file */
 .current h2 {
     text-align: center;
     background-color: #1dc211;
@@ -116,6 +120,7 @@ footer {
     background-color: #7bec73;
 }
 
+/* Use class when on week is completed on the fixture.html file */
 .done h2 {
     text-align: center;
     background-color: #e32323;
@@ -131,6 +136,9 @@ footer {
     text-align: center;
     background-color: #d5cdcd;
 }
+
+
+
 
 /* Additional styles for points page */
 .points {
