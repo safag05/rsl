@@ -108,7 +108,7 @@ footer {
 
 .fixtures tr {
     text-align: center;
-    background-color: #b1e2ef;
+    background-color: #bce4ef;
 }
 
 /* Use class when on current week on the fixture.html file */
@@ -125,7 +125,7 @@ footer {
 
 .currenttable tr {
     text-align: center;
-    background-color: #7bec73;
+    background-color: #aff3aa;
 }
 
 /* Use class when on week is completed on the fixture.html file */
