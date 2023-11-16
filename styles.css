@@ -185,3 +185,7 @@ th {
         font-size: 0.8em; /* Adjust table font size for smaller screens */
     }
 }
+
+iframe {
+    max-width: 100%;
+}
