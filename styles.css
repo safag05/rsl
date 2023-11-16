@@ -35,6 +35,10 @@ main {
     padding: 20px;
 }
 
+.mainpadding {
+    padding: 8px;
+}
+
 .teams, .fixtures {
     margin-bottom: 30px;
 }
