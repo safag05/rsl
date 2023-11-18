@@ -25,7 +25,25 @@
                 <li><a href="./">HOME</a></li>
                 <li><a href="./rules">RULES</a></li>
                 <li><a href="./fixtures">FIXTURES</a></li>
-                <li><a href="./points">POINTS</a></li>
+                <li>
+                    <select id="myDropdown">
+                        <option value="" selected disabled>POINTS</option>
+                        <option value="./league_points">League</option>
+                        <option value="./group_a_points">Group A</option>
+                        <option value="./group_b_points">Group B</option>
+                        <!-- Add more local file options as needed -->
+                    </select>
+                </li>
+                <script>
+                    // JavaScript to handle dropdown change event
+                    document.getElementById("myDropdown").addEventListener("change", function() {
+                        var selectedOption = this.options[this.selectedIndex].value;
+                        if (selectedOption) {
+                            // Use window.open to open the local file
+                            window.location.href = selectedOption;
+                        }
+                    });
+                </script>
                 <li><a href="./teams">TEAMS</a></li>
             </ul>
         </nav>
