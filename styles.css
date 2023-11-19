@@ -221,3 +221,19 @@ select option {
 select option:checked {
     background-color: rgb(29, 119, 155); /* Set background color for the selected option */
 }
+
+img {
+    max-width: 100%;
+    height: auto; /* This ensures the image maintains its aspect ratio */
+}
+
+.archive_div {
+    background-color: rgb(226, 236, 246);
+    padding: 10px;
+    border-radius: 30px;
+    margin-bottom: 5px;
+}
+
+.archive_ol {
+    font-size: .9em
+}
