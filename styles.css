@@ -185,6 +185,10 @@ th {
         font-size: 1.5em; /* Adjust header font size for smaller screens */
     }
 
+    select {
+        font-size: 1.5em; /* Adjust header font size for smaller screens */
+    }
+
     table {
         font-size: 0.8em; /* Adjust table font size for smaller screens */
     }
