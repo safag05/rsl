@@ -22,6 +22,7 @@ header.sticky {
     top: 0;
     width: 100%;
     z-index: 1000;
+    transition: background-color 0.5s, padding 0.5s;
 }
 
 nav ul {
