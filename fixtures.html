@@ -46,12 +46,12 @@
                     });
                 </script>
                 <script>
-                    // Add this script for the sticky header
-                    window.onload = function () {
+                    // JavaScript to handle scroll sticky
+                    document.addEventListener("DOMContentLoaded", function() {
                         var prevScrollpos = window.pageYOffset;
                         var header = document.querySelector('header');
             
-                        window.onscroll = function () {
+                        window.onscroll = function() {
                             var currentScrollPos = window.pageYOffset;
             
                             // Add 'sticky' class when scrolling up
@@ -64,7 +64,7 @@
             
                             prevScrollpos = currentScrollPos;
                         };
-                    };
+                    });
                 </script>
                 <li><a href="./teams">TEAMS</a></li>
             </ul>
