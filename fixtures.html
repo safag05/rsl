@@ -18,7 +18,7 @@
     <link rel="icon" href="./images/favicon.png" type="image/png">
 </head>
 <body>
-    <header>
+    <header class="non-sticky">
         <h1>FIXTURES</h1>
         <nav>
             <ul>
@@ -44,6 +44,27 @@
                             window.location.href = selectedOption;
                         }
                     });
+                </script>
+                <script>
+                    // Add this script for the sticky header
+                    window.onload = function () {
+                        var prevScrollpos = window.pageYOffset;
+                        var header = document.querySelector('header');
+            
+                        window.onscroll = function () {
+                            var currentScrollPos = window.pageYOffset;
+            
+                            // Add 'sticky' class when scrolling up
+                            if (prevScrollpos > currentScrollPos) {
+                                header.classList.add('sticky');
+                            } else {
+                                // Remove 'sticky' class when scrolling down
+                                header.classList.remove('sticky');
+                            }
+            
+                            prevScrollpos = currentScrollPos;
+                        };
+                    };
                 </script>
                 <li><a href="./teams">TEAMS</a></li>
             </ul>
