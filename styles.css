@@ -9,7 +9,7 @@ header {
     color: white;
     padding: .1rem;
     text-align: center;
-    transition: background-color 3s, padding 3s;
+    transition: background-color 0.5s, padding 0.5s;
 }
 
 header h1 {
