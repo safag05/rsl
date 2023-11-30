@@ -45,27 +45,6 @@
                         }
                     });
                 </script>
-                <script>
-                    // JavaScript to handle scroll sticky
-                    document.addEventListener("DOMContentLoaded", function () {
-                        var header = document.querySelector("header");
-                        var lastScrollTop = 0;
-
-                        window.addEventListener("scroll", function () {
-                            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-                            if (scrollTop > lastScrollTop) {
-                                // Scrolling down
-                                header.classList.remove("sticky");
-                            } else {
-                                // Scrolling up
-                                header.classList.add("sticky");
-                            }
-
-                            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-                        });
-                    });
-                </script>
                 <li><a href="./teams">TEAMS</a></li>
             </ul>
         </nav>
@@ -89,8 +68,6 @@
                 <h2>Week #<PUT WEEK #</h2>
                 <table class="currenttable">
         -->
-        <br>
-        <br>
         <h2>Fixtures</h2>
         <section class="done">
             <h2>Friendly Week</h2>

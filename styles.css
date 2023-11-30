@@ -9,20 +9,10 @@ header {
     color: white;
     padding: .1rem;
     text-align: center;
-    transition: background-color 0.3s ease, padding 0.3s ease;
 }
 
 header h1 {
     font-size: 1em; 
-}
-
-/* Add this to your existing CSS */
-header.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    transition: background-color 0.3s ease, padding 0.3s ease;
 }
 
 nav ul {
