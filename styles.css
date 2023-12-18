@@ -11,7 +11,7 @@ header {
     text-align: center;
     width: 100%;
     position: fixed;
-    transition: top 0.3s;
+    transition: top 0.5s;
 }
 
 header h1 {
