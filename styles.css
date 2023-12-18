@@ -9,6 +9,9 @@ header {
     color: white;
     padding: .1rem;
     text-align: center;
+    width: 100%;
+    position: fixed;
+    transition: top 0.3s;
 }
 
 header h1 {
