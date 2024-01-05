@@ -174,12 +174,13 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
+    table-layout: fixed;
 }
 
 th, td {
     padding: 2px;
     text-align: center;
-    border: 1px solid rgba(19, 16, 16, 0.914);
+    border: 1.5px solid rgba(19, 16, 16, 0.914);
 }
 
 th {
