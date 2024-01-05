@@ -180,7 +180,7 @@ table {
 th, td {
     padding: 2px;
     text-align: center;
-    border: 1.5px solid rgba(19, 16, 16, 0.914);
+    border: 1.3px solid rgba(19, 16, 16, 0.914);
 }
 
 th {
@@ -201,7 +201,7 @@ th {
     }
 
     table {
-        font-size: 0.8em; /* Adjust table font size for smaller screens */
+        font-size: 0.6em; /* Adjust table font size for smaller screens */
     }
 }
 
