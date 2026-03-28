@@ -114,6 +114,34 @@
           ]
         }
       ]
+    },
+    {
+      "week": "Week 5",
+      "days": [
+        {
+          "dateHeader": "Sunday",
+          "games": [
+            {
+              "home": "🦅 Allentown Eagles FC",
+              "homeScore": "1",
+              "awayScore": "1",
+              "away": "⚡ El Clasico FC"
+            },
+            {
+              "home": "🦅 Allentown Eagles FC",
+              "homeScore": "1",
+              "awayScore": "1",
+              "away": "⚽️ Medina FC"
+            },
+            {
+              "home": "🐬 Blue Dolphins FC",
+              "homeScore": "7",
+              "awayScore": "0",
+              "away": "⚔️ Terminators FC"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
