@@ -1,24 +1,3 @@
-{
-  "weeks": [
-    {
-      "week": "Week 1",
-      "days": [
-        {
-          "dateHeader": "Tuesday - 10/17/2023",
-          "games": [
-            {
-              "home": "MC FC",
-              "homeScore": "1",
-              "awayScore": "2",
-              "away": "Samanyolu FC"
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
-
 function renderFixtures(data) {
     let html = `
     <table>
