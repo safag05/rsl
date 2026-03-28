@@ -54,6 +54,22 @@
           ]
         }
       ]
+    },
+    {
+      "week": "Week 3",
+      "days": [
+        {
+          "dateHeader": "monday",
+          "games": [
+            {
+              "home": "🐬 Blue Dolphins FC",
+              "homeScore": "1",
+              "awayScore": "20",
+              "away": "🇺🇦 Divenate FC"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
