@@ -18,6 +18,25 @@
           "away": "🇹🇷 Samanyolu F 1"
         }
       ]
+    },
+    {
+      "week": "Week 2",
+      "games": [
+        {
+          "date": "April 4, 2026 1:04 PM",
+          "home": "🇹🇷 Samanyolu F 1",
+          "homeScore": 5,
+          "awayScore": 5,
+          "away": "🎯 MC FC"
+        },
+        {
+          "date": "April 11, 2026 1:05 PM",
+          "home": "🇹🇷 Samanyolu FC",
+          "homeScore": 10,
+          "awayScore": 11,
+          "away": "⚽️ Medina FC 1"
+        }
+      ]
     }
   ]
 }
