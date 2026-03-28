@@ -2,6 +2,7 @@ backend:
   name: github
   repo: safag05/rsl
   branch: main
+  publish_mode: editorial_workflow
 
 media_folder: "images"
 public_folder: "/images"
