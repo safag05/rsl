@@ -2,39 +2,10 @@
   "weeks": [
     {
       "week": "Week 1",
-      "games": [
+      "days": [
         {
-          "date": "March 28, 2026 12:51 PM",
-          "home": "🎯 MC FC",
-          "homeScore": 3,
-          "awayScore": 10,
-          "away": "🇹🇷 Samanyolu FC"
-        },
-        {
-          "date": "March 29, 2026 12:51 PM",
-          "home": "⚽️ Medina FC 1",
-          "homeScore": 20,
-          "awayScore": 19,
-          "away": "🇹🇷 Samanyolu F 1"
-        }
-      ]
-    },
-    {
-      "week": "Week 2",
-      "games": [
-        {
-          "date": "April 4, 2026 1:04 PM",
-          "home": "🇹🇷 Samanyolu F 1",
-          "homeScore": 5,
-          "awayScore": 5,
-          "away": "🎯 MC FC"
-        },
-        {
-          "date": "April 11, 2026 1:05 PM",
-          "home": "🇹🇷 Samanyolu FC",
-          "homeScore": 10,
-          "awayScore": 11,
-          "away": "⚽️ Medina FC 1"
+          "dateHeader": "Tuesday - 10/17/2023",
+          "games": []
         }
       ]
     }
