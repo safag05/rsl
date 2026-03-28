@@ -38,6 +38,22 @@
           ]
         }
       ]
+    },
+    {
+      "week": "Week 2",
+      "days": [
+        {
+          "dateHeader": "Mon",
+          "games": [
+            {
+              "home": "🇹🇷 Samanyolu FC",
+              "homeScore": "1",
+              "awayScore": "2",
+              "away": "🦅 Allentown Eagles FC"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
