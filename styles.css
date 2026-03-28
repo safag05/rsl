@@ -326,3 +326,9 @@ img {
 .game-row td:last-child {
     background-color: #ebf5fa;
 }
+
+/* This adds the gap between the weeks */
+.week-container {
+    margin-bottom: 50px; /* Adjust this number to make the gap bigger or smaller */
+    display: block;      /* Ensures it takes up the full width */
+}
