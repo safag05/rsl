@@ -4,16 +4,18 @@
       "week": "Week 1",
       "games": [
         {
+          "date": "March 28, 2026 12:51 PM",
           "home": "🎯 MC FC",
           "homeScore": 3,
-          "awayScore": 9,
+          "awayScore": 10,
           "away": "🇹🇷 Samanyolu FC"
         },
         {
-          "home": "⚽️ Medina FC",
-          "homeScore": 10,
-          "awayScore": 7,
-          "away": "⚔️ Terminators FC"
+          "date": "March 29, 2026 12:51 PM",
+          "home": "⚽️ Medina FC 1",
+          "homeScore": 20,
+          "awayScore": 19,
+          "away": "🇹🇷 Samanyolu F 1"
         }
       ]
     }
