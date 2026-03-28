@@ -22,9 +22,9 @@ function renderFixtures(data) {
                     <th colspan="3">${week.week}</th>
                 </tr>
                 <tr>
-                    <th style="background-color: #cdd9de;">🏟️ Home</th>
-                    <th style="background-color: #cdd9de;">📅 Dates</th>
-                    <th style="background-color: #cdd9de;">🚌 Away</th>
+                    <th style="background-color: #c5e1ed;">🏟️ Home</th>
+                    <th style="background-color: #c5e1ed;">📅 Dates</th>
+                    <th style="background-color: #c5e1ed;">🚌 Away</th>
                 </tr>
             </thead>
             <tbody>`;
