@@ -4,8 +4,8 @@ backend:
   branch: main
   publish_mode: editorial_workflow
 
-media_folder: "/images"
-public_folder: "/images"
+media_folder: "images"
+public_folder: "images"
 
 collections:
 
