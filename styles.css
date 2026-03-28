@@ -384,7 +384,7 @@ img {
         width: 70px !important; 
         font-size: 0.75rem !important;
         white-space: nowrap;
-        background-color: #f9f9f9; /* Optional: subtle tint to distinguish it */
+        /* background-color: #f9f9f9; Optional: subtle tint to distinguish it */
     }
 
     /* 4. Shrink the Week and Date headers further for mobile */
