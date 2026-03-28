@@ -70,6 +70,22 @@
           ]
         }
       ]
+    },
+    {
+      "week": "Week 4",
+      "days": [
+        {
+          "dateHeader": "mon",
+          "games": [
+            {
+              "home": "⚡ El Clasico FC",
+              "homeScore": "1",
+              "awayScore": "2",
+              "away": "🇲🇦 Maghreb FC"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
