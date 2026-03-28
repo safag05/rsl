@@ -361,3 +361,40 @@ img {
         padding: 4px 1px; /* Tighter padding for mobile */
     }
 }
+
+/* Only applies to phones/small screens */
+@media (max-width: 480px) {
+    
+    /* 1. Tighten the overall cell padding */
+    .fixtures-table td, 
+    .fixtures-table th {
+        padding: 4px 2px !important; 
+    }
+
+    /* 2. Shrink the font size for team names */
+    .game-row td {
+        font-size: 0.82rem !important;
+        line-height: 1.2;
+    }
+
+    /* 3. Make the Score (Middle Column) narrower */
+    /* This targets the 2nd cell in every row */
+    .game-row td:nth-child(2),
+    .fixtures-table th:nth-child(2) {
+        width: 70px !important; 
+        font-size: 0.75rem !important;
+        white-space: nowrap;
+        background-color: #f9f9f9; /* Optional: subtle tint to distinguish it */
+    }
+
+    /* 4. Shrink the Week and Date headers further for mobile */
+    .week-title-row th {
+        font-size: 1rem !important;
+        padding: 5px !important;
+    }
+    
+    .date-header-row th {
+        font-size: 0.85rem !important;
+        padding: 3px !important;
+    }
+}
