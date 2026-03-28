@@ -310,7 +310,7 @@ img {
 
 /* Specific styling for the Standings header */
 .week-title-row th {
-    background-color: #72b0c9; 
+    background-color: #8bbcd5;
     color: rgb(0, 0, 0);
     text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
     text-transform: uppercase;
