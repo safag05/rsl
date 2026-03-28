@@ -46,7 +46,8 @@ collections:
                         file: "teams"
                         search_fields: ["teams.name"]
                         display_fields: ["teams.name"]
-                        value_field: "teams.name"
+                        value_field: "name"
+                        display_fields: ["name"]
                       - { label: "Home Score", name: "homeScore", widget: "string", default: "TBD" }
                       - { label: "Away Score", name: "awayScore", widget: "string", default: "TBD" }
                       - label: "Away Team"
@@ -56,4 +57,5 @@ collections:
                         file: "teams"
                         search_fields: ["teams.name"]
                         display_fields: ["teams.name"]
-                        value_field: "teams.name"
+                        value_field: "name"
+                        display_fields: ["name"]
