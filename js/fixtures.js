@@ -1,36 +1,34 @@
 function renderFixtures(data) {
     const container = document.getElementById('fixtures-container');
     
-    // Safety check: Make sure the container exists in your HTML
     if (!container) {
         console.error("Error: Could not find element with ID 'fixtures-container'");
         return;
     }
 
-    let html = `
-    <table class="fixtures-table">
-        <thead>
-            <tr>
-                <th>🏟️ Home</th>
-                <th>📅 Dates</th>
-                <th>🚌 Away</th>
-            </tr>
-        </thead>
-        <tbody>`;
+    let html = `<table class="fixtures-table"><tbody>`;
 
-    // Ensure data.weeks exists before looping
     if (data && data.weeks) {
         data.weeks.forEach(week => {
-            // Safety check: Use a fallback if week name is missing
             const weekDisplayName = (week.week || "TBD WEEK").toUpperCase();
 
+            // 1. THE WEEK HEADER (Now at the very top of the section)
             html += `
             <tr class="week-title-row">
                 <th colspan="3">${weekDisplayName}</th>
             </tr>`;
 
+            // 2. THE COLUMN TITLES (Moved here to be below the Week name)
+            html += `
+            <tr class="column-labels-row">
+                <th>🏟️ Home</th>
+                <th>📅 Dates</th>
+                <th>🚌 Away</th>
+            </tr>`;
+
             if (week.days) {
                 week.days.forEach(day => {
+                    // 3. THE DATE HEADER
                     html += `
                     <tr class="date-header-row">
                         <th colspan="3">${day.dateHeader || ''}</th>
@@ -59,17 +57,16 @@ function renderFixtures(data) {
     container.innerHTML = html;
 }
 
-// --- THE CRITICAL PART: FETCH THE DATA ---
-// This must be at the bottom of your file
+// FETCH DATA
 fetch('/data/fixtures.json')
     .then(response => {
         if (!response.ok) throw new Error("Could not load fixtures.json");
         return response.json();
     })
-    .then(data => {
-        renderFixtures(data);
-    })
+    .then(data => renderFixtures(data))
     .catch(error => {
         console.error("Error loading fixtures:", error);
-        document.getElementById('fixtures-container').innerHTML = "<p>Error loading fixtures. Check console (F12).</p>";
+        if(document.getElementById('fixtures-container')) {
+            document.getElementById('fixtures-container').innerHTML = "<p>Error loading data.</p>";
+        }
     });
