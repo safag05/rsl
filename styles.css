@@ -255,11 +255,11 @@ img {
 
 .fixtures-table {
     width: 100%;
-    font-family: sans-serif;
-    margin-top: 20px;
-    border-collapse: collapse;
-    margin-bottom: 40px; /* This creates a nice gap between each table */
-    border: 1px solid #333;
+    border-collapse: separate; /* Changed from collapse to separate */
+    border-spacing: 0;         /* Keeps internal borders tight */
+    margin-bottom: 0;          /* Reset this so it doesn't fight the container */
+    border: 2px solid #333;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Optional: adds a nice shadow to separate them visually */
 }
 
 /* The top "Week 1" style bar */
@@ -329,6 +329,8 @@ img {
 
 /* This adds the gap between the weeks */
 .week-container {
-    margin-bottom: 50px; /* Adjust this number to make the gap bigger or smaller */
-    display: block;      /* Ensures it takes up the full width */
+    margin-bottom: 60px !important; /* Increase this to 60px or more */
+    display: block;
+    clear: both;
+    position: relative;
 }
