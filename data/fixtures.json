@@ -7,10 +7,49 @@
           "dateHeader": "Tuesday - 10/17/2023",
           "games": [
             {
-              "home": "MC FC",
+              "home": "🦅 Allentown Eagles FC",
+              "homeScore": "5",
+              "awayScore": "5",
+              "away": "🇺🇦 Divenate FC"
+            },
+            {
+              "home": "⚔️ Terminators FC",
+              "homeScore": "1",
+              "awayScore": "5",
+              "away": "🇹🇷 Samanyolu FC"
+            }
+          ]
+        },
+        {
+          "dateHeader": "Tuesday - 10/18/2023",
+          "games": [
+            {
+              "home": "⚽️ Medina FC",
               "homeScore": "1",
               "awayScore": "2",
-              "away": "Samanyolu FC"
+              "away": "🐬 Blue Dolphins FC"
+            },
+            {
+              "home": "🇲🇦 Maghreb FC",
+              "homeScore": "TBD",
+              "awayScore": "TBD",
+              "away": "⚡ El Clasico FC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "week": "Week 2",
+      "days": [
+        {
+          "dateHeader": "Monday - 10/11/23",
+          "games": [
+            {
+              "home": "🇺🇦 Divenate FC",
+              "homeScore": "TBD",
+              "awayScore": "TBD",
+              "away": "🐬 Blue Dolphins FC"
             }
           ]
         }
