@@ -30,10 +30,13 @@ collections:
             name: "weeks"
             widget: "list"
             fields:
-              - { label: "Week", name: "week", widget: "string" }
+              - { label: "Week Name", name: "week", widget: "string" }
               - label: "Games"
                 name: "games"
                 widget: "list"
                 fields:
+                  - { label: "Date & Time", name: "date", widget: "datetime", required: false, format: "LLL" }
                   - { label: "Home Team", name: "home", widget: "string" }
-                  # (Keep any other fields you had below this in your original file)
+                  - { label: "Home Score", name: "homeScore", widget: "number", value_type: "int", default: 0 }
+                  - { label: "Away Score", name: "awayScore", widget: "number", value_type: "int", default: 0 }
+                  - { label: "Away Team", name: "away", widget: "string" }
