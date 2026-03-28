@@ -327,17 +327,19 @@ img {
     width: 100%;
 }
 
-/* Make the Team column take up the remaining space */
-.col-team {
-    width: 40%; 
+/* Give the team column as much space as possible */
+.col-team, .team-cell {
+    width: 35% !important;
     text-align: left !important;
-    padding-left: 15px !important;
+    padding-left: 12px !important;
+    font-weight: bold;
 }
 
 /* Make all the number columns small and uniform */
 .col-stat {
-    width: 8%; 
-    white-space: nowrap; /* Prevent numbers from wrapping */
+    width: 7%; 
+    font-size: 0.85em;
+    white-space: nowrap;
 }
 
 /* Ensure data cells match the header alignment */
@@ -347,12 +349,14 @@ img {
     font-size: 0.9em; /* Slightly smaller text helps fit longer names */
 }
 
-/* Mobile Adjustment */
 @media (max-width: 768px) {
     .standings-table {
-        font-size: 0.8em; /* Shrink text on phones to prevent overflow */
+        font-size: 0.72em; /* Slightly smaller for mobile fit */
     }
     .col-team {
-        width: 35%;
+        width: 30% !important;
+    }
+    th, td {
+        padding: 4px 1px; /* Tighter padding for mobile */
     }
 }

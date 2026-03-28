@@ -44,10 +44,18 @@ fetch('/data/fixtures.json')
     });
   });
 
-  // Sort by Points (pts), then Goal Difference (gf - ga)
+  // Sort by Points (pts), then Goal Difference (gd), then Goals For (gf)
   let standings = Object.values(table).sort((a, b) => {
+    // 1st Tie-breaker: Points
     if (b.pts !== a.pts) return b.pts - a.pts;
-    return (b.gf - b.ga) - (a.gf - a.ga);
+
+    // 2nd Tie-breaker: Goal Difference (GF - GA)
+    const gdA = a.gf - a.ga;
+    const gdB = b.gf - b.ga;
+    if (gdB !== gdA) return gdB - gdA;
+
+    // 3rd Tie-breaker: Goals For
+    return b.gf - a.gf;
   });
 
   renderStandings(standings);
@@ -55,31 +63,38 @@ fetch('/data/fixtures.json')
 
 function renderStandings(standings) {
   let html = `
-    <table class="fixtures-table standings-table"> <thead>
+    <table class="fixtures-table standings-table">
+        <thead>
             <tr class="week-title-row">
-                <th colspan="8">LEAGUE STANDINGS</th>
-            </tr>
+                <th colspan="9">LEAGUE STANDINGS</th> </tr>
             <tr>
-                <th class="col-team">Team</th> <th class="col-stat">P</th>    <th class="col-stat">W</th>
+                <th class="col-team">Team</th>
+                <th class="col-stat">P</th>
+                <th class="col-stat">W</th>
                 <th class="col-stat">D</th>
                 <th class="col-stat">L</th>
                 <th class="col-stat">GF</th>
                 <th class="col-stat">GA</th>
-                <th class="col-stat">PTS</th>
+                <th class="col-stat">GD</th> <th class="col-stat">PTS</th>
             </tr>
         </thead>
         <tbody>`;
 
   standings.forEach(row => {
+    const gd = row.gf - row.ga;
+    // Adds a "+" in front of positive numbers for a professional look
+    const displayGD = gd > 0 ? `+${gd}` : gd;
+
     html += `
       <tr class="game-row">
-          <td style="text-align:left; padding-left:20px; font-weight:bold;">${row.team}</td>
+          <td class="team-cell">${row.team}</td>
           <td>${row.played}</td>
           <td>${row.win}</td>
           <td>${row.draw}</td>
           <td>${row.loss}</td>
           <td>${row.gf}</td>
           <td>${row.ga}</td>
+          <td style="font-weight:bold;">${displayGD}</td>
           <td style="font-weight:bold; color:#2c3e50;">${row.pts}</td>
       </tr>`;
   });
