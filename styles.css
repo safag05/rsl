@@ -320,3 +320,39 @@ img {
     clear: both;
     position: relative;
 }
+
+/* Target only the standings table to avoid breaking other tables */
+.standings-table {
+    table-layout: auto !important; /* Allow columns to resize based on content */
+    width: 100%;
+}
+
+/* Make the Team column take up the remaining space */
+.col-team {
+    width: 40%; 
+    text-align: left !important;
+    padding-left: 15px !important;
+}
+
+/* Make all the number columns small and uniform */
+.col-stat {
+    width: 8%; 
+    white-space: nowrap; /* Prevent numbers from wrapping */
+}
+
+/* Ensure data cells match the header alignment */
+.standings-table td:first-child {
+    text-align: left !important;
+    padding-left: 15px !important;
+    font-size: 0.9em; /* Slightly smaller text helps fit longer names */
+}
+
+/* Mobile Adjustment */
+@media (max-width: 768px) {
+    .standings-table {
+        font-size: 0.8em; /* Shrink text on phones to prevent overflow */
+    }
+    .col-team {
+        width: 35%;
+    }
+}

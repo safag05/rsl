@@ -55,20 +55,17 @@ fetch('/data/fixtures.json')
 
 function renderStandings(standings) {
   let html = `
-    <table class="fixtures-table">
-        <thead>
+    <table class="fixtures-table standings-table"> <thead>
             <tr class="week-title-row">
                 <th colspan="8">LEAGUE STANDINGS</th>
             </tr>
             <tr>
-                <th style="text-align:left; padding-left:20px;">Team</th>
-                <th>P</th>
-                <th>W</th>
-                <th>D</th>
-                <th>L</th>
-                <th>GF</th>
-                <th>GA</th>
-                <th>PTS</th>
+                <th class="col-team">Team</th> <th class="col-stat">P</th>    <th class="col-stat">W</th>
+                <th class="col-stat">D</th>
+                <th class="col-stat">L</th>
+                <th class="col-stat">GF</th>
+                <th class="col-stat">GA</th>
+                <th class="col-stat">PTS</th>
             </tr>
         </thead>
         <tbody>`;
