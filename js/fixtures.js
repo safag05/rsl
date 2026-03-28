@@ -21,7 +21,7 @@ function renderFixtures(data) {
                 <tr class="week-title-row">
                     <th colspan="3">${week.week}</th>
                 </tr>
-                <tr>
+                <tr style="background-color: #cdd9de;">
                     <th>🏟️ Home</th>
                     <th>📅 Dates</th>
                     <th>🚌 Away</th>
