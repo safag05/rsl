@@ -87,6 +87,33 @@
           ]
         }
       ]
+    },
+    {
+      "week": "Week 4",
+      "days": [
+        {
+          "dateHeader": "Friday",
+          "games": [
+            {
+              "home": "⚡ El Clasico FC",
+              "homeScore": "5",
+              "awayScore": "2",
+              "away": "🇺🇦 Divenate FC"
+            }
+          ]
+        },
+        {
+          "dateHeader": "Sat",
+          "games": [
+            {
+              "home": "🇹🇷 Samanyolu FC",
+              "homeScore": "5",
+              "awayScore": "6",
+              "away": "⚽️ Medina FC"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
