@@ -263,7 +263,7 @@ img {
 
 /* The top "Week 1" style bar */
 .week-title-row th {
-    background-color: #72b0c9; /* Teal/Blue color from your image */
+    background-color: #ebf5fa;; /* Teal/Blue color from your image */
     color: black;
     padding: 12px;
     font-size: 1.4rem;
@@ -273,7 +273,7 @@ img {
 
 /* The Date Header style bar */
 .date-header-row th {
-    background-color: #add8e6; /* Lighter blue */
+    background-color: #ebf5fa; /* Lighter blue */
     color: #000;
     padding: 8px;
     font-size: 1.1rem;
@@ -282,7 +282,7 @@ img {
 
 /* The main table headers (Home, Dates, Away) */
 .fixtures-table thead th {
-    background-color: #b6e4f7;
+    background-color: #ebf5fa;
     padding: 10px;
     border: 1px solid #333;
 }
@@ -292,7 +292,7 @@ img {
     padding: 10px;
     text-align: center;
     border: 1px solid #333;
-    background-color: #b6e4f7;
+    background-color: #ebf5fa;
 }
 
 /* Make the score stand out a bit */
@@ -310,7 +310,7 @@ img {
 /* Specific styling for the Standings header */
 .week-title-row th {
     background-color: #72b0c9; 
-    color: white;
+    color: rgb(0, 0, 0);
     text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -318,10 +318,10 @@ img {
 
 /* zebra striping for readability */
 .game-row:nth-child(even) td {
-    background-color: #b6e4f7;
+    background-color: #ebf5fa;
 }
 
 /* Highlight the Points column */
 .game-row td:last-child {
-    background-color: #b6e4f7;
+    background-color: #ebf5fa;
 }
