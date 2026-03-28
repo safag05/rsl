@@ -5,7 +5,14 @@
       "days": [
         {
           "dateHeader": "Tuesday - 10/17/2023",
-          "games": []
+          "games": [
+            {
+              "home": "MC FC",
+              "homeScore": "TBD",
+              "awayScore": "TBD",
+              "away": "Samanyolu FC"
+            }
+          ]
         }
       ]
     }
