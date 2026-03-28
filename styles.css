@@ -255,10 +255,11 @@ img {
 
 .fixtures-table {
     width: 100%;
-    border-collapse: collapse;
     font-family: sans-serif;
     margin-top: 20px;
-    border: 2px solid #333;
+    border-collapse: collapse;
+    margin-bottom: 40px; /* This creates a nice gap between each table */
+    border: 1px solid #333;
 }
 
 /* The top "Week 1" style bar */
