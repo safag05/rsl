@@ -1,14 +1,14 @@
 function renderFixtures(data) {
     const container = document.getElementById('fixtures-container');
-    if (!container) return;
+    if (!container) {
+        console.error("Error: Could not find element with ID 'fixtures-container'");
+        return;
+    }
 
-    let html = ''; // Start clean
+    let html = `<table class="fixtures-table"><tbody>`;
 
     if (data && data.weeks) {
         data.weeks.forEach(week => {
-            // OPEN the individual week container and table
-            html += `<div class="week-container">`;
-            html += `<table class="fixtures-table"><tbody>`;
             
             const weekDisplayName = (week.week || "TBD WEEK").toUpperCase();
 
@@ -50,12 +50,23 @@ function renderFixtures(data) {
                     }
                 });
             }
-            // CLOSE the table and the div for THIS week
-            html += `</tbody></table>`;
-            html += `</div>`; 
         });
     }
 
-    // Set the content
+    html += `</tbody></table>`;
     container.innerHTML = html;
 }
+
+// FETCH DATA
+fetch('/data/fixtures.json')
+    .then(response => {
+        if (!response.ok) throw new Error("Could not load fixtures.json");
+        return response.json();
+    })
+    .then(data => renderFixtures(data))
+    .catch(error => {
+        console.error("Error loading fixtures:", error);
+        if(document.getElementById('fixtures-container')) {
+            document.getElementById('fixtures-container').innerHTML = "<p>Error loading data.</p>";
+        }
+    });
