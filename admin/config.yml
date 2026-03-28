@@ -10,7 +10,6 @@ collections:
   - name: "data_files"
     label: "Data Files"
     files:
-      
       - name: "teams"
         label: "Teams"
         file: "data/teams.json"
@@ -34,7 +33,7 @@ collections:
                 name: "days"
                 widget: "list"
                 fields:
-                  - { label: "Date Header", name: "dateHeader", widget: "string", hint: "e.g. Tuesday - 10/17/2023" }
+                  - { label: "Date Header", name: "dateHeader", widget: "string", hint: "e.g. Tuesday" }
                   - label: "Games"
                     name: "games"
                     widget: "list"
@@ -44,18 +43,16 @@ collections:
                         widget: "relation"
                         collection: "data_files"
                         file: "teams"
-                        search_fields: ["teams.name"]
-                        display_fields: ["teams.name"]
-                        value_field: "name"
-                        display_fields: ["name"]
-                      - { label: "Home Score", name: "homeScore", widget: "string", default: "0" }
-                      - { label: "Away Score", name: "awayScore", widget: "string", default: "0" }
+                        search_fields: ["teams.*.name"]
+                        display_fields: ["teams.*.name"]
+                        value_field: "teams.*.name"
+                      - { label: "Home Score", name: "homeScore", widget: "string", default: "TBD" }
+                      - { label: "Away Score", name: "awayScore", widget: "string", default: "TBD" }
                       - label: "Away Team"
                         name: "away"
                         widget: "relation"
                         collection: "data_files"
                         file: "teams"
-                        search_fields: ["teams.name"]
-                        display_fields: ["teams.name"]
-                        value_field: "name"
-                        display_fields: ["name"]
+                        search_fields: ["teams.*.name"]
+                        display_fields: ["teams.*.name"]
+                        value_field: "teams.*.name"
