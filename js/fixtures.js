@@ -1,38 +1,36 @@
-fetch('/data/fixtures.json')
-.then(res => res.json())
-.then(data => {
-
-  const container = document.getElementById("fixtures-container");
-
-  data.weeks.forEach(week => {
-
+function renderFixtures(data) {
     let html = `
-      <section class="done">
-      <h2>${week.week}</h2>
-      <table class="donetable">
-      <tr>
-        <th>Home</th>
-        <th>Score</th>
-        <th>Away</th>
-      </tr>
-    `;
-
-    week.games.forEach(game => {
-
-      html += `
+    <table>
         <tr>
-          <td>${game.home}</td>
-          <td>${game.homeScore} - ${game.awayScore}</td>
-          <td>${game.away}</td>
-        </tr>
-      `;
+            <th>🏟️ Home</th>
+            <th>📅 Dates</th>
+            <th>🚌 Away</th>
+        </tr>`;
 
+    data.weeks.forEach(week => {
+        week.days.forEach(day => {
+            // Add the Date Header Row
+            html += `
+            <tr>
+                <th colspan="3">${day.dateHeader}</th>
+            </tr>`;
+
+            // Add each Game Row
+            day.games.forEach(game => {
+                const scoreDisplay = (game.homeScore === "TBD") 
+                    ? "TBD" 
+                    : `${game.homeScore} - ${game.awayScore}`;
+                
+                html += `
+                <tr>
+                    <td>${game.home}</td>
+                    <td>${scoreDisplay}</td>
+                    <td>${game.away}</td>
+                </tr>`;
+            });
+        });
     });
 
-    html += "</table></section>";
-
-    container.innerHTML += html;
-
-  });
-
-});
+    html += `</table>`;
+    document.getElementById('fixtures-container').innerHTML = html;
+}
