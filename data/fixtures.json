@@ -1,0 +1,21 @@
+{
+  "weeks": [
+    {
+      "week": "Week 1",
+      "games": [
+        {
+          "home": "🎯 MC FC",
+          "homeScore": 3,
+          "awayScore": 9,
+          "away": "🇹🇷 Samanyolu FC"
+        },
+        {
+          "home": "⚽️ Medina FC",
+          "homeScore": 10,
+          "awayScore": 7,
+          "away": "⚔️ Terminators FC"
+        }
+      ]
+    }
+  ]
+}
