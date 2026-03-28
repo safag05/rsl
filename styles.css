@@ -252,3 +252,50 @@ img {
 .archive_ol {
     font-size: .9em
 }
+
+.fixtures-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: sans-serif;
+    margin-top: 20px;
+    border: 2px solid #333;
+}
+
+/* The top "Week 1" style bar */
+.week-title-row th {
+    background-color: #72b0c9; /* Teal/Blue color from your image */
+    color: black;
+    padding: 12px;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    border: 1px solid #333;
+}
+
+/* The Date Header style bar */
+.date-header-row th {
+    background-color: #add8e6; /* Lighter blue */
+    color: #000;
+    padding: 8px;
+    font-size: 1.1rem;
+    border: 1px solid #333;
+}
+
+/* The main table headers (Home, Dates, Away) */
+.fixtures-table thead th {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border: 1px solid #333;
+}
+
+/* Individual game rows */
+.game-row td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #333;
+    background-color: #fff;
+}
+
+/* Make the score stand out a bit */
+.score {
+    font-weight: bold;
+}
