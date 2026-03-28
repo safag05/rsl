@@ -38,6 +38,28 @@
           ]
         }
       ]
+    },
+    {
+      "week": "Week 2",
+      "days": [
+        {
+          "dateHeader": "Monday",
+          "games": [
+            {
+              "home": "⚡ El Clasico FC",
+              "homeScore": "1",
+              "awayScore": "5",
+              "away": "🇹🇷 Samanyolu FC"
+            },
+            {
+              "home": "🐬 Blue Dolphins FC",
+              "homeScore": "TBD",
+              "awayScore": "TBD",
+              "away": "🦅 Allentown Eagles FC"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
