@@ -264,13 +264,14 @@ img {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Optional: adds a nice shadow to separate them visually */
 }
 
-/* Specific styling for the Standings header */
+/* The top "Week 1" style bar */
 .week-title-row th {
-    background-color: #8bbcd5;
-    color: rgb(0, 0, 0);
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-    text-transform: uppercase;
+    background-color: #8bbcd5; /* Teal/Blue color from your image */
+    color: black;
+    padding: 12px;
+    font-size: 1.4rem;
     letter-spacing: 2px;
+    border: 1px solid #333;
 }
 
 /* The Date Header style bar */
@@ -307,16 +308,6 @@ img {
     margin: 20px auto;
     max-width: 900px;
     overflow-x: auto;
-}
-
-/* zebra striping for readability */
-.game-row:nth-child(even) td {
-    background-color: #ebf5fa;
-}
-
-/* Highlight the Points column */
-.game-row td:last-child {
-    background-color: #ebf5fa;
 }
 
 /* This adds the gap between the weeks */
