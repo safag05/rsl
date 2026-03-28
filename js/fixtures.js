@@ -1,3 +1,24 @@
+{
+  "weeks": [
+    {
+      "week": "Week 1",
+      "days": [
+        {
+          "dateHeader": "Tuesday - 10/17/2023",
+          "games": [
+            {
+              "home": "MC FC",
+              "homeScore": "1",
+              "awayScore": "2",
+              "away": "Samanyolu FC"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
 function renderFixtures(data) {
     let html = `
     <table>
@@ -34,3 +55,13 @@ function renderFixtures(data) {
     html += `</table>`;
     document.getElementById('fixtures-container').innerHTML = html;
 }
+
+// ADD THIS BELOW YOUR FUNCTION:
+// Fetch the JSON file and execute the render function
+fetch('/data/fixtures.json')
+    .then(response => {
+        if (!response.ok) throw new Error("Network response was not ok");
+        return response.json();
+    })
+    .then(data => renderFixtures(data))
+    .catch(error => console.error("Error loading fixtures:", error));
