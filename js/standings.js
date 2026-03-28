@@ -4,14 +4,13 @@ fetch('/data/fixtures.json')
   let table = {};
 
   data.weeks.forEach(week => {
-    // We must now loop through 'days' first!
-    week.days.forEach(day => {
-      day.games.forEach(game => {
+    week.days.forEach(day => { // Added this layer
+      day.games.forEach(game => { // Games are now inside days
         
-        // 1. Skip games that haven't been played
+        // Skip games that are not played yet
         if (game.homeScore === "TBD" || game.awayScore === "TBD") return;
 
-        // 2. Ensure scores are numbers
+        // Ensure we are working with numbers
         const hScore = parseInt(game.homeScore);
         const aScore = parseInt(game.awayScore);
 
@@ -47,6 +46,7 @@ fetch('/data/fixtures.json')
     });
   });
 
+  // The rest of your sorting and rendering code...
   let standings = Object.values(table).sort((a,b) => b.pts - a.pts);
-  // ... rest of your rendering logic ...
+  // ...
 });
