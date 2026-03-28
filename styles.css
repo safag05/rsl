@@ -282,7 +282,7 @@ img {
 
 /* The main table headers (Home, Dates, Away) */
 .fixtures-table thead th {
-    background-color: #add8e6;
+    background-color: #b6e4f7;
     padding: 10px;
     border: 1px solid #333;
 }
@@ -292,7 +292,7 @@ img {
     padding: 10px;
     text-align: center;
     border: 1px solid #333;
-    background-color: #add8e6;
+    background-color: #b6e4f7;
 }
 
 /* Make the score stand out a bit */
@@ -310,7 +310,7 @@ img {
 /* Specific styling for the Standings header */
 .week-title-row th {
     background-color: #72b0c9; 
-    color: rgb(0, 0, 0);
+    color: white;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -318,10 +318,10 @@ img {
 
 /* zebra striping for readability */
 .game-row:nth-child(even) td {
-    background-color: #add8e6;
+    background-color: #b6e4f7;
 }
 
 /* Highlight the Points column */
 .game-row td:last-child {
-    background-color: #add8e6;
+    background-color: #b6e4f7;
 }
