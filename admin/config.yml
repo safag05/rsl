@@ -8,31 +8,32 @@ media_folder: "images"
 public_folder: "images"
 
 collections:
-
-  - name: "teams"
-    label: "Teams"
-    file: "data/teams.json"
-    fields:
-      - label: "Teams"
-        name: "teams"
-        widget: "list"
+  - name: "data_files"       # Parent collection name
+    label: "Data Files"      # What shows up in the CMS sidebar
+    files:                   # MUST be the plural 'files'
+      
+      - name: "teams"
+        label: "Teams"
+        file: "data/teams.json"
         fields:
-          - { label: "Team Name", name: "name", widget: "string" }
-
-  - name: "fixtures"
-    label: "Fixtures"
-    file: "data/fixtures.json"
-    fields:
-      - label: "Weeks"
-        name: "weeks"
-        widget: "list"
-        fields:
-          - { label: "Week", name: "week", widget: "string" }
-          - label: "Games"
-            name: "games"
+          - label: "Teams"
+            name: "teams"
             widget: "list"
             fields:
-              - { label: "Home Team", name: "home", widget: "string" }
-              - { label: "Home Score", name: "homeScore", widget: "number" }
-              - { label: "Away Score", name: "awayScore", widget: "number" }
-              - { label: "Away Team", name: "away", widget: "string" }
+              - { label: "Team Name", name: "name", widget: "string" }
+
+      - name: "fixtures"
+        label: "Fixtures"
+        file: "data/fixtures.json"
+        fields:
+          - label: "Weeks"
+            name: "weeks"
+            widget: "list"
+            fields:
+              - { label: "Week", name: "week", widget: "string" }
+              - label: "Games"
+                name: "games"
+                widget: "list"
+                fields:
+                  - { label: "Home Team", name: "home", widget: "string" }
+                  # (Keep any other fields you had below this in your original file)
