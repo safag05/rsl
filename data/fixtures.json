@@ -60,6 +60,33 @@
           ]
         }
       ]
+    },
+    {
+      "week": "Week 3",
+      "days": [
+        {
+          "dateHeader": "Tuesday",
+          "games": [
+            {
+              "home": "⚔️ Terminators FC",
+              "homeScore": "2",
+              "awayScore": "2",
+              "away": "⚡ El Clasico FC"
+            }
+          ]
+        },
+        {
+          "dateHeader": "Wednesday",
+          "games": [
+            {
+              "home": "🦅 Allentown Eagles FC",
+              "homeScore": "3",
+              "awayScore": "2",
+              "away": "🐬 Blue Dolphins FC"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
