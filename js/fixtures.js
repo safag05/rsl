@@ -17,8 +17,8 @@ function renderFixtures(data) {
 
             // Add each Game Row
             day.games.forEach(game => {
-                const scoreDisplay = (game.homeScore === "TBD") 
-                    ? "TBD" 
+                const scoreDisplay = (game.homeScore === "0") 
+                    ? "0" 
                     : `${game.homeScore} - ${game.awayScore}`;
                 
                 html += `
