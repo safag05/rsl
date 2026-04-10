@@ -202,6 +202,7 @@
     },
     {
       "week": "Week 5",
+      "announcement": "<section class=\"teams\">Starting May 2026: Wednesday/Thursday kickoff times and dates are subject to change.</section>",
       "days": [
         {
           "dateHeader": "Tuesday - 05/05/2026",
@@ -425,10 +426,10 @@
           "dateHeader": "Wednesday - 06/10/2026",
           "games": [
             {
-              "home": "🐅 TIGERS FC",
+              "home": "☪️ TEAM BABO FC",
               "homeScore": "10:00 PM",
               "awayScore": "TBD",
-              "away": "🦅 AL-HATEM FC"
+              "away": "💫 JEI FC"
             }
           ]
         },
@@ -436,10 +437,10 @@
           "dateHeader": "Thursday - 06/11/2026",
           "games": [
             {
-              "home": "☪️ TEAM BABO FC",
+              "home": "🐅 TIGERS FC",
               "homeScore": "10:00 PM",
               "awayScore": "TBD",
-              "away": "💫 JEI FC"
+              "away": "🦅 AL-HATEM FC"
             },
             {
               "home": "👵 BIBI FC",
