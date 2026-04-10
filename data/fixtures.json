@@ -352,10 +352,10 @@
     },
     {
       "week": "Week 8",
-      "announcement": "<section class=\"teams\">No games will be played from May 25 to May 29 in observance of Eid. ‼️<br><br>Playoffs will resume on June 2.</section>",
+      "announcement": "<section class=\"teams\">No games will be played from May 25 to May 29 in observance of Eid. ‼️<br><br>Week 8 will resume on June 2nd.</section>",
       "days": [
         {
-          "dateHeader": "Tuesday - 05/26/2026",
+          "dateHeader": "Tuesday - 06/02/2026",
           "games": [
             {
               "home": "👵 BIBI FC",
@@ -372,7 +372,7 @@
           ]
         },
         {
-          "dateHeader": "Wednesday - 05/27/2026",
+          "dateHeader": "Wednesday - 06/03/2026",
           "games": [
             {
               "home": "💫 JEI FC",
@@ -383,7 +383,7 @@
           ]
         },
         {
-          "dateHeader": "Thursday - 05/28/2026",
+          "dateHeader": "Thursday - 06/04/2026",
           "games": [
             {
               "home": "🐅 TIGERS FC",
@@ -405,7 +405,7 @@
       "week": "Week 9",
       "days": [
         {
-          "dateHeader": "Tuesday - 06/02/2026",
+          "dateHeader": "Tuesday - 06/09/2026",
           "games": [
             {
               "home": "🐊 ATLANTIC FC",
@@ -422,7 +422,7 @@
           ]
         },
         {
-          "dateHeader": "Wednesday - 06/03/2026",
+          "dateHeader": "Wednesday - 06/10/2026",
           "games": [
             {
               "home": "🐅 TIGERS FC",
@@ -433,7 +433,7 @@
           ]
         },
         {
-          "dateHeader": "Thursday - 06/04/2026",
+          "dateHeader": "Thursday - 06/11/2026",
           "games": [
             {
               "home": "☪️ TEAM BABO FC",
