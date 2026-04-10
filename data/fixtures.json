@@ -352,6 +352,7 @@
     },
     {
       "week": "Week 8",
+      "announcementHtml": "<section class=\"teams\">No games will be played from May 25 to May 29 in observance of Eid. ‼️<br><br>Playoffs will resume on June 2.</section>",
       "days": [
         {
           "dateHeader": "Tuesday - 05/26/2026",
