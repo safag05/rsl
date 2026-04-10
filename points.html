@@ -17,35 +17,40 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="./images/favicon.png" type="image/png">
 </head>
+<script src="nav.js"></script>
 <body>
     <header>
         <h1>POINTS</h1>
+        <button class="menu-toggle" id="menuToggle">
+            ☰ <span>Menu</span> ⚽
+        </button>
         <nav>
             <ul>
-                <li><a href="./">HOME</a></li>
-                <li><a href="./rules">RULES</a></li>
-                <li><a href="./fixtures">FIXTURES</a></li>
-                <li>
+                <li class="always-show"><a href="./">🏠 HOME</a></li>
+
+                <li class="menu-only"><a href="./rules">📜 RULES</a></li>
+                
+                <li class="always-show"><a href="./fixtures">📅 FIXTURES</a></li>
+              
+                <li class="menu-only"><a href="./league_points">🏆 POINTS</a></li>
+
+                <li class="menu-only"><a href="./teams">👥 TEAMS</a></li>
+              
+                <li class="menu-only">
                     <select id="myDropdown">
-                        <option value="" selected disabled>POINTS</option>
-                        <option value="./league_points">League</option>
-                        <option value="./group_a_points">Group A</option>
-                        <option value="./group_b_points">Group B</option>
-                        <option value="./archive">Archive</option>
-                        <!-- Add more local file options as needed -->
+                        <option value="" selected disabled>🗂️ ARCHIVE</option>
+                      
+                        <optgroup label="Archive - 2024">
+                          <option value="./archive/2024_league_points">League</option>
+                          <option value="./archive/2024_group_a_points">Group A</option>
+                          <option value="./archive/2024_group_b_points">Group B</option>
+                        </optgroup>
+                      
+                        <optgroup label="Archive - 2023">
+                          <option value="./archive/2023">League</option>
+                        </optgroup>
                     </select>
-                </li>
-                <script>
-                    // JavaScript to handle dropdown change event
-                    document.getElementById("myDropdown").addEventListener("change", function() {
-                        var selectedOption = this.options[this.selectedIndex].value;
-                        if (selectedOption) {
-                            // Use window.open to open the local file
-                            window.location.href = selectedOption;
-                        }
-                    });
-                </script>
-                <li><a href="./teams">TEAMS</a></li>
+                </li>            
             </ul>
         </nav>
     </header>
@@ -53,17 +58,17 @@
     <main>
         <br>
         <section class="pointss">
-            RSL - League  ➡️  <a href="./league_points"> POINTS </a>
+            <!-- RSL - League  ➡️  <a href="./league_points"> POINTS </a> -->
         </section>
         <br>
         <br>
         <section class="pointss2">
-            RSL - Group A  ➡️  <a href="./group_a_points"> POINTS </a>
+            <!-- RSL - Group A  ➡️  <a href="./group_a_points"> POINTS </a> -->
         </section>
         <br>
         <br>
         <section class="pointss2">
-            RSL - Group B  ➡️ <a href="./group_b_points">POINTS</a>
+            <!-- RSL - Group B  ➡️ <a href="./group_b_points">POINTS</a> -->
         </section>
     </main>
 

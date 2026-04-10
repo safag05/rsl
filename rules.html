@@ -17,47 +17,64 @@
     <link rel="icon" href="./images/favicon.png" type="image/png">
     <title>Rules</title>
 </head>
+<script src="nav.js"></script>
 <body>
     <header>
         <h1>GAME RULES</h1>
+        <button class="menu-toggle" id="menuToggle">
+            ☰ <span>Menu</span> ⚽
+        </button>
         <nav>
             <ul>
-                <li><a href="./">HOME</a></li>
-                <li><a href="./rules">RULES</a></li>
-                <li><a href="./fixtures">FIXTURES</a></li>
-                <li>
+                <li class="always-show"><a href="./">🏠 HOME</a></li>
+
+                <li class="menu-only"><a href="./rules">📜 RULES</a></li>
+                
+                <li class="always-show"><a href="./fixtures">📅 FIXTURES</a></li>
+              
+                <li class="menu-only"><a href="./league_points">🏆 POINTS</a></li>
+
+                <li class="menu-only"><a href="./teams">👥 TEAMS</a></li>
+              
+                <li class="menu-only">
                     <select id="myDropdown">
-                        <option value="" selected disabled>POINTS</option>
-                        <option value="./league_points">League</option>
-                        <option value="./group_a_points">Group A</option>
-                        <option value="./group_b_points">Group B</option>
-                        <option value="./archive">Archive</option>
-                        <!-- Add more local file options as needed -->
+                        <option value="" selected disabled>🗂️ ARCHIVE</option>
+                      
+                        <optgroup label="Archive - 2024">
+                          <option value="./archive/2024_league_points">League</option>
+                          <option value="./archive/2024_group_a_points">Group A</option>
+                          <option value="./archive/2024_group_b_points">Group B</option>
+                        </optgroup>
+                      
+                        <optgroup label="Archive - 2023">
+                          <option value="./archive/2023">League</option>
+                        </optgroup>
                     </select>
-                </li>
-                <script>
-                    // JavaScript to handle dropdown change event
-                    document.getElementById("myDropdown").addEventListener("change", function() {
-                        var selectedOption = this.options[this.selectedIndex].value;
-                        if (selectedOption) {
-                            // Use window.open to open the local file
-                            window.location.href = selectedOption;
-                        }
-                    });
-                </script>
-                <li><a href="./teams">TEAMS</a></li>
+                </li>            
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="teams">
+            <h2>Team Formation Rules</h2>
+            <ul>
+                <li>Each team must have a name and a logo.</li>
+                <br>
+                <li>Each team must have at least 8 players. However, we recommend teams have around 11 players to ensure substitutes are available.</li>
+                <br>
+                <li>All players must be 16 years of age or older.</li>
+                <br>
+                <li>All participants are required to sign a Disclosure Form (Consent/Release Form).</li>
+                <br>
+                <li>For participants under the age of 18, the form must be signed by a parent or legal guardian.</li>
+            </ul>
             <h2>GAME RULES</h2>
             <ul>
                 
                 <li>Please always keep in mind, this is a league for FUN! Please avoid fights and respect each other.</li>
                 <br>
-                <li>Games will be played 7 vs 7 including goalies!!!</li>
+                <li>Games will be played 8 vs 8 including goalies!!!</li>
                 <br>
                 <li><strong>Substitute rules:</strong> Anyone from the bench can change players at their will, BUT the players who are making the change, please yell "CHANGE" so that other players are informed. Substitutes, please DO NOT enter the field until your teammate is out of the field.</li>
                 <br>
@@ -79,9 +96,9 @@
                 <br>
                 <li>You can only play on one team during the tournament. The only way a person can switch to another team is PERMANENTLY. And you must tell both Team Leaders in each team. And you can only switch to another team ONLY ONCE!!! The reason for allowing it one time can be due to unhappiness with the current team for any reason, but once you switch, you either keep playing on that team or quit the tournament until the next tournament!!!</li>
                 <br>
-                <li><strong>YELLOW card</strong> - 5 Minutes out<br><strong>RED card</strong> - 10 minutes out<br><strong>2nd RED is permanent out for the game!!!</strong><br>Meanwhile NO SUB can enter for him!!! The team will play one player less.<br>Card calls will be determined by the referee.</li>
+                <li><strong>🟨 YELLOW card</strong> - 5 Minutes out<br><strong>RED card</strong> - 10 minutes out<br><strong>2nd 🟥 RED is permanent out for the game!!!</strong><br>Meanwhile NO SUB can enter for him!!! The team will play one player less.<br>Card calls will be determined by the referee.</li>
                 <br>
-                <li><strong>NO SLIDING TACKLE!!!</strong><br>Result can be a warning, YELLOW OR RED depending on the severeness in the referee's view.</li>
+                <li><strong>NO SLIDING TACKLE!!!</strong><br>Result can be a warning, 🟨 YELLOW OR 🟥 RED depending on the severeness in the referee's view.</li>
             </ul>
         </section>
     </main>

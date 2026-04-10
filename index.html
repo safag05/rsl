@@ -1,51 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="refresh" content="21600">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-33SEFYBZ3E"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <meta http-equiv="refresh" content="21600">
+        <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-33SEFYBZ3E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-33SEFYBZ3E');
-</script>
+      gtag('config', 'G-33SEFYBZ3E');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="./images/favicon.png" type="image/png">
     <title>RSL</title>
 </head>
+<script src="nav.js"></script>  
 <body>
     <header>
         <h1>Respect Soccer League</h1>
+        <button class="menu-toggle" id="menuToggle">
+            ☰ <span>Menu</span> ⚽
+        </button>
         <nav>
             <ul>
-                <li><a href="./">HOME</a></li>
-                <li><a href="./rules">RULES</a></li>
-                <li><a href="./fixtures">FIXTURES</a></li>
-                <li>
+                <li class="always-show"><a href="./">🏠 HOME</a></li>
+
+                <li class="menu-only"><a href="./rules">📜 RULES</a></li>
+
+                <li class="always-show"><a href="./fixtures">📅 FIXTURES</a></li>
+
+                <li class="menu-only"><a href="./league_points">🏆 POINTS</a></li>
+
+                <li class="menu-only"><a href="./teams">👥 TEAMS</a></li>
+
+                <li class="menu-only">
                     <select id="myDropdown">
-                        <option value="" selected disabled>POINTS</option>
-                        <option value="./league_points">League</option>
-                        <option value="./group_a_points">Group A</option>
-                        <option value="./group_b_points">Group B</option>
-                        <option value="./archive">Archive</option>
-                        <!-- Add more local file options as needed -->
+                        <option value="" selected disabled>🗂️ ARCHIVE</option>
+
+                        <optgroup label="Archive - 2024">
+                          <option value="./archive/2024_league_points">League</option>
+                          <option value="./archive/2024_group_a_points">Group A</option>
+                          <option value="./archive/2024_group_b_points">Group B</option>
+                        </optgroup>
+                        
+                        <optgroup label="Archive - 2023">
+                          <option value="./archive/2023">League</option>
+                        </optgroup>
                     </select>
-                </li>
-                <script>
-                    // JavaScript to handle dropdown change event
-                    document.getElementById("myDropdown").addEventListener("change", function() {
-                        var selectedOption = this.options[this.selectedIndex].value;
-                        if (selectedOption) {
-                            // Use window.open to open the local file
-                            window.location.href = selectedOption;
-                        }
-                    });
-                </script>
-                <li><a href="./teams">TEAMS</a></li>
+                </li>            
             </ul>
         </nav>
     </header>
@@ -53,64 +58,32 @@
     <main>
         <section class="teams">
             <h2>RSL News</h2>
-            <p>RSL 2023-2024 FORMAT</p>
+            <p>RSL 2026 FORMAT</p>
             <ul>
-                <li>‼️ We will take one week off on Thanksgiving week and 3 weeks off on Christmas and New Years for vacation purposes 
-                    where people may have for themselves or their families. And the tournament will resume afterwards.</li>
+                <li>Before anything, we are just trying to gather people to get to know each other and have fun!!</li>
                 <br>
-                <li>8 Teams are in the competition</li>
-                <br>
-                <li> Each team will play each other once in the league format 
-                    <br>
-                    Winner 3 Points
-                    <br>
-                    Tie 1 Point
-                    <br>
-                    Lose 0 Point</li>
-                <br>
-                <li>At the end of 7 Weeks, two groups will be made.</li>
-                <br>
-                <li>First 4 will move on to 
-                    <br>
-                    Respect Champions League</li>
-                    <br>
-                <li>Last 4 will move on to 
-                    <br>
-                    Respect Conference League</li>
-                    <br>
-                <li>In these groups each team will play eachother twice that means 6 games for each team.
-                    <br> 
-                    Winner 3 Points
-                    <br>
-                    Tie 1 Point
-                    <br>
-                    Lose 0 Point</li>
-                    <br>
-                <li>Winners in each group will get a Trophy in their division.</li>
-                    <br>
-                <li>RSL will take 7+6= 13 Weeks in Total</li>
-                    <br>
-                <li>That means everyone will have second chance to win a trophy 🏆 </li>
-                    <br>
-                <li>Before anything, we are just trying to gather people to get to know eachother and have fun!!</li>
+                <li><strong>League Structure:</strong>
+                    <ul>
+                        <li>7 Regular Season Games.</li>
+                        <li>Points System: 3 pts for a Win | 1 pt for a Draw | 0 pts for a Loss.</li>
+                        <li>Post-Season: We will have a playoff system.</li>
+                    </ul>
+                </li>
             </ul>
 
             <br>
 
             <p>INFO</p>
             <ul>
-                <li>⏱️ Games will be held on Tuesdays and Thursdays.
-                    <br>
-                    <br>
-                    Tuesday games will be held from 9 pm to 11 pm. First game will be from 9 pm to 10 pm. Second game will be from 10 pm to 11 pm.
-                    <br>
-                    <br>
-                    Thursday games will be held from 9 pm to 11 pm. First game will be from 9 pm to 10 pm. Second game will be from 10 pm to 11 pm.
+                <li>⏱️ <strong>Games will be held on:</strong>
+                    <br>• Tuesday: 8:30-9:30 PM & 9:30-10:30 PM
+                    <br>• Wednesday: 10:00-11:00 PM
+                    <br>• Thursday: 10:00-11:00 PM
                 </li>
                 <br>
-                <li>📍Game location - St. Luke’s Metro Field - 1206 N Sherman St Allentown, PA 18109</li>
+                <li>📍<strong>Game location:</strong> 3323 Seventh St, Whitehall, PA 18052</li>
                 <br>
-                <li>💬 Join our RSL WhatsApp Group: <a href="https://chat.whatsapp.com/GPCajZ23QMh8n9KBglptmD">WhatsApp Group</a></li>
+                <li>💬 Join our RSL WhatsApp Community: <a href="https://chat.whatsapp.com/EWwjr1f79zW0HqxTsPFNQQ">WhatsApp Community</a></li>
                 <br>
             </ul>
 

@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background: linear-gradient(to bottom, #eef6f9, #ffffff);
 }
 
 header {
@@ -9,6 +10,7 @@ header {
     color: white;
     padding: .1rem;
     text-align: center;
+    z-index: 1000;
 }
 
 .header2 {
@@ -19,11 +21,14 @@ header {
     width: 100%;
     position: fixed;
     transition: top 0.6s;
+    z-index: 1000;
 }
 
 header h1 {
-    font-size: 1em; 
-}
+    font-size: 1.4em;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}  
 
 nav ul {
     list-style: none;
@@ -191,23 +196,25 @@ th {
 /* th:nth-child(1) { background-color: #ccc; } */
 
 
-@media (max-width: 768px) {
-    header {
-        font-size: 1.5em; /* Adjust header font size for smaller screens */
+@media (max-width: 600px) {
+    nav ul {
+      flex-wrap: wrap;
+      gap: 6px;
     }
-
-    select {
-        font-size: 1.5em; /* Adjust header font size for smaller screens */
+  
+    nav ul li a,
+    nav select {
+      font-size: 0.9em;
     }
 
     table {
-        font-size: 0.74em; /* Adjust table font size for smaller screens */
-    }
-
-    th:nth-child(2) {
-      width: 60px; /* Adjust the width as needed */
-    }
-}
+        font-size: 0.8em;
+      }
+    
+      th, td {
+        padding: 6px;
+      }
+  }  
 
 iframe {
     max-width: 100%;
@@ -251,4 +258,263 @@ img {
 
 .archive_ol {
     font-size: .9em
+}
+
+/* ============================= */
+/* MODERN NAV OVERRIDES */
+/* ============================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 8px 12px;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+  }
+  
+  nav ul li {
+    display: block; /* override inline */
+    margin: 0;
+  }
+  
+  nav ul li a {
+    font-size: 0.85em; /* readable on mobile */
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+  }
+  
+  nav ul li a:hover,
+  nav ul li a.active {
+    background: rgba(255, 255, 255, 0.25);
+  }
+  
+  /* Dropdown match nav style */
+  nav select {
+    font-size: 0.8em;
+    padding: 6px 10px;
+    border-radius: 8px;
+  }
+  
+  .teams,
+  .fixtures,
+  .points,
+  .pointss,
+  .pointss2 {
+    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  }
+
+  /* ============================= */
+/* HAMBURGER MENU */
+/* ============================= */
+
+.menu-toggle {
+    display: none;
+    align-items: center;
+    gap: 6px;
+    font-size: 1.1em;
+    font-weight: 600;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: white;
+    -webkit-tap-highlight-color: transparent;
+    padding: 6px 12px;
+    border-radius: 20px;
+  }
+  
+  .menu-toggle span {
+    font-size: 0.9em;
+  }
+  
+  /* Mobile only */
+  @media (max-width: 600px) {
+    .menu-toggle {
+      display: inline-flex;
+    }
+  
+    nav {
+      display: none;
+    }
+  
+    nav.open {
+      display: block;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 8px;
+      background-color: rgb(29, 119, 155);
+      padding: 10px;
+      border-radius: 10px;
+    }
+  
+    nav ul li a,
+    nav select {
+      width: 100%;
+      text-align: center;
+      font-size: 1em;
+    }
+  }
+  
+  select optgroup {
+    font-weight: bold;
+  }
+  
+.fixtures-table {
+    width: 100%;
+    border-collapse: separate; /* Changed from collapse to separate */
+    border-spacing: 0;         /* Keeps internal borders tight */
+    margin-bottom: 0;          /* Reset this so it doesn't fight the container */
+    border: 2px solid #333;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Optional: adds a nice shadow to separate them visually */
+}
+
+/* The top "Week 1" style bar */
+.week-title-row th {
+    background-color: #8bbcd5; /* Teal/Blue color from your image */
+    color: black;
+    padding: 6px !important;   /* Was 12px */
+    font-size: 1.1rem !important; /* Was 1.4rem */
+    letter-spacing: 2px;
+    border: 1px solid #333;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* The Date Header style bar */
+.date-header-row th {
+    background-color: #b3d7e9; /* Lighter blue */
+    color: #000;
+    padding: 4px !important;   /* Was 8px */
+    font-size: 0.95rem !important; /* Was 1.1rem */
+    border: 1px solid #333;
+}
+
+/* The main table headers (Home, Dates, Away) */
+.fixtures-table thead th {
+    background-color: #8bbcd5;
+    padding: 10px;
+    border: 1px solid #333;
+}
+
+/* Individual game rows */
+.game-row td {
+    padding: 5px 10px !important; /* Was 10px all around */
+    font-size: 0.9rem;
+    text-align: center;
+    border: 1px solid #333;
+    background-color: #ebf5fa;
+}
+
+/* Make the score stand out a bit */
+.score {
+    font-weight: bold;
+}
+
+/* Container for the standings */
+#standings-container {
+    margin: 20px auto;
+    max-width: 900px;
+    overflow-x: auto;
+}
+
+/* This adds the gap between the weeks */
+.week-container {
+    margin-bottom: 30px !important; /* Increase this to 60px or more */
+    display: block;
+    clear: both;
+    position: relative;
+}
+
+/* Target only the standings table to avoid breaking other tables */
+.standings-table {
+    table-layout: auto !important; /* Allow columns to resize based on content */
+    width: 100%;
+}
+
+/* Give the team column as much space as possible */
+.col-team, .team-cell {
+    width: 35% !important;
+    text-align: left !important;
+    padding-left: 12px !important;
+    font-weight: bold;
+}
+
+/* Make all the number columns small and uniform */
+.col-stat {
+    width: 7%; 
+    font-size: 0.85em;
+    white-space: nowrap;
+}
+
+/* Ensure data cells match the header alignment */
+.standings-table td:first-child {
+    text-align: left !important;
+    padding-left: 15px !important;
+    font-size: 0.9em; /* Slightly smaller text helps fit longer names */
+}
+
+@media (max-width: 768px) {
+    .standings-table {
+        font-size: 0.72em; /* Slightly smaller for mobile fit */
+    }
+    .col-team {
+        width: 30% !important;
+    }
+    th, td {
+        padding: 4px 1px; /* Tighter padding for mobile */
+    }
+}
+
+/* Only applies to phones/small screens */
+@media (max-width: 480px) {
+    
+    /* 1. Tighten the overall cell padding */
+    .fixtures-table td, 
+    .fixtures-table th {
+        padding: 4px 2px !important; 
+    }
+
+    /* 2. Shrink the font size for team names */
+    .game-row td {
+        font-size: 0.82rem !important;
+        line-height: 1.2;
+    }
+
+    /* 3. Make the Score (Middle Column) narrower */
+    /* This targets the 2nd cell in every row */
+    .game-row td:nth-child(2),
+    .fixtures-table th:nth-child(2) {
+        width: 70px !important; 
+        font-size: 0.75rem !important;
+        white-space: nowrap;
+        /* background-color: #f9f9f9; Optional: subtle tint to distinguish it */
+    }
+
+    /* 4. Shrink the Week and Date headers further for mobile */
+    .week-title-row th {
+        font-size: 1rem !important;
+        padding: 5px !important;
+    }
+    
+    .date-header-row th {
+        font-size: 0.85rem !important;
+        padding: 3px !important;
+    }
+}
+
+/* Add this to your CSS file */
+.score:contains("BYE") {
+    color: #e92106;
+    font-style: italic;
+    font-size: 0.85rem;
 }
