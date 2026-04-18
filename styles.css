@@ -447,11 +447,7 @@ header {
 }
 
 /* Make the score stand out a bit more naturally */
-.score {
-    font-weight: 700;
-    color: #0f172a;
-    background-color: #e2eff5 !important; /* Slightly darker shade to highlight the center */
-}
+
 
 /* Subtle hover effect so users know what row they are looking at */
 .game-row:hover td {
