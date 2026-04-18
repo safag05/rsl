@@ -1,17 +1,31 @@
-name: Daily Match Reminder
+name: Match Day Reminder
 
 on:
   schedule:
-    - cron: '40 23 * * *'  # 10 AM EST
+    - cron: '0 14 * * *'
   workflow_dispatch:
 
 jobs:
-  run-script:
+  send-reminder:
     runs-on: ubuntu-latest
-
+    env:
+      # This kills the Node.js 20 deprecation warning
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true' 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
+        with:
+          python-version: '3.11' # This kills the python-version warning
+
+      - name: Install Dependencies
+        run: pip install requests
+
+      - name: Run Script
+        env:
+          # We store the phone numbers as a comma-separated list in Secrets
+          WHATSAPP_NUMBERS: ${{ secrets.WHATSAPP_NUMBERS }}
+          CALLMEBOT_API_KEY: ${{ secrets.CALLMEBOT_API_KEY }}
+        run: python fixtures.py
