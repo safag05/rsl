@@ -368,63 +368,86 @@ header {
     font-weight: bold;
   }
   
+/* ============================= */
+/* MODERN FIXTURES TABLE         */
+/* ============================= */
+
+/* The container that holds each week */
+.week-container {
+    margin-bottom: 40px !important; 
+    display: block;
+    position: relative;
+    background: #ffffff;
+    border-radius: 16px; /* Smooth rounded corners */
+    box-shadow: 0 8px 24px rgba(29, 119, 155, 0.12); /* Soft shadow tinted with your header blue */
+    overflow: hidden; /* This forces the table inside to follow the rounded corners */
+    border: 1px solid #d2edee; 
+}
+
 .fixtures-table {
     width: 100%;
-    border-collapse: separate; /* Changed from collapse to separate */
-    border-spacing: 0;         /* Keeps internal borders tight */
-    margin-bottom: 0;          /* Reset this so it doesn't fight the container */
-    border: 2px solid #333;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Optional: adds a nice shadow to separate them visually */
+    border-collapse: collapse; /* Changed from separate so it sits flush in the rounded container */
+    margin-bottom: 0;
 }
 
 /* The top "Week 1" style bar */
 .week-title-row th {
-    background-color: #8bbcd5; /* Teal/Blue color from your image */
-    color: black;
-    padding: 6px !important;   /* Was 12px */
-    font-size: 1.1rem !important; /* Was 1.4rem */
+    background-color: #8bbcd5; /* Your original teal/blue */
+    color: #ffffff;
+    padding: 14px !important;   
+    font-size: 1.15rem !important; 
     letter-spacing: 2px;
-    border: 1px solid #333;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    border: none; /* Removed the black border */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
     text-transform: uppercase;
-    letter-spacing: 2px;
+}
+
+/* The main table headers (Home, Dates, Away) */
+.col-header, .fixtures-table thead th {
+    background-color: #c5e1ed; 
+    color: #1e293b;
+    padding: 12px;
+    border: none;
+    font-weight: 600;
+    border-bottom: 2px solid #a4cddf; /* Slightly darker bottom border to anchor it */
 }
 
 /* The Date Header style bar */
 .date-header-row th {
-    background-color: #b3d7e9; /* Lighter blue */
-    color: #000;
-    padding: 4px !important;   /* Was 8px */
-    font-size: 0.95rem !important; /* Was 1.1rem */
-    border: 1px solid #333;
-}
-
-/* The main table headers (Home, Dates, Away) */
-.fixtures-table thead th {
-    background-color: #8bbcd5;
-    padding: 10px;
-    border: 1px solid #333;
+    background-color: #b3d7e9; 
+    color: #1a4457; /* Darkened text slightly for better readability */
+    padding: 8px !important;   
+    font-size: 0.95rem !important; 
+    border: none;
+    border-bottom: 1px solid #a4cddf;
 }
 
 /* Individual game rows */
 .game-row td {
-    padding: 5px 10px !important; /* Was 10px all around */
-    font-size: 0.9rem;
+    padding: 12px 10px !important; 
+    font-size: 0.95rem;
     text-align: center;
-    border: 1px solid #333;
-    background-color: #ebf5fa;
+    border: none; /* Removed the black border */
+    border-bottom: 1px solid #e2ecef; /* Very subtle line between games */
+    background-color: #ebf5fa; /* Your original row color */
+    color: #334155;
 }
 
-/* Make the score stand out a bit */
+/* Remove bottom border from the very last game row */
+.game-row:last-child td {
+    border-bottom: none;
+}
+
+/* Make the score stand out a bit more naturally */
 .score {
-    font-weight: bold;
+    font-weight: 700;
+    color: #0f172a;
+    background-color: #e2eff5 !important; /* Slightly darker shade to highlight the center */
 }
 
-/* Container for the standings */
-#standings-container {
-    margin: 20px auto;
-    max-width: 900px;
-    overflow-x: auto;
+/* Subtle hover effect so users know what row they are looking at */
+.game-row:hover td {
+    background-color: #f4f9fb;
 }
 
 /* This adds the gap between the weeks */
