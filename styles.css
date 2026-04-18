@@ -425,8 +425,8 @@ header {
 
 /* 4. DARKER & BIGGER SCORES */
 .score {
-    font-weight: 800 !important; /* Extra bold */
-    font-size: 1.1rem !important; /* Larger text */
+    font-weight: 2000 !important; /* Extra bold */
+    font-size: 2.1rem !important; /* Larger text */
     color: #000000 !important;  /* Pure black for maximum punch */
     background-color: #e2eff5 !important;
 }
@@ -446,7 +446,6 @@ header {
     border-bottom: none;
 }
 
-/* Make the score stand out a bit more naturally */
 
 
 /* Subtle hover effect so users know what row they are looking at */
