@@ -406,7 +406,7 @@ header {
 
 /* 2. THE COLUMN HEADERS (Home, Dates, Away) */
 .col-header, .fixtures-table thead th {
-    background-color: #c5e1ed; 
+    background-color: #77a3b6; 
     color: #1e293b;
     padding: 12px;
     border: none;
