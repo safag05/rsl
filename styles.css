@@ -369,71 +369,79 @@ header {
   }
   
 /* ============================= */
-/* MODERN FIXTURES TABLE         */
+/* MODERN FIXTURES TABLE - V2   */
 /* ============================= */
 
-/* The container that holds each week */
 .week-container {
     margin-bottom: 40px !important; 
     display: block;
     position: relative;
     background: #ffffff;
-    border-radius: 16px; /* Smooth rounded corners */
-    box-shadow: 0 8px 24px rgba(29, 119, 155, 0.12); /* Soft shadow tinted with your header blue */
-    overflow: hidden; /* This forces the table inside to follow the rounded corners */
-    border: 1px solid #d2edee; 
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(29, 119, 155, 0.12);
+    overflow: hidden; 
+    border: 1px solid #d2edee;
+    /* FIX: Ensure no internal padding pushes the header down */
+    padding: 0 !important; 
 }
 
 .fixtures-table {
     width: 100%;
-    border-collapse: collapse; /* Changed from separate so it sits flush in the rounded container */
-    margin-bottom: 0;
+    border-collapse: collapse;
+    margin: 0; /* Ensures the table stays flush to the top */
 }
 
-/* The top "Week 1" style bar */
+/* 1. DARKER WEEK TITLE ROW */
 .week-title-row th {
-    background-color: #8bbcd5; /* Your original teal/blue */
+    /* Using a deeper blue for better hierarchy */
+    background-color: #2b7a9e; 
     color: #ffffff;
-    padding: 14px !important;   
-    font-size: 1.15rem !important; 
+    padding: 16px !important;   
+    font-size: 1.3rem !important; /* Made it bigger */
+    font-weight: 700;
     letter-spacing: 2px;
-    border: none; /* Removed the black border */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    border: none;
     text-transform: uppercase;
 }
 
-/* The main table headers (Home, Dates, Away) */
+/* 2. THE COLUMN HEADERS (Home, Dates, Away) */
 .col-header, .fixtures-table thead th {
     background-color: #c5e1ed; 
     color: #1e293b;
     padding: 12px;
     border: none;
     font-weight: 600;
-    border-bottom: 2px solid #a4cddf; /* Slightly darker bottom border to anchor it */
 }
 
-/* The Date Header style bar */
+/* 3. DARKER & BIGGER DATE HEADERS */
 .date-header-row th {
     background-color: #b3d7e9; 
-    color: #1a4457; /* Darkened text slightly for better readability */
-    padding: 8px !important;   
-    font-size: 0.95rem !important; 
+    color: #0f172a; /* Darker navy for better contrast */
+    padding: 12px !important;   
+    font-size: 1.1rem !important; /* Made it bigger */
     border: none;
-    border-bottom: 1px solid #a4cddf;
+    border-bottom: 1px solid #99c2d6;
+}
+
+/* 4. DARKER & BIGGER SCORES */
+.score {
+    font-weight: 800 !important; /* Extra bold */
+    font-size: 1.1rem !important; /* Larger text */
+    color: #000000 !important;  /* Pure black for maximum punch */
+    background-color: #e2eff5 !important;
 }
 
 /* Individual game rows */
 .game-row td {
-    padding: 12px 10px !important; 
-    font-size: 0.95rem;
+    padding: 14px 10px !important; 
+    font-size: 1rem;
     text-align: center;
-    border: none; /* Removed the black border */
-    border-bottom: 1px solid #e2ecef; /* Very subtle line between games */
-    background-color: #ebf5fa; /* Your original row color */
+    border: none;
+    border-bottom: 1px solid #e2ecef;
+    background-color: #ebf5fa;
     color: #334155;
 }
 
-/* Remove bottom border from the very last game row */
 .game-row:last-child td {
     border-bottom: none;
 }
@@ -535,9 +543,10 @@ header {
     }
 }
 
-/* Add this to your CSS file */
+/* Update Bye Text for the new size */
 .bye-text {
     color: #e92106;
     font-style: italic;
-    font-size: 0.85rem;
+    font-weight: 700;
+    font-size: 0.95rem;
 }
