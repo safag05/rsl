@@ -536,7 +536,7 @@ header {
 }
 
 /* Add this to your CSS file */
-.score:contains("BYE") {
+.bye-text {
     color: #e92106;
     font-style: italic;
     font-size: 0.85rem;

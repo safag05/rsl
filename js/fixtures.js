@@ -54,8 +54,8 @@ function renderFixtures(data) {
 
                 // 1. Check for BYE week first
                 if (game.homeScore === "BYE" || game.awayScore === "BYE") {
-                    scoreDisplay = "BYE WEEK";
-                } 
+                    scoreDisplay = "<span class='bye-text'>BYE WEEK</span>";
+                }
                 // 2. If BOTH are numbers, display the final score (e.g., "2 - 1")
                 else if (homeIsNumber && awayIsNumber) {
                     scoreDisplay = `${game.homeScore} - ${game.awayScore}`;
