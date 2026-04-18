@@ -394,7 +394,7 @@ header {
 /* 1. DARKER WEEK TITLE ROW */
 .week-title-row th {
     /* Using a deeper blue for better hierarchy */
-    background-color: #2b7a9e; 
+    background-color: #135371; 
     color: #ffffff;
     padding: 16px !important;   
     font-size: 1.3rem !important; /* Made it bigger */
@@ -437,8 +437,8 @@ header {
     font-size: 1rem;
     text-align: center;
     border: none;
-    border-bottom: 1px solid #e2ecef;
-    background-color: #ebf5fa;
+    border-bottom: 1px solid #b6deea;
+    background-color: #a6c6d8;
     color: #334155;
 }
 
