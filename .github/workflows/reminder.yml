@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Run script
-        run: python3 generate_message.py
+      - name: Set up Python
+        uses: actions/setup-python@v5
