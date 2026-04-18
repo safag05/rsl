@@ -202,7 +202,7 @@
     },
     {
       "week": "Week 5",
-      "announcement": "<section class=\"teams\">Starting May 2026: Wednesday/Thursday kickoff times and dates are subject to change. Important: While the time might shift, your opponent will remain the same.</section>",
+      "announcement": "Starting May 2026: Wednesday/Thursday kickoff times and dates are subject to change. Important: While the time might shift, your opponent will remain the same.",
       "days": [
         {
           "dateHeader": "Tuesday - 05/05/2026",
@@ -353,7 +353,7 @@
     },
     {
       "week": "Week 8",
-      "announcement": "<section class=\"teams\">No games will be played from May 25 to May 29 in observance of Eid. ‼️<br><br>Week 8 will resume on June 2nd.</section>",
+      "announcement": "No games will be played from May 25 to May 29 in observance of Eid. ‼️<br><br>Week 8 will resume on June 2nd.",
       "days": [
         {
           "dateHeader": "Tuesday - 06/02/2026",
