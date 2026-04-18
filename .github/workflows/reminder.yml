@@ -1,0 +1,17 @@
+name: Daily Match Reminder
+
+on:
+  schedule:
+    - cron: '40 23 * * *'  # 10 AM EST
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Run script
+        run: python3 generate_message.py
