@@ -1,99 +1,107 @@
-# import json
-# import os
-# import re
-# from datetime import datetime
-# from twilio.rest import Client
+import json
+import os
+import re
+import requests
+from datetime import datetime
 
-# # ---- TWILIO CONFIG (Must be at the top) ----
-# account_sid = os.getenv('TWILIO_ACCOUNT_SID')
-# auth_token = os.getenv('TWILIO_AUTH_TOKEN')
-# from_whatsapp = os.getenv('TWILIO_FROM_NUMBER') # Should be whatsapp:+14155238886
-# numbers_raw = os.getenv('WHATSAPP_NUMBERS', "")
-# phone_list = [n.strip() for n in numbers_raw.split(",") if n.strip()]
+# ---- CALLMEBOT CONFIG ----
+numbers_raw = os.getenv('WHATSAPP_NUMBERS', "")
+keys_raw = os.getenv('CALLMEBOT_API_KEYS', "")
 
-# # Now this check will work because the names are defined
-# if not account_sid or not auth_token:
-#     print("⚠️ Missing Twilio Credentials in GitHub Secrets.")
-#     exit()
+phone_list = [n.strip() for n in numbers_raw.split(",") if n.strip()]
+key_list = [k.strip() for k in keys_raw.split(",") if k.strip()]
 
-# TEAM_JERSEYS = {
-#     "GREEN KNIGHTS FC": "Green",
-#     "TIGERS FC": "Red"
-# }
+if not phone_list or not key_list:
+    print("⚠️ Missing Phone Numbers or API Keys in GitHub Secrets.")
+    exit()
 
-# def clean_team_name(name):
-#     return re.sub(r'[^\w\s]', '', name).strip()
+# Create a mapping of phone numbers to their respective API keys
+user_configs = list(zip(phone_list, key_list))
 
-# def get_colors(home, away):
-#     if home == "GREEN KNIGHTS FC": return "Green", "Black"
-#     if away == "GREEN KNIGHTS FC": return "Black", "Green"
-#     if home == "TIGERS FC": return "Red", "White"
-#     if away == "TIGERS FC": return "White", "Red"
-#     return "Black", "White"
+TEAM_JERSEYS = {
+    "GREEN KNIGHTS FC": "*Green*",
+    "TIGERS FC": "*Red*"
+}
 
-# # ---- LOAD DATA ----
-# with open("./data/fixtures.json") as f:
-#     data = json.load(f)
+def clean_team_name(name):
+    return re.sub(r'[^\w\s]', '', name).strip()
 
-# today_str = datetime.now().strftime("%m/%d/%Y")
-# today_games = []
+def get_colors(home_raw, away_raw):
+    home = clean_team_name(home_raw).upper()
+    away = clean_team_name(away_raw).upper()
 
-# for week in data["weeks"]:
-#     for day in week["days"]:
-#         if today_str in day["dateHeader"]:
-#             for game in day["games"]:
-#                 if game["homeScore"] == "BYE": continue
-#                 if "PM" not in game["homeScore"] and "AM" not in game["homeScore"]: continue
-#                 today_games.append((game["home"], game["away"], game["homeScore"]))
+    # Determine Home Color
+    if home == "TIGERS FC":
+        home_col = "*Red*"
+    elif home == "GREEN KNIGHTS FC":
+        home_col = "*Green*"
+    else:
+        home_col = "*Black*"
 
-# if not today_games:
-#     print("No games today.")
-#     exit()
+    # Determine Away Color
+    if away == "TIGERS FC":
+        away_col = "*Red*"
+    elif away == "GREEN KNIGHTS FC":
+        away_col = "*Green*"
+    else:
+        away_col = "*White*"
 
-# # ---- BUILD MESSAGE ----
-# message = "⚽ *RSL Match Day Reminder*\n\n"
-# for i, (home_raw, away_raw, time) in enumerate(today_games, 1):
-#     home_clean, away_clean = clean_team_name(home_raw), clean_team_name(away_raw)
-#     home_col, away_col = get_colors(home_clean, away_clean)
+    return home_col, away_col
 
-#     message += f"{i}️⃣ *{home_raw}* vs *{away_raw}*\n"
-#     message += f"⏰ {time}\n"
-#     message += f"👕 {home_raw}: {home_col}\n"
-#     message += f"👕 {away_raw}: {away_col}\n\n"
+# ---- LOAD DATA ----
+try:
+    with open("./data/fixtures.json") as f:
+        data = json.load(f)
+except FileNotFoundError:
+    print("❌ Error: fixtures.json not found.")
+    exit()
 
-# message += "🚫 *NO GRAY shirts allowed.*\nPlease arrive 15 minutes early."
+today_str = datetime.now().strftime("%m/%d/%Y")
+today_games = []
 
-# # ---- SENDING VIA TWILIO ----
-# if not account_sid or not auth_token:
-#     print("⚠️ Missing Twilio Credentials.")
-#     exit()
+for week in data["weeks"]:
+    for day in week["days"]:
+        if today_str in day["dateHeader"]:
+            for game in day["games"]:
+                if game["homeScore"] == "BYE": continue
+                if "PM" not in game["homeScore"] and "AM" not in game["homeScore"]: continue
+                today_games.append((game["home"], game["away"], game["homeScore"]))
 
-# client = Client(account_sid, auth_token)
+if not today_games:
+    print(f"No games found for today ({today_str}).")
+    exit()
 
-# # Ensure the FROM number has the correct prefix
-# if not from_whatsapp.startswith("whatsapp:"):
-#     # If it doesn't have the prefix, add it. 
-#     # Also ensure it has the '+' if it's just the digits.
-#     if not from_whatsapp.startswith("+"):
-#         from_whatsapp = f"whatsapp:+{from_whatsapp}"
-#     else:
-#         from_whatsapp = f"whatsapp:{from_whatsapp}"
+# ---- BUILD MESSAGE ----
+message = "⚽ *RSL Match Day Reminder*\n\n"
+for i, (home_raw, away_raw, time) in enumerate(today_games, 1):
+    home_clean, away_clean = clean_team_name(home_raw), clean_team_name(away_raw)
+    home_col, away_col = get_colors(home_raw, away_raw)
 
-# for phone in phone_list:
-#     try:
-#         # Clean up the receiver number
-#         target_phone = phone.strip()
-#         if not target_phone.startswith("whatsapp:"):
-#             if not target_phone.startswith("+"):
-#                 target_phone = f"whatsapp:+{target_phone}"
-#             else:
-#                 target_phone = f"whatsapp:{target_phone}"
+    message += f"{i}️⃣ *{home_raw}* vs *{away_raw}*\n"
+    message += f"⏰ {time}\n"
+    message += f"*JERSEYS:*\n"
+    message += f"👕 {home_raw}: {home_col}\n"
+    message += f"👕 {away_raw}: {away_col}\n\n"
+
+message += "🚫 *NO GRAY shirts allowed.*\nPlease arrive 15 minutes early."
+
+# ---- SENDING VIA CALLMEBOT ----
+for phone, apikey in user_configs:
+    try:
+        # CallMeBot API Endpoint
+        url = "https://api.callmebot.com/whatsapp.php"
+        params = {
+            "phone": phone,
+            "text": message,
+            "apikey": apikey
+        }
         
-#         client.messages.create(
-#             body=message,
-#             from_=from_whatsapp,
-#             to=target_phone
-#         )
-#         print(f"✅ Sent to {target_phone}")
-#     except Exception as e:
-#         print(f"❌ Failed for {phone}: {e}")
+        response = requests.get(url, params=params)
+        
+        if response.status_code == 200:
+            print(f"✅ Sent successfully to {phone}")
+        else:
+            print(f"❌ Failed for {phone}: Status {response.status_code} - {response.text}")
+            
+    except Exception as e:
+        print(f"❌ Connection error for {phone}: {e}")
