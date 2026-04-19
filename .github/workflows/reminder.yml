@@ -2,15 +2,18 @@ name: Match Day Reminder
 
 on:
   schedule:
-    - cron: '0 14 * * *' # 10:00 AM EST (approx)
+    - cron: '0 14 * * *'
   workflow_dispatch:
 
 jobs:
   send-reminder:
     runs-on: ubuntu-latest
     env:
-      # 1. FIX: This forces the runner to use Node 24 and stops the deprecation warning
+      # This tells GitHub to use Node 24 for the engine
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+      # This tells GitHub you acknowledge the risk of using an unsecure/deprecated node version
+      ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: 'true' 
+    
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -18,7 +21,6 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          # 2. FIX: Setting this explicitly removes the "python-version not set" warning
           python-version: '3.11'
 
       - name: Install Dependencies
@@ -26,7 +28,6 @@ jobs:
 
       - name: Run Script
         env:
-          # Pulling hidden secrets from your GitHub settings
           WHATSAPP_NUMBERS: ${{ secrets.WHATSAPP_NUMBERS }}
           CALLMEBOT_API_KEY: ${{ secrets.CALLMEBOT_API_KEY }}
         run: python generate_message.py
