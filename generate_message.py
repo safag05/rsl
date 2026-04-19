@@ -15,7 +15,7 @@ phone_list = [n.strip() for n in numbers_raw.split(",") if n.strip()]
 if not account_sid or not auth_token:
     print("⚠️ Missing Twilio Credentials in GitHub Secrets.")
     exit()
-    
+
 TEAM_JERSEYS = {
     "GREEN KNIGHTS FC": "Green",
     "TIGERS FC": "Red"
@@ -70,16 +70,30 @@ if not account_sid or not auth_token:
 
 client = Client(account_sid, auth_token)
 
+# Ensure the FROM number has the correct prefix
+if not from_whatsapp.startswith("whatsapp:"):
+    # If it doesn't have the prefix, add it. 
+    # Also ensure it has the '+' if it's just the digits.
+    if not from_whatsapp.startswith("+"):
+        from_whatsapp = f"whatsapp:+{from_whatsapp}"
+    else:
+        from_whatsapp = f"whatsapp:{from_whatsapp}"
+
 for phone in phone_list:
     try:
-        # Twilio requires the "whatsapp:" prefix for both numbers
-        to_whatsapp = f"whatsapp:+{phone}" if not phone.startswith("whatsapp:") else phone
+        # Clean up the receiver number
+        target_phone = phone.strip()
+        if not target_phone.startswith("whatsapp:"):
+            if not target_phone.startswith("+"):
+                target_phone = f"whatsapp:+{target_phone}"
+            else:
+                target_phone = f"whatsapp:{target_phone}"
         
         client.messages.create(
             body=message,
             from_=from_whatsapp,
-            to=to_whatsapp
+            to=target_phone
         )
-        print(f"✅ Sent to {phone[:5]}***")
+        print(f"✅ Sent to {target_phone}")
     except Exception as e:
-        print(f"❌ Failed for {phone[:5]}***: {e}")
+        print(f"❌ Failed for {phone}: {e}")
