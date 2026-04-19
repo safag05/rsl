@@ -9,11 +9,8 @@ jobs:
   send-reminder:
     runs-on: ubuntu-latest
     env:
-      # This tells GitHub to use Node 24 for the engine
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
-      # This tells GitHub you acknowledge the risk of using an unsecure/deprecated node version
       ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: 'true' 
-    
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -24,10 +21,14 @@ jobs:
           python-version: '3.11'
 
       - name: Install Dependencies
-        run: pip install requests
+        run: |
+          pip install requests twilio
 
       - name: Run Script
         env:
+          # Use your new Twilio Secrets
+          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+          TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
+          TWILIO_FROM_NUMBER: ${{ secrets.TWILIO_FROM_NUMBER }}
           WHATSAPP_NUMBERS: ${{ secrets.WHATSAPP_NUMBERS }}
-          CALLMEBOT_API_KEY: ${{ secrets.CALLMEBOT_API_KEY }}
         run: python generate_message.py
