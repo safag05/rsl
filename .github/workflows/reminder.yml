@@ -1,31 +1,31 @@
-name: Match Day Reminder
+# name: Match Day Reminder
 
-on:
-  schedule:
-    - cron: '0 14 * * *'
-  workflow_dispatch:
+# on:
+#   schedule:
+#     - cron: '0 14 * * *'
+#   workflow_dispatch:
 
-jobs:
-  send-reminder:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+# jobs:
+#   send-reminder:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout Code
+#         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
+#       - name: Set up Python
+#         uses: actions/setup-python@v5
+#         with:
+#           python-version: '3.11'
 
-      - name: Install Dependencies
-        run: |
-          pip install requests twilio
+#       - name: Install Dependencies
+#         run: |
+#           pip install requests twilio
 
-      - name: Run Script
-        env:
-          # Use your new Twilio Secrets
-          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
-          TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
-          TWILIO_FROM_NUMBER: ${{ secrets.TWILIO_FROM_NUMBER }}
-          WHATSAPP_NUMBERS: ${{ secrets.WHATSAPP_NUMBERS }}
-        run: python generate_message.py
+#       - name: Run Script
+#         env:
+#           # Use your new Twilio Secrets
+#           TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+#           TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
+#           TWILIO_FROM_NUMBER: ${{ secrets.TWILIO_FROM_NUMBER }}
+#           WHATSAPP_NUMBERS: ${{ secrets.WHATSAPP_NUMBERS }}
+#         run: python generate_message.py
