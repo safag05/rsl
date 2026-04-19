@@ -3,7 +3,7 @@ name: Match Day Reminder
 on:
   schedule:
     # Runs at 14:00 UTC (10:00 AM EST time) on Tuesday, Wednesday, and Thursday
-    - cron: '20 19 * * 2,3,4'
+    - cron: '0 14 * * 2,3,4'
   workflow_dispatch:
 
 jobs:

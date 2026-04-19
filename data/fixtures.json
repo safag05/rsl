@@ -58,14 +58,14 @@
           "games": [
             {
               "home": "👵 BIBI FC",
-              "homeScore": "8:30 PM",
-              "awayScore": "TBD",
+              "homeScore": "19",
+              "awayScore": "3",
               "away": "🐬 BLUE DOLPHINS FC"
             },
             {
               "home": "🇪🇬 EGYPT FC",
-              "homeScore": "9:30 PM",
-              "awayScore": "TBD",
+              "homeScore": "15",
+              "awayScore": "1",
               "away": "🟢 GREEN KNIGHTS FC"
             }
           ]
@@ -75,8 +75,8 @@
           "games": [
             {
               "home": "💫 JEI FC",
-              "homeScore": "10:00 PM",
-              "awayScore": "TBD",
+              "homeScore": "5",
+              "awayScore": "14",
               "away": "🐅 TIGERS FC"
             }
           ]
@@ -86,8 +86,8 @@
           "games": [
             {
               "home": "☪️ TEAM BABO FC",
-              "homeScore": "10:00 PM",
-              "awayScore": "TBD",
+              "homeScore": "10",
+              "awayScore": "3",
               "away": "🦅 AL-HATEM FC"
             },
             {
@@ -104,31 +104,19 @@
       "week": "Week 3",
       "days": [
         {
-          "dateHeader": "Tuesday - 04/19/2026",
+          "dateHeader": "Tuesday - 04/21/2026",
           "games": [
             {
-              "home": "🐅 TIGERS FC",
-              "homeScore": "10:30 PM",
+              "home": "🦅 AL-HATEM FC",
+              "homeScore": "8:30 PM",
               "awayScore": "TBD",
-              "away": "🐬 BLUE DOLPHINS FC"
-            },
-            {
-              "home": "🐬 BLUE DOLPHINS FC",
-              "homeScore": "10:30 PM",
-              "awayScore": "TBD",
-              "away": "🐅 TIGERS FC"
+              "away": "🇪🇬 EGYPT FC"
             },
             {
               "home": "🟢 GREEN KNIGHTS FC",
-              "homeScore": "9:00 PM",
+              "homeScore": "9:30 PM",
               "awayScore": "TBD",
               "away": "🐅 TIGERS FC"
-            },
-            {
-              "home": "🐅 TIGERS FC",
-              "homeScore": "10:00 PM",
-              "awayScore": "TBD",
-              "away": "🟢 GREEN KNIGHTS FC"
             }
           ]
         },
@@ -214,7 +202,6 @@
     },
     {
       "week": "Week 5",
-      "announcement": "Starting May 2026: Wednesday/Thursday kickoff times and dates are subject to change. Important: While the time might shift, your opponent will remain the same.",
       "days": [
         {
           "dateHeader": "Tuesday - 05/05/2026",
@@ -261,7 +248,8 @@
             }
           ]
         }
-      ]
+      ],
+      "announcement": "Starting May 2026: Wednesday/Thursday kickoff times and dates are subject to change. Important: While the time might shift, your opponent will remain the same."
     },
     {
       "week": "Week 6",
@@ -365,7 +353,6 @@
     },
     {
       "week": "Week 8",
-      "announcement": "No games will be played from May 25 to May 29 in observance of Eid. ‼️<br><br>Week 8 will resume on June 2nd.",
       "days": [
         {
           "dateHeader": "Tuesday - 06/02/2026",
@@ -412,7 +399,8 @@
             }
           ]
         }
-      ]
+      ],
+      "announcement": "No games will be played from May 25 to May 29 in observance of Eid. ‼️<br><br>Week 8 will resume on June 2nd."
     },
     {
       "week": "Week 9",
