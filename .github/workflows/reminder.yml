@@ -2,15 +2,15 @@ name: Match Day Reminder
 
 on:
   schedule:
-    - cron: '0 14 * * *'
+    - cron: '0 14 * * *' # 10:00 AM EST (approx)
   workflow_dispatch:
 
 jobs:
   send-reminder:
     runs-on: ubuntu-latest
     env:
-      # This kills the Node.js 20 deprecation warning
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true' 
+      # 1. FIX: This forces the runner to use Node 24 and stops the deprecation warning
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -18,14 +18,15 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11' # This kills the python-version warning
+          # 2. FIX: Setting this explicitly removes the "python-version not set" warning
+          python-version: '3.11'
 
       - name: Install Dependencies
         run: pip install requests
 
       - name: Run Script
         env:
-          # We store the phone numbers as a comma-separated list in Secrets
+          # Pulling hidden secrets from your GitHub settings
           WHATSAPP_NUMBERS: ${{ secrets.WHATSAPP_NUMBERS }}
           CALLMEBOT_API_KEY: ${{ secrets.CALLMEBOT_API_KEY }}
-        run: python fixtures.py
+        run: python generate_message.py
