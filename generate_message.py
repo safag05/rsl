@@ -18,11 +18,6 @@ if not phone_list or not key_list:
 # Create a mapping of phone numbers to their respective API keys
 user_configs = list(zip(phone_list, key_list))
 
-TEAM_JERSEYS = {
-    "GREEN KNIGHTS FC": "*Green*",
-    "TIGERS FC": "*Red*"
-}
-
 def clean_team_name(name):
     return re.sub(r'[^\w\s]', '', name).strip()
 
@@ -30,21 +25,33 @@ def get_colors(home_raw, away_raw):
     home = clean_team_name(home_raw).upper()
     away = clean_team_name(away_raw).upper()
 
-    # Determine Home Color
-    if home == "TIGERS FC":
+    # Set standard defaults for the rest of the league
+    home_col = "*Black*"
+    away_col = "*White*"
+
+    # Special Case: Tigers play Green Knights
+    if home == "TIGERS FC" and away == "GREEN KNIGHTS FC":
         home_col = "*Red*"
+        away_col = "*Green*"
+    elif home == "GREEN KNIGHTS FC" and away == "TIGERS FC":
+        home_col = "*Green*"
+        away_col = "*Red*"
+        
+    # Tigers play any other team
+    elif home == "TIGERS FC":
+        home_col = "*Red*"
+        away_col = "*White*"  # Opponent wears white
+    elif away == "TIGERS FC":
+        away_col = "*Red*"
+        home_col = "*White*"  # Opponent wears white
+        
+    # Green Knights play any other team
     elif home == "GREEN KNIGHTS FC":
         home_col = "*Green*"
-    else:
-        home_col = "*Black*"
-
-    # Determine Away Color
-    if away == "TIGERS FC":
-        away_col = "*Red*"
+        away_col = "*Black*"  # Opponent wears black
     elif away == "GREEN KNIGHTS FC":
         away_col = "*Green*"
-    else:
-        away_col = "*White*"
+        home_col = "*Black*"  # Opponent wears black
 
     return home_col, away_col
 
@@ -72,7 +79,7 @@ if not today_games:
     exit()
 
 # ---- BUILD MESSAGE ----
-message = "⚽ *RSL Match Day Reminder*\n\n"
+message = "⚽ *RSL Match Day Reminder & Jersey Color*\n\n"
 for i, (home_raw, away_raw, time) in enumerate(today_games, 1):
     home_clean, away_clean = clean_team_name(home_raw), clean_team_name(away_raw)
     home_col, away_col = get_colors(home_raw, away_raw)

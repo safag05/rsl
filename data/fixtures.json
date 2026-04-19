@@ -108,9 +108,21 @@
           "games": [
             {
               "home": "🦅 AL-HATEM FC",
-              "homeScore": "8:30 PM",
+              "homeScore": "7:30 PM",
               "awayScore": "TBD",
               "away": "🇪🇬 EGYPT FC"
+            },
+            {
+              "home": "🇪🇬 EGYPT FC",
+              "homeScore": "8:30 PM",
+              "awayScore": "TBD",
+              "away": "🦅 AL-HATEM FC"
+            },
+            {
+              "home": "☪️ TEAM BABO FC",
+              "homeScore": "6:00 PM",
+              "awayScore": "TBD",
+              "away": "🦅 AL-HATEM FC"
             },
             {
               "home": "🟢 GREEN KNIGHTS FC",
@@ -119,10 +131,34 @@
               "away": "🐊 ATLANTIC FC"
             },
             {
+              "home": "🐊 ATLANTIC FC",
+              "homeScore": "9:30 PM",
+              "awayScore": "TBD",
+              "away": "🟢 GREEN KNIGHTS FC"
+            },
+            {
               "home": "🐅 TIGERS FC",
               "homeScore": "10:30 PM",
               "awayScore": "TBD",
               "away": "🐬 BLUE DOLPHINS FC"
+            },
+            {
+              "home": "🐬 BLUE DOLPHINS FC",
+              "homeScore": "10:30 PM",
+              "awayScore": "TBD",
+              "away": "🐅 TIGERS FC"
+            },
+            {
+              "home": "🟢 GREEN KNIGHTS FC",
+              "homeScore": "9:00 PM",
+              "awayScore": "TBD",
+              "away": "🐅 TIGERS FC"
+            },
+            {
+              "home": "🐅 TIGERS FC",
+              "homeScore": "10:00 PM",
+              "awayScore": "TBD",
+              "away": "🟢 GREEN KNIGHTS FC"
             }
           ]
         },
