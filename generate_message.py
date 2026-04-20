@@ -94,6 +94,9 @@ message += "🚫 *NO GRAY shirts allowed.*\nPlease arrive 15 minutes early."
 
 # ---- SENDING VIA CALLMEBOT ----
 for phone, apikey in user_configs:
+    # Completely mask the phone number for the logs
+    masked_phone = "***"
+    
     try:
         # CallMeBot API Endpoint
         url = "https://api.callmebot.com/whatsapp.php"
@@ -106,9 +109,9 @@ for phone, apikey in user_configs:
         response = requests.get(url, params=params)
         
         if response.status_code == 200:
-            print(f"✅ Sent successfully to {phone}")
+            print(f"✅ Sent successfully to {masked_phone}")
         else:
-            print(f"❌ Failed for {phone}: Status {response.status_code} - {response.text}")
+            print(f"❌ Failed for {masked_phone}: Status {response.status_code} - {response.text}")
             
     except Exception as e:
-        print(f"❌ Connection error for {phone}: {e}")
+        print(f"❌ Connection error for {masked_phone}: {e}")
