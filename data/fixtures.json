@@ -485,15 +485,15 @@
             {
               "label": "",
               "home": "5th Place",
-              "homeScore": "TBD",
-              "awayScore": "TBD",
+              "homeScore": "4",
+              "awayScore": "1",
               "away": "8th Place"
             },
             {
               "label": "",
               "home": "6th Place",
-              "homeScore": "TBD",
-              "awayScore": "TBD",
+              "homeScore": "2",
+              "awayScore": "3",
               "away": "7th Place"
             }
           ]
@@ -516,8 +516,8 @@
             {
               "label": "🥉 3rd Place Match",
               "home": "Div A Semis 1 Loser",
-              "homeScore": "TBD",
-              "awayScore": "TBD",
+              "homeScore": "2",
+              "awayScore": "1",
               "away": "Div A Semis 2 Loser"
             }
           ]
@@ -528,15 +528,15 @@
             {
               "label": "🥇 Div B Championship",
               "home": "Div B Semis 1 Winner",
-              "homeScore": "TBD",
-              "awayScore": "TBD",
+              "homeScore": "2",
+              "awayScore": "3",
               "away": "Div B Semis 2 Winner"
             },
             {
               "label": "🥉 Div B 3rd Place",
               "home": "Div B Semis 1 Loser",
-              "homeScore": "TBD",
-              "awayScore": "TBD",
+              "homeScore": "1",
+              "awayScore": "0",
               "away": "Div B Semis 2 Loser"
             }
           ]
