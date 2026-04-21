@@ -2,6 +2,7 @@
   "weeks": [
     {
       "week": "Week 1",
+      "announcement": "",
       "days": [
         {
           "dateHeader": "Tuesday - 04/07/2026",
@@ -52,6 +53,7 @@
     },
     {
       "week": "Week 2",
+      "announcement": "",
       "days": [
         {
           "dateHeader": "Tuesday - 04/14/2026",
@@ -102,6 +104,7 @@
     },
     {
       "week": "Week 3",
+      "announcement": "",
       "days": [
         {
           "dateHeader": "Tuesday - 04/21/2026",
@@ -202,6 +205,7 @@
     },
     {
       "week": "Week 5",
+      "announcement": "Starting May 2026: Wednesday/Thursday kickoff times and dates are subject to change. Important: While the time might shift, your opponent will remain the same.",
       "days": [
         {
           "dateHeader": "Tuesday - 05/05/2026",
@@ -248,8 +252,7 @@
             }
           ]
         }
-      ],
-      "announcement": "Starting May 2026: Wednesday/Thursday kickoff times and dates are subject to change. Important: While the time might shift, your opponent will remain the same."
+      ]
     },
     {
       "week": "Week 6",
@@ -353,6 +356,7 @@
     },
     {
       "week": "Week 8",
+      "announcement": "No games will be played from May 25 to May 29 in observance of Eid. ‼️<br><br>Week 8 will resume on June 2nd.",
       "days": [
         {
           "dateHeader": "Tuesday - 06/02/2026",
@@ -399,8 +403,7 @@
             }
           ]
         }
-      ],
-      "announcement": "No games will be played from May 25 to May 29 in observance of Eid. ‼️<br><br>Week 8 will resume on June 2nd."
+      ]
     },
     {
       "week": "Week 9",
@@ -461,12 +464,14 @@
           "dateHeader": "Division A Semifinals (Top 4)",
           "games": [
             {
+              "label": "",
               "home": "1st Place",
-              "homeScore": "TBD",
-              "awayScore": "TBD",
+              "homeScore": "1",
+              "awayScore": "2",
               "away": "4th Place"
             },
             {
+              "label": "",
               "home": "2nd Place",
               "homeScore": "TBD",
               "awayScore": "TBD",
@@ -478,12 +483,14 @@
           "dateHeader": "Division B Semifinals (5th–8th Place)",
           "games": [
             {
+              "label": "",
               "home": "5th Place",
               "homeScore": "TBD",
               "awayScore": "TBD",
               "away": "8th Place"
             },
             {
+              "label": "",
               "home": "6th Place",
               "homeScore": "TBD",
               "awayScore": "TBD",
@@ -500,18 +507,18 @@
           "dateHeader": "Division A Finals",
           "games": [
             {
+              "label": "🏆 CHAMPIONSHIP GAME 🏆",
               "home": "Div A Semis 1 Winner",
               "homeScore": "TBD",
               "awayScore": "TBD",
-              "away": "Div A Semis 2 Winner",
-              "label": "🏆 CHAMPIONSHIP GAME 🏆"
+              "away": "Div A Semis 2 Winner"
             },
             {
+              "label": "🥉 3rd Place Match",
               "home": "Div A Semis 1 Loser",
               "homeScore": "TBD",
               "awayScore": "TBD",
-              "away": "Div A Semis 2 Loser",
-              "label": "🥉 3rd Place Match"
+              "away": "Div A Semis 2 Loser"
             }
           ]
         },
@@ -519,18 +526,18 @@
           "dateHeader": "Division B Finals",
           "games": [
             {
+              "label": "🥇 Div B Championship",
               "home": "Div B Semis 1 Winner",
               "homeScore": "TBD",
               "awayScore": "TBD",
-              "away": "Div B Semis 2 Winner",
-              "label": "🥇 Div B Championship"
+              "away": "Div B Semis 2 Winner"
             },
             {
+              "label": "🥉 Div B 3rd Place",
               "home": "Div B Semis 1 Loser",
               "homeScore": "TBD",
               "awayScore": "TBD",
-              "away": "Div B Semis 2 Loser",
-              "label": "🥉 Div B 3rd Place"
+              "away": "Div B Semis 2 Loser"
             }
           ]
         }
