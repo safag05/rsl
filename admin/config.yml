@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: respectsl/rsl-web
+  repo: safag05/rsl
   branch: main
 
 media_folder: "images"
