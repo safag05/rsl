@@ -461,6 +461,7 @@
       "round": "Playoffs Week 1 - Semifinals",
       "days": [
         {
+          "playoffDate": "Tuesday - 06/16/2026",
           "dateHeader": "Division A Semifinals (Top 4)",
           "games": [
             {
@@ -480,6 +481,7 @@
           ]
         },
         {
+          "playoffDate": "TBD",
           "dateHeader": "Division B Semifinals (5th–8th Place)",
           "games": [
             {
@@ -504,6 +506,7 @@
       "round": "Playoffs Week 2 - Finals",
       "days": [
         {
+          "playoffDate": "TBD",
           "dateHeader": "Division A Finals",
           "games": [
             {
@@ -523,6 +526,7 @@
           ]
         },
         {
+          "playoffDate": "TBD",
           "dateHeader": "Division B Finals",
           "games": [
             {
