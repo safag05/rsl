@@ -473,8 +473,8 @@
             {
               "label": "",
               "home": "2nd Place",
-              "homeScore": "TBD",
-              "awayScore": "TBD",
+              "homeScore": "2",
+              "awayScore": "3",
               "away": "3rd Place"
             }
           ]
@@ -509,8 +509,8 @@
             {
               "label": "🏆 CHAMPIONSHIP GAME 🏆",
               "home": "Div A Semis 1 Winner",
-              "homeScore": "TBD",
-              "awayScore": "TBD",
+              "homeScore": "1",
+              "awayScore": "2",
               "away": "Div A Semis 2 Winner"
             },
             {
