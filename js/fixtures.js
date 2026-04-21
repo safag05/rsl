@@ -1,4 +1,3 @@
-// 1. Fetch the data from your JSON file
 fetch('/data/fixtures.json')
   .then(res => res.json())
   .then(data => {
@@ -6,23 +5,17 @@ fetch('/data/fixtures.json')
   })
   .catch(error => console.error("Error loading fixtures:", error));
 
-// 2. The function that builds the HTML
 function renderFixtures(data) {
-    let html = ''; // Start with an empty string
+    let html = ''; 
 
+    // --- RENDER REGULAR SEASON ---
     data.weeks.forEach(week => {
-        // Start a new container to create the 60px gap from your CSS
         html += `<div class="week-container">`;
 
-        // 👉 NEW CODE: Check for an announcement and add it here!
         if (week.announcement) {
-            html += `
-            <section class="teams">
-                ${week.announcement}
-            </section>`;
+            html += `<section class="teams">${week.announcement}</section>`;
         }
 
-        // Start a NEW independent table for this specific week
         html += `
         <table class="fixtures-table">
             <thead>
@@ -38,58 +31,87 @@ function renderFixtures(data) {
             <tbody>`;
 
         week.days.forEach(day => {
-            // Add the Date Header
             html += `
             <tr class="date-header-row">
                 <th colspan="3">${day.dateHeader}</th>
             </tr>`;
 
-            // Add each Game
             day.games.forEach(game => {
-                let scoreDisplay = "";
-                
-                // Check if BOTH score fields contain ONLY numbers
-                const homeIsNumber = /^\d+$/.test(String(game.homeScore).trim());
-                const awayIsNumber = /^\d+$/.test(String(game.awayScore).trim());
-
-                // 1. Check for BYE week first
-                if (game.homeScore === "BYE" || game.awayScore === "BYE") {
-                    scoreDisplay = "<span class='bye-text'>BYE WEEK</span>";
-                }
-                // 2. If BOTH are numbers, display the final score (e.g., "2 - 1")
-                else if (homeIsNumber && awayIsNumber) {
-                    scoreDisplay = `${game.homeScore} - ${game.awayScore}`;
-                }
-                // 3. If they aren't numbers, but Home Score has custom text (like "8:00 PM"), show it!
-                else if (game.homeScore !== "TBD" && game.homeScore !== "") {
-                    scoreDisplay = game.homeScore;
-                }
-                // 4. Fallback: if everything is just TBD or empty
-                else {
-                    scoreDisplay = "TBD";
-                }
+                let scoreDisplay = getScoreDisplay(game);
+                let gameLabel = game.label ? `<br><span style="font-size: 0.8em; color: #d35400; font-weight: bold;">${game.label}</span>` : '';
                 
                 html += `
                 <tr class="game-row">
                     <td>${game.home}</td>
-                    <td class="score" style="text-align:center;">${scoreDisplay}</td>
+                    <td class="score" style="text-align:center;">${scoreDisplay}${gameLabel}</td>
                     <td>${game.away}</td>
                 </tr>`;
             });
         });
 
-        // Close the table and the div container for this week
-        html += `
-            </tbody>
-        </table>
-        </div>`; 
+        html += `</tbody></table></div>`; 
     });
 
-    // Inject the final HTML into your page
+    // --- RENDER PLAYOFFS ---
+    if (data.playoffs && data.playoffs.length > 0) {
+        html += `<br><br><h2 style="text-align: center; color: #2c3e50; font-size: 2em;">🏆 PLAYOFFS 🏆</h2><br>`;
+
+        data.playoffs.forEach(round => {
+            html += `<div class="week-container">`;
+            html += `
+            <table class="fixtures-table">
+                <thead>
+                    <tr class="week-title-row">
+                        <th colspan="3" style="background-color: #ffd700; color: #000;">${round.round}</th>
+                    </tr>
+                    <tr>
+                        <th style="background-color: #f1c40f;">🏟️ Home</th>
+                        <th style="background-color: #f1c40f;">📅 Dates/Scores</th>
+                        <th style="background-color: #f1c40f;">🚌 Away</th>
+                    </tr>
+                </thead>
+                <tbody>`;
+
+            round.days.forEach(day => {
+                html += `
+                <tr class="date-header-row">
+                    <th colspan="3">${day.dateHeader}</th>
+                </tr>`;
+
+                day.games.forEach(game => {
+                    let scoreDisplay = getScoreDisplay(game);
+                    let gameLabel = game.label ? `<br><span style="font-size: 0.8em; color: #d35400; font-weight: bold;">${game.label}</span>` : '';
+                    
+                    html += `
+                    <tr class="game-row">
+                        <td style="font-weight: bold;">${game.home}</td>
+                        <td class="score" style="text-align:center;">${scoreDisplay}${gameLabel}</td>
+                        <td style="font-weight: bold;">${game.away}</td>
+                    </tr>`;
+                });
+            });
+
+            html += `</tbody></table></div>`; 
+        });
+    }
+
     const container = document.getElementById('fixtures-container');
     if (container) {
         container.innerHTML = html;
+    }
+}
+
+function getScoreDisplay(game) {
+    const homeIsNumber = /^\d+$/.test(String(game.homeScore).trim());
+    const awayIsNumber = /^\d+$/.test(String(game.awayScore).trim());
+
+    if (game.homeScore === "BYE" || game.awayScore === "BYE") {
+        return "<span class='bye-text'>BYE WEEK</span>";
+    } else if (homeIsNumber && awayIsNumber) {
+        return `<strong>${game.homeScore} - ${game.awayScore}</strong>`;
+    } else if (game.homeScore !== "TBD" && game.homeScore !== "") {
+        return game.homeScore;
     } else {
-        console.error("Could not find element with ID 'fixtures-container'");
+        return "TBD";
     }
 }

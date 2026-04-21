@@ -3,24 +3,18 @@ fetch('/data/fixtures.json')
 .then(data => {
   let table = {};
 
+  // REGULAR SEASON CALCULATIONS ONLY
   data.weeks.forEach(week => {
     week.days.forEach(day => {
       day.games.forEach(game => {
-        // 1. Check if BOTH score fields contain ONLY numbers
-        // This regex (/^\d+$/) means "only digits 0-9". 
-        // It will reject "TBD", "BYE", "8:00 PM", "18:30", etc.
         const homeIsNumber = /^\d+$/.test(String(game.homeScore).trim());
         const awayIsNumber = /^\d+$/.test(String(game.awayScore).trim());
 
-        // 2. If either field is not a pure number, skip calculating standings for this game
-        if (!homeIsNumber || !awayIsNumber) {
-          return; 
-        }
+        if (!homeIsNumber || !awayIsNumber) return; 
 
         const hScore = parseInt(game.homeScore, 10);
         const aScore = parseInt(game.awayScore, 10);
 
-        // Initialize teams in the object if they don't exist
         [game.home, game.away].forEach(team => {
           if (!table[team]) {
             table[team] = { team: team, played: 0, win: 0, draw: 0, loss: 0, gf: 0, ga: 0, pts: 0 };
@@ -35,38 +29,29 @@ fetch('/data/fixtures.json')
         table[game.away].ga += hScore;
 
         if (hScore > aScore) {
-          table[game.home].win++;
-          table[game.home].pts += 3;
-          table[game.away].loss++;
+          table[game.home].win++; table[game.home].pts += 3; table[game.away].loss++;
         } else if (hScore < aScore) {
-          table[game.away].win++;
-          table[game.away].pts += 3;
-          table[game.home].loss++;
+          table[game.away].win++; table[game.away].pts += 3; table[game.home].loss++;
         } else {
-          table[game.home].draw++;
-          table[game.away].draw++;
-          table[game.home].pts += 1;
-          table[game.away].pts += 1;
+          table[game.home].draw++; table[game.away].draw++; table[game.home].pts += 1; table[game.away].pts += 1;
         }
       });
     });
   });
 
-  // Sort by Points (pts), then Goal Difference (gd), then Goals For (gf)
   let standings = Object.values(table).sort((a, b) => {
-    // 1st Tie-breaker: Points
     if (b.pts !== a.pts) return b.pts - a.pts;
-
-    // 2nd Tie-breaker: Goal Difference (GF - GA)
-    const gdA = a.gf - a.ga;
-    const gdB = b.gf - b.ga;
+    const gdA = a.gf - a.ga; const gdB = b.gf - b.ga;
     if (gdB !== gdA) return gdB - gdA;
-
-    // 3rd Tie-breaker: Goals For
     return b.gf - a.gf;
   });
 
   renderStandings(standings);
+
+  // Render Playoff Results
+  if (data.playoffs && data.playoffs.length > 0) {
+      renderPlayoffResults(data.playoffs);
+  }
 });
 
 function renderStandings(standings) {
@@ -78,14 +63,9 @@ function renderStandings(standings) {
             </tr>
             <tr>
                 <th class="col-stat">#</th> <th class="col-team">Team</th>
-                <th class="col-stat">P</th>
-                <th class="col-stat">W</th>
-                <th class="col-stat">D</th>
-                <th class="col-stat">L</th>
-                <th class="col-stat">GF</th>
-                <th class="col-stat">GA</th>
-                <th class="col-stat">GD</th>
-                <th class="col-stat">PTS</th>
+                <th class="col-stat">P</th><th class="col-stat">W</th><th class="col-stat">D</th>
+                <th class="col-stat">L</th><th class="col-stat">GF</th><th class="col-stat">GA</th>
+                <th class="col-stat">GD</th><th class="col-stat">PTS</th>
             </tr>
         </thead>
         <tbody>`;
@@ -111,4 +91,73 @@ function renderStandings(standings) {
 
   html += `</tbody></table>`;
   document.getElementById('standings-container').innerHTML = html;
+}
+
+function renderPlayoffResults(playoffs) {
+    let html = `<h2 style="text-align: center; color: #2c3e50; margin-top: 20px;">🏆 TOURNAMENT RESULTS 🏆</h2>`;
+
+    playoffs.forEach(round => {
+        let roundHasResults = false;
+        let roundHtml = `
+        <table class="fixtures-table standings-table" style="margin-top: 20px;">
+            <thead>
+                <tr class="week-title-row">
+                    <th colspan="3" style="background-color: #2c3e50; color: white;">${round.round}</th>
+                </tr>
+            </thead>
+            <tbody>`;
+
+        round.days.forEach(day => {
+            let dayHasResults = false;
+            let dayHtml = `
+            <tr class="date-header-row">
+                <th colspan="3" style="background-color: #ecf0f1; color: #34495e; font-size: 0.9em; text-align: center;">
+                    ${day.dateHeader}
+                </th>
+            </tr>`;
+
+            day.games.forEach(game => {
+                const homeIsNumber = /^\d+$/.test(String(game.homeScore).trim());
+                const awayIsNumber = /^\d+$/.test(String(game.awayScore).trim());
+
+                if (homeIsNumber && awayIsNumber) {
+                    roundHasResults = true;
+                    dayHasResults = true;
+                    
+                    const hScore = parseInt(game.homeScore, 10);
+                    const aScore = parseInt(game.awayScore, 10);
+                    let hStyle = hScore > aScore ? "color: #27ae60; font-weight: bold;" : "";
+                    let aStyle = aScore > hScore ? "color: #27ae60; font-weight: bold;" : "";
+
+                    let gameLabel = game.label ? `<div style="font-size: 0.8em; color: #d35400; text-align: center; margin-bottom: 4px;">${game.label}</div>` : '';
+
+                    dayHtml += `
+                    <tr class="game-row">
+                        <td style="text-align: right; width: 40%; ${hStyle}">${game.home}</td>
+                        <td style="text-align: center; width: 20%; font-weight: bold;">
+                            ${gameLabel}
+                            ${game.homeScore} - ${game.awayScore}
+                        </td>
+                        <td style="text-align: left; width: 40%; ${aStyle}">${game.away}</td>
+                    </tr>`;
+                }
+            });
+
+            // Only append the day's header and games if there are completed games in that section
+            if (dayHasResults) {
+                roundHtml += dayHtml;
+            }
+        });
+
+        roundHtml += `</tbody></table>`;
+
+        if (roundHasResults) {
+            html += roundHtml;
+        }
+    });
+
+    const playoffsContainer = document.getElementById('playoffs-results-container');
+    if (playoffsContainer) {
+        playoffsContainer.innerHTML = html;
+    }
 }

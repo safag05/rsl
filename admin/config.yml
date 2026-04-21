@@ -29,11 +29,12 @@ collections:
             widget: "list"
             fields:
               - { label: "Week Name", name: "week", widget: "string", hint: "e.g. Week 1" }
+              - { label: "Announcement", name: "announcement", widget: "text", required: false }
               - label: "Days"
                 name: "days"
                 widget: "list"
                 fields:
-                  - { label: "Date Header", name: "dateHeader", widget: "string", hint: "e.g. Tuesday" }
+                  - { label: "Date Header", name: "dateHeader", widget: "string", hint: "e.g. Tuesday - 04/07/2026" }
                   - label: "Games"
                     name: "games"
                     widget: "list"
@@ -56,3 +57,29 @@ collections:
                         search_fields: ["teams.*.name"]
                         display_fields: ["teams.*.name"]
                         value_field: "teams.*.name"
+
+          # --- NEW PLAYOFFS SECTION ---
+          - label: "Playoffs"
+            name: "playoffs"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Round Name", name: "round", widget: "string", hint: "e.g. Semi-Finals" }
+              - label: "Days"
+                name: "days"
+                widget: "list"
+                fields:
+                  - { label: "Date/Division Header", name: "dateHeader", widget: "string", hint: "e.g. Division A Semifinals" }
+                  - label: "Games"
+                    name: "games"
+                    widget: "list"
+                    fields:
+                      - { label: "Match Label", name: "label", widget: "string", hint: "e.g. Championship Game", required: false }
+                      - label: "Home Team"
+                        name: "home"
+                        widget: "string" # Using string here because team names might be "Winner of Game 1" before finalized
+                      - { label: "Home Score", name: "homeScore", widget: "string", default: "TBD" }
+                      - { label: "Away Score", name: "awayScore", widget: "string", default: "TBD" }
+                      - label: "Away Team"
+                        name: "away"
+                        widget: "string"
