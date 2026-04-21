@@ -62,14 +62,14 @@ collections:
           - label: "Playoffs"
             name: "playoffs"
             widget: "list"
-            required: false
             fields:
-              - { label: "Round Name", name: "round", widget: "string", hint: "e.g. Semi-Finals" }
+              - { label: "Round Name", name: "round", widget: "string" }
               - label: "Days"
                 name: "days"
                 widget: "list"
                 fields:
-                  - { label: "Date/Division Header", name: "dateHeader", widget: "string", hint: "e.g. Division A Semifinals" }
+                  - { label: "Actual Date", name: "date", widget: "string", hint: "e.g. Tuesday - 06/16/2026" } # <--- Add this
+                  - { label: "Division/Header", name: "dateHeader", widget: "string", hint: "e.g. Division A Semifinals" }
                   - label: "Games"
                     name: "games"
                     widget: "list"
