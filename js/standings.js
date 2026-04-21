@@ -94,8 +94,7 @@ function renderStandings(standings) {
 }
 
 function renderPlayoffResults(playoffs) {
-    let playoffContentHtml = ""; // Temp variable to hold the tables
-    let hasAnyCompletedGames = false;
+    let html = `<h2 style="text-align: center; color: #2c3e50; margin-top: 20px;">🏆 TOURNAMENT RESULTS 🏆</h2>`;
 
     playoffs.forEach(round => {
         let roundHasResults = false;
@@ -124,12 +123,12 @@ function renderPlayoffResults(playoffs) {
                 if (homeIsNumber && awayIsNumber) {
                     roundHasResults = true;
                     dayHasResults = true;
-                    hasAnyCompletedGames = true; // Flag that we found at least one result!
                     
                     const hScore = parseInt(game.homeScore, 10);
                     const aScore = parseInt(game.awayScore, 10);
                     let hStyle = hScore > aScore ? "color: #27ae60; font-weight: bold;" : "";
                     let aStyle = aScore > hScore ? "color: #27ae60; font-weight: bold;" : "";
+
                     let gameLabel = game.label ? `<div style="font-size: 0.8em; color: #d35400; text-align: center; margin-bottom: 4px;">${game.label}</div>` : '';
 
                     dayHtml += `
@@ -144,22 +143,21 @@ function renderPlayoffResults(playoffs) {
                 }
             });
 
-            if (dayHasResults) roundHtml += dayHtml;
+            // Only append the day's header and games if there are completed games in that section
+            if (dayHasResults) {
+                roundHtml += dayHtml;
+            }
         });
 
         roundHtml += `</tbody></table>`;
-        if (roundHasResults) playoffContentHtml += roundHtml;
+
+        if (roundHasResults) {
+            html += roundHtml;
+        }
     });
 
-    // ONLY if we found completed games, we build the final HTML including the header
-    if (hasAnyCompletedGames) {
-        let finalHtml = `
-            <h2 style="text-align: center; color: #2c3e50; margin-top: 40px;">🏆 TOURNAMENT RESULTS 🏆</h2>
-            ${playoffContentHtml}
-        `;
-        document.getElementById('playoffs-results-container').innerHTML = finalHtml;
-    } else {
-        // If no games are played yet, keep the container empty
-        document.getElementById('playoffs-results-container').innerHTML = "";
+    const playoffsContainer = document.getElementById('playoffs-results-container');
+    if (playoffsContainer) {
+        playoffsContainer.innerHTML = html;
     }
 }

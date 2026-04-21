@@ -64,13 +64,12 @@ collections:
             widget: "list"
             required: false
             fields:
-              - { label: "Round Name", name: "round", widget: "string", hint: "e.g. Week 1 - Semifinals" }
+              - { label: "Round Name", name: "round", widget: "string", hint: "e.g. Semi-Finals" }
               - label: "Days"
                 name: "days"
                 widget: "list"
                 fields:
-                  - { label: "Date", name: "playoffDate", widget: "string", hint: "e.g. Tuesday - 06/16/2026" } # NEW FIELD
-                  - { label: "Division Header", name: "dateHeader", widget: "string", hint: "e.g. Division A Semifinals" }
+                  - { label: "Date/Division Header", name: "dateHeader", widget: "string", hint: "e.g. Division A Semifinals" }
                   - label: "Games"
                     name: "games"
                     widget: "list"

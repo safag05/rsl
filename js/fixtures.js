@@ -72,24 +72,22 @@ function renderFixtures(data) {
                 </thead>
                 <tbody>`;
 
-            // Inside renderFixtures function, in the Playoff loop:
             round.days.forEach(day => {
-                // 1. Add the NEW Date Row (if it exists)
-                if (day.playoffDate) {
-                    html += `
-                    <tr class="date-header-row">
-                        <th colspan="3" style="background-color: #34495e; color: white; padding: 10px;">📅 ${day.playoffDate}</th>
-                    </tr>`;
-                }
-
-                // 2. Add the Division Header Row (your existing dateHeader)
                 html += `
                 <tr class="date-header-row">
-                    <th colspan="3" style="background-color: #ecf0f1; color: #2c3e50;">${day.dateHeader}</th>
+                    <th colspan="3">${day.dateHeader}</th>
                 </tr>`;
 
                 day.games.forEach(game => {
-                    // ... rest of game rendering logic
+                    let scoreDisplay = getScoreDisplay(game);
+                    let gameLabel = game.label ? `<br><span style="font-size: 0.8em; color: #d35400; font-weight: bold;">${game.label}</span>` : '';
+                    
+                    html += `
+                    <tr class="game-row">
+                        <td style="font-weight: bold;">${game.home}</td>
+                        <td class="score" style="text-align:center;">${scoreDisplay}${gameLabel}</td>
+                        <td style="font-weight: bold;">${game.away}</td>
+                    </tr>`;
                 });
             });
 
