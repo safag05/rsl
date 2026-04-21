@@ -461,27 +461,26 @@
       "round": "Playoffs Week 1 - Semifinals",
       "days": [
         {
-          "playoffDate": "Tuesday - 06/16/2026",
           "dateHeader": "Division A Semifinals (Top 4)",
           "games": [
             {
               "label": "",
               "home": "1st Place",
-              "homeScore": "TBD",
-              "awayScore": "TBD",
+              "homeScore": "1",
+              "awayScore": "2",
               "away": "4th Place"
             },
             {
               "label": "",
               "home": "2nd Place",
-              "homeScore": "TBD",
-              "awayScore": "TBD",
+              "homeScore": "5",
+              "awayScore": "2",
               "away": "3rd Place"
             }
-          ]
+          ],
+          "playoffDate": "Tuesday - 06/16/2026"
         },
         {
-          "playoffDate": "TBD",
           "dateHeader": "Division B Semifinals (5th–8th Place)",
           "games": [
             {
@@ -498,7 +497,8 @@
               "awayScore": "TBD",
               "away": "7th Place"
             }
-          ]
+          ],
+          "playoffDate": "TBD"
         }
       ]
     },
@@ -506,27 +506,26 @@
       "round": "Playoffs Week 2 - Finals",
       "days": [
         {
-          "playoffDate": "TBD",
           "dateHeader": "Division A Finals",
           "games": [
             {
               "label": "🏆 CHAMPIONSHIP GAME 🏆",
               "home": "Div A Semis 1 Winner",
-              "homeScore": "TBD",
-              "awayScore": "TBD",
+              "homeScore": "2",
+              "awayScore": "1",
               "away": "Div A Semis 2 Winner"
             },
             {
               "label": "🥉 3rd Place Match",
               "home": "Div A Semis 1 Loser",
-              "homeScore": "TBD",
-              "awayScore": "TBD",
+              "homeScore": "1",
+              "awayScore": "9",
               "away": "Div A Semis 2 Loser"
             }
-          ]
+          ],
+          "playoffDate": "TBD"
         },
         {
-          "playoffDate": "TBD",
           "dateHeader": "Division B Finals",
           "games": [
             {
@@ -543,7 +542,8 @@
               "awayScore": "TBD",
               "away": "Div B Semis 2 Loser"
             }
-          ]
+          ],
+          "playoffDate": "TBD"
         }
       ]
     }
