@@ -466,15 +466,15 @@
             {
               "label": "",
               "home": "1st Place",
-              "homeScore": "1",
-              "awayScore": "2",
+              "homeScore": "TBD",
+              "awayScore": "TBD",
               "away": "4th Place"
             },
             {
               "label": "",
               "home": "2nd Place",
-              "homeScore": "2",
-              "awayScore": "3",
+              "homeScore": "TBD",
+              "awayScore": "TBD",
               "away": "3rd Place"
             }
           ]
@@ -485,15 +485,15 @@
             {
               "label": "",
               "home": "5th Place",
-              "homeScore": "4",
-              "awayScore": "1",
+              "homeScore": "TBD",
+              "awayScore": "TBD",
               "away": "8th Place"
             },
             {
               "label": "",
               "home": "6th Place",
-              "homeScore": "2",
-              "awayScore": "3",
+              "homeScore": "TBD",
+              "awayScore": "TBD",
               "away": "7th Place"
             }
           ]
@@ -509,15 +509,15 @@
             {
               "label": "🏆 CHAMPIONSHIP GAME 🏆",
               "home": "Div A Semis 1 Winner",
-              "homeScore": "1",
-              "awayScore": "2",
+              "homeScore": "TBD",
+              "awayScore": "TBD",
               "away": "Div A Semis 2 Winner"
             },
             {
               "label": "🥉 3rd Place Match",
               "home": "Div A Semis 1 Loser",
-              "homeScore": "2",
-              "awayScore": "1",
+              "homeScore": "TBD",
+              "awayScore": "TBD",
               "away": "Div A Semis 2 Loser"
             }
           ]
@@ -528,15 +528,15 @@
             {
               "label": "🥇 Div B Championship",
               "home": "Div B Semis 1 Winner",
-              "homeScore": "2",
-              "awayScore": "3",
+              "homeScore": "TBD",
+              "awayScore": "TBD",
               "away": "Div B Semis 2 Winner"
             },
             {
               "label": "🥉 Div B 3rd Place",
               "home": "Div B Semis 1 Loser",
-              "homeScore": "1",
-              "awayScore": "0",
+              "homeScore": "TBD",
+              "awayScore": "TBD",
               "away": "Div B Semis 2 Loser"
             }
           ]
