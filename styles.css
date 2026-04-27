@@ -1,547 +1,650 @@
+/* ============================================================
+   RSL — MAIN STYLESHEET
+   Replaces both styles.css and team.css (merged & deduplicated)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap');
+
+/* ── CSS VARIABLES ──────────────────────────────────────── */
+:root {
+  --brand:       rgb(29, 119, 155);
+  --brand-dark:  #135371;
+  --brand-mid:   #1a7a9e;
+  --brand-light: #d2edee;
+  --brand-pale:  #eef6f9;
+  --accent:      #1dc211;
+  --danger:      #e32323;
+  --text:        #1e293b;
+  --text-muted:  #64748b;
+  --bg:          #f8fafc;
+  --white:       #ffffff;
+  --radius:      16px;
+  --shadow:      0 6px 24px rgba(29, 119, 155, 0.12);
+}
+
+/* ── RESET / BASE ───────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to bottom, #eef6f9, #ffffff);
-}
-
-header {
-    background-color: rgb(29, 119, 155);
-    color: white;
-    padding: .1rem;
-    text-align: center;
-    z-index: 1000;
-}
-
-.header2 {
-    background-color: rgb(29, 119, 155);
-    color: white;
-    padding: .1rem;
-    text-align: center;
-    width: 100%;
-    position: fixed;
-    transition: top 0.6s;
-    z-index: 1000;
-}
-
-header h1 {
-    font-size: 1.4em;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-}  
-
-nav ul {
-    list-style: none;
-    font-size: .90em; 
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: .5em
-}
-
-main {
-    padding: 20px;
-}
-
-.mainpadding {
-    padding: 3px;
-}
-
-.teams, .fixtures {
-    margin-bottom: 30px;
-}
-
-footer {
-    background-color: rgb(29, 119, 155);
-    color: white;
-    text-align: center;
-    padding: .75rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-.disclaimer {
-    color: #a2b9a2;
-}
-
-/* Additional styles for teams page */
-.teams {
-    background-color: #fcf7f7;
-    padding: 10px;
-    border-radius: 40px;
-}
-
-/* Additional styles for pointss page */
-.pointss {
-    background-color: #d2edee;
-    padding: 15px;
-    border-radius: 40px;
-    margin-bottom: 20px;
-}
-
-/* Additional styles for pointss2 page */
-.pointss2 {
-    background-color: #65939322;
-    padding: 15px;
-    border-radius: 40px;
-    margin-bottom: 20px;
-}
-
-
-
-
-/* Additional styles for fixtures page */
-.fixtures th[colspan] {
-    background-color: #84c7db;
-    padding: 3px;
-    border-radius: 0px;
-}
-
-.fixtures ul {
-    list-style: none;
-    padding: 0;
-}
-
-.fixtures li {
-    margin-bottom: 10px;
-}
-
-.fixtures h2 {
-    text-align: center;
-    background-color: #55b3ce;
-    border-radius: 40px;
-}
-
-.fixtures table {
-    text-align: center;
-    background-color: #eef8fb;
-}
-
-.fixtures tr {
-    text-align: center;
-    background-color: #cbebf3;
-}
-
-/* Use class when on current week on the fixture.html file */
-.current h2 {
-    text-align: center;
-    background-color: #1dc211;
-    border-radius: 40px;
-}
-
-.currenttable th {
-    text-align: center;
-    background-color: #49d83e;
-}
-
-.currenttable tr {
-    text-align: center;
-    background-color: rgb(193, 235, 189);
-}
-
-/* Use class when on week is completed on the fixture.html file */
-.done h2 {
-    text-align: center;
-    background-color: #e32323;
-    border-radius: 40px;
-}
-
-.donetable th {
-    text-align: center;
-    background-color: #e55040;
-}
-
-.donetable tr {
-    text-align: center;
-    background-color: #d5cdcd;
-}
-
-
-
-
-/* Additional styles for points page */
-.points {
-    background-color: #fcf7f7;
-    padding: 20px;
-    border-radius: 40px;
-    overflow-x: auto; /* Add horizontal scrollbar if needed */
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    table-layout: fixed;
-}
-
-th, td {
-    padding: 2px;
-    text-align: center;
-    border: 1.3px solid rgba(19, 16, 16, 0.914);
-}
-
-th {
-    background-color: #f2f2f2e7;
-}
-
-/* Style the header cells differently if needed */
-/* th:nth-child(1) { background-color: #ccc; } */
-
-
-@media (max-width: 600px) {
-    nav ul {
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-  
-    nav ul li a,
-    nav select {
-      font-size: 0.9em;
-    }
-
-    table {
-        font-size: 0.8em;
-      }
-    
-      th, td {
-        padding: 6px;
-      }
-  }  
-
-iframe {
-    max-width: 100%;
-}
-
-/* Custom styles for the dropdown */
-select {
-    
-    border: none;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: rgb(29, 119, 155);
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-size: .5em
-}
-
-/* Style for the options */
-select option {
-    background-color: rgb(29, 119, 155); /* Set background color for options */
-    color: #333; /* Set text color for options */
-}
-
-/* Style for the selected option */
-select option:checked {
-    background-color: rgb(29, 119, 155); /* Set background color for the selected option */
+  font-family: 'Barlow', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--brand-pale);
+  color: var(--text);
 }
 
 img {
-    max-width: 100%;
-    height: auto; /* This ensures the image maintains its aspect ratio */
+  max-width: 100%;
+  height: auto;
 }
 
-.archive_div {
-    background-color: rgb(226, 236, 246);
-    padding: 10px;
-    border-radius: 30px;
-    margin-bottom: 5px;
+iframe {
+  max-width: 100%;
 }
 
-.archive_ol {
-    font-size: .9em
-}
-
-/* ============================= */
-/* MODERN NAV OVERRIDES */
-/* ============================= */
-
+/* ── HEADER / NAV ───────────────────────────────────────── */
 header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 8px 12px;
-  }
-  
-  nav ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding: 6px 0;
-  }
-  
-  nav ul li {
-    display: block; /* override inline */
-    margin: 0;
-  }
-  
-  nav ul li a {
-    font-size: 0.85em; /* readable on mobile */
-    padding: 6px 12px;
-    border-radius: 8px;
-    transition: background 0.2s ease;
-  }
-  
-  nav ul li a:hover,
-  nav ul li a.active {
-    background: rgba(255, 255, 255, 0.25);
-  }
-  
-  /* Dropdown match nav style */
-  nav select {
-    font-size: 0.8em;
-    padding: 6px 10px;
-    border-radius: 8px;
-  }
-  
-  .teams,
-  .fixtures,
-  .points,
-  .pointss,
-  .pointss2 {
-    border-radius: 18px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  }
+  background-color: var(--brand);
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-  /* ============================= */
-/* HAMBURGER MENU */
-/* ============================= */
+/* Scrolling sticky variant used on fixtures page */
+.header2 {
+  background-color: var(--brand);
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: top 0.3s;
+}
 
+header h1 {
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+  font-size: 1.5em;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 4px 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 6px 0 4px;
+  margin: 0;
+  font-size: 0.9em;
+}
+
+nav ul li {
+  display: block;
+  margin: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.88em;
+  font-weight: 600;
+  padding: 5px 11px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Archive dropdown */
+select {
+  border: none;
+  font-family: 'Barlow', Arial, sans-serif;
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  font-size: 0.88em;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+select option,
+select optgroup {
+  background-color: var(--brand-dark);
+  color: white;
+}
+
+select optgroup {
+  font-weight: bold;
+}
+
+/* ── HAMBURGER MENU ─────────────────────────────────────── */
 .menu-toggle {
-    display: none;
-    align-items: center;
-    gap: 6px;
-    font-size: 1.1em;
-    font-weight: 600;
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.4);
-    color: white;
-    -webkit-tap-highlight-color: transparent;
-    padding: 6px 12px;
-    border-radius: 20px;
-  }
-  
-  .menu-toggle span {
-    font-size: 0.9em;
-  }
-  
-  /* Mobile only */
-  @media (max-width: 600px) {
-    .menu-toggle {
-      display: inline-flex;
-    }
-  
-    nav {
-      display: none;
-    }
-  
-    nav.open {
-      display: block;
-    }
-  
-    nav ul {
-      flex-direction: column;
-      gap: 8px;
-      background-color: rgb(29, 119, 155);
-      padding: 10px;
-      border-radius: 10px;
-    }
-  
-    nav ul li a,
-    nav select {
-      width: 100%;
-      text-align: center;
-      font-size: 1em;
-    }
-  }
-  
-  select optgroup {
-    font-weight: bold;
-  }
-  
-/* ============================= */
-/* MODERN FIXTURES TABLE - V2   */
-/* ============================= */
+  display: none;
+  align-items: center;
+  gap: 6px;
+  font-size: 1em;
+  font-weight: 700;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.4);
+  color: white;
+  -webkit-tap-highlight-color: transparent;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 4px auto;
+}
 
-.week-container {
-    margin-bottom: 40px !important; 
+@media (max-width: 600px) {
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  nav {
+    display: none;
+  }
+
+  nav.open {
     display: block;
-    position: relative;
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(29, 119, 155, 0.12);
-    overflow: hidden; 
-    border: 1px solid #d2edee;
-    /* FIX: Ensure no internal padding pushes the header down */
-    padding: 0 !important; 
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 6px;
+    background-color: var(--brand);
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  nav ul li a,
+  nav select {
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+  }
+
+  /* hide items that should only show in menu on mobile */
+  .always-show { display: block; }
+  .menu-only { display: block; }
+}
+
+/* On desktop, always show everything */
+@media (min-width: 601px) {
+  .always-show,
+  .menu-only {
+    display: block;
+  }
+}
+
+/* ── MAIN / LAYOUT ──────────────────────────────────────── */
+main {
+  padding: 20px 16px 80px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.mainpadding {
+  padding: 4px;
+}
+
+/* ── CONTENT CARDS ──────────────────────────────────────── */
+.teams,
+.fixtures,
+.points,
+.pointss,
+.pointss2 {
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 24px;
+  border: 1px solid rgba(29, 119, 155, 0.1);
+}
+
+.teams    { background-color: #fcf7f7; }
+.pointss  { background-color: var(--brand-light); }
+.pointss2 { background-color: rgba(101, 147, 147, 0.13); }
+
+/* ── TABLES ─────────────────────────────────────────────── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 8px 6px;
+  text-align: center;
+  border: 1px solid rgba(19, 16, 16, 0.15);
+}
+
+th {
+  background-color: #f2f2f2;
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* ── FIXTURES TABLE ─────────────────────────────────────── */
+.week-container {
+  margin-bottom: 32px;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  border: 1px solid var(--brand-light);
+  padding: 0;
 }
 
 .fixtures-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 0; /* Ensures the table stays flush to the top */
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
 }
 
-/* 1. DARKER WEEK TITLE ROW */
 .week-title-row th {
-    /* Using a deeper blue for better hierarchy */
-    background-color: #135371; 
-    color: #ffffff;
-    padding: 16px !important;   
-    font-size: 1.3rem !important; /* Made it bigger */
-    font-weight: 700;
-    letter-spacing: 2px;
-    border: none;
-    text-transform: uppercase;
+  background-color: var(--brand-dark);
+  color: white;
+  padding: 14px;
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  border: none;
+  text-transform: uppercase;
 }
 
-/* 2. THE COLUMN HEADERS (Home, Dates, Away) */
-.col-header, .fixtures-table thead th {
-    background-color: #77a3b6; 
-    color: #1e293b;
-    padding: 12px;
-    border: none;
-    font-weight: 600;
+.fixtures-table thead th {
+  background-color: #77a3b6;
+  color: var(--text);
+  padding: 10px;
+  border: none;
+  font-weight: 600;
 }
 
-/* 3. DARKER & BIGGER DATE HEADERS */
 .date-header-row th {
-    background-color: #b3d7e9; 
-    color: #0f172a; /* Darker navy for better contrast */
-    padding: 12px !important;   
-    font-size: 1.1rem !important; /* Made it bigger */
-    border: none;
-    border-bottom: 1px solid #99c2d6;
+  background-color: #b3d7e9;
+  color: #0f172a;
+  padding: 10px;
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 1px solid #99c2d6;
 }
 
-/* 4. DARKER & BIGGER SCORES */
-.score {
-    font-weight: 2000 !important; /* Extra bold */
-    font-size: 2.1rem !important; /* Larger text */
-    color: #000000 !important;  /* Pure black for maximum punch */
-    background-color: #e2eff5 !important;
-}
-
-/* Individual game rows */
 .game-row td {
-    padding: 14px 10px !important; 
-    font-size: 1rem;
-    text-align: center;
-    border: none;
-    border-bottom: 1px solid #e2ecef;
-    background-color: #ebf5fa;
-    color: #334155;
+  padding: 12px 8px;
+  font-size: 0.97rem;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid #e2ecef;
+  background-color: #ebf5fa;
+  color: #334155;
 }
 
-.game-row:last-child td {
-    border-bottom: none;
+.game-row:last-child td { border-bottom: none; }
+
+.game-row:hover td { background-color: #f4f9fb; }
+
+.score {
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: #000;
+  background-color: #e2eff5 !important;
 }
 
-
-
-/* Subtle hover effect so users know what row they are looking at */
-.game-row:hover td {
-    background-color: #f4f9fb;
-}
-
-/* This adds the gap between the weeks */
-.week-container {
-    margin-bottom: 30px !important; /* Increase this to 60px or more */
-    display: block;
-    clear: both;
-    position: relative;
-}
-
-/* Target only the standings table to avoid breaking other tables */
-.standings-table {
-    table-layout: auto !important; /* Allow columns to resize based on content */
-    width: 100%;
-}
-
-/* Give the team column as much space as possible */
-.col-team, .team-cell {
-    width: 35% !important;
-    text-align: left !important;
-    padding-left: 12px !important;
-    font-weight: bold;
-}
-
-/* Make all the number columns small and uniform */
-.col-stat {
-    width: 7%; 
-    font-size: 0.85em;
-    white-space: nowrap;
-}
-
-/* Ensure data cells match the header alignment */
-.standings-table td:first-child {
-    text-align: left !important;
-    padding-left: 15px !important;
-    font-size: 0.9em; /* Slightly smaller text helps fit longer names */
-}
-
-@media (max-width: 768px) {
-    .standings-table {
-        font-size: 0.72em; /* Slightly smaller for mobile fit */
-    }
-    .col-team {
-        width: 30% !important;
-    }
-    th, td {
-        padding: 4px 1px; /* Tighter padding for mobile */
-    }
-}
-
-/* Only applies to phones/small screens */
-@media (max-width: 480px) {
-    
-    /* 1. Tighten the overall cell padding */
-    .fixtures-table td, 
-    .fixtures-table th {
-        padding: 4px 2px !important; 
-    }
-
-    /* 2. Shrink the font size for team names */
-    .game-row td {
-        font-size: 0.82rem !important;
-        line-height: 1.2;
-    }
-
-    /* 3. Make the Score (Middle Column) narrower */
-    /* This targets the 2nd cell in every row */
-    .game-row td:nth-child(2),
-    .fixtures-table th:nth-child(2) {
-        width: 70px !important; 
-        font-size: 0.75rem !important;
-        white-space: nowrap;
-        /* background-color: #f9f9f9; Optional: subtle tint to distinguish it */
-    }
-
-    /* 4. Shrink the Week and Date headers further for mobile */
-    .week-title-row th {
-        font-size: 1rem !important;
-        padding: 5px !important;
-    }
-    
-    .date-header-row th {
-        font-size: 0.85rem !important;
-        padding: 3px !important;
-    }
-}
-
-/* Update Bye Text for the new size */
 .bye-text {
-    color: #e92106;
-    font-style: italic;
-    font-weight: 700;
-    font-size: 0.95rem;
+  color: #e92106;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* ── STANDINGS TABLE ─────────────────────────────────────── */
+.standings-table {
+  table-layout: auto !important;
+  width: 100%;
+}
+
+.col-team, .team-cell {
+  width: 35%;
+  text-align: left !important;
+  padding-left: 12px !important;
+  font-weight: bold;
+}
+
+.col-stat {
+  width: 7%;
+  font-size: 0.85em;
+  white-space: nowrap;
+}
+
+.standings-table td:first-child {
+  text-align: left !important;
+  padding-left: 15px !important;
+  font-size: 0.9em;
+}
+
+/* ── STATUS CLASSES (fixtures page) ─────────────────────── */
+.fixtures h2 {
+  text-align: center;
+  background-color: #55b3ce;
+  border-radius: 40px;
+}
+
+.fixtures table  { background-color: #eef8fb; }
+.fixtures tr     { background-color: #cbebf3; }
+
+.fixtures th[colspan] {
+  background-color: #84c7db;
+  padding: 8px;
+}
+
+.current h2 {
+  text-align: center;
+  background-color: var(--accent);
+  border-radius: 40px;
+}
+
+.currenttable th { background-color: #49d83e; }
+.currenttable tr { background-color: rgb(193, 235, 189); }
+
+.done h2 {
+  text-align: center;
+  background-color: var(--danger);
+  border-radius: 40px;
+}
+
+.donetable th { background-color: #e55040; }
+.donetable tr { background-color: #d5cdcd; }
+
+/* ── ARCHIVE ─────────────────────────────────────────────── */
+.archive_div {
+  background-color: rgb(226, 236, 246);
+  padding: 10px;
+  border-radius: 30px;
+  margin-bottom: 5px;
+}
+
+.archive_ol {
+  font-size: 0.9em;
+}
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+footer {
+  background-color: var(--brand);
+  color: white;
+  text-align: center;
+  padding: 12px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+  font-size: 0.9em;
+}
+
+footer a.disclaimer {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+}
+
+footer a.disclaimer:hover {
+  color: white;
+}
+
+/* ── HOMEPAGE SPECIFIC ───────────────────────────────────── */
+.hero {
+  background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 60%, #1da3cc 100%);
+  color: white;
+  border-radius: var(--radius);
+  padding: 36px 24px;
+  text-align: center;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(19, 83, 113, 0.3);
+}
+
+.hero::before {
+  content: '⚽';
+  position: absolute;
+  font-size: 10rem;
+  opacity: 0.06;
+  top: -20px;
+  right: -20px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.hero h2 {
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+  font-size: 2.4rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+
+.hero p {
+  font-size: 1rem;
+  opacity: 0.85;
+  margin: 0;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.info-card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(29, 119, 155, 0.1);
+  border-top: 3px solid var(--brand);
+}
+
+.info-card .card-icon {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.info-card h3 {
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--brand-dark);
+  margin: 0 0 8px;
+}
+
+.info-card p,
+.info-card a {
+  font-size: 0.9rem;
+  color: var(--text);
+  margin: 2px 0;
+  text-decoration: none;
+}
+
+.info-card a:hover { color: var(--brand); }
+
+.section-card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(29, 119, 155, 0.1);
+  margin-bottom: 24px;
+}
+
+.section-card h2 {
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--brand-dark);
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--brand-light);
+}
+
+.section-card ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.section-card li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* Playoff bracket */
+.bracket-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.bracket-division {
+  background: var(--brand-pale);
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid var(--brand-light);
+}
+
+.bracket-division h4 {
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--brand-dark);
+  margin: 0 0 12px;
+  text-align: center;
+}
+
+.bracket-week {
+  background: white;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border-left: 3px solid var(--brand);
+}
+
+.bracket-week h5 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--brand);
+  margin: 0 0 6px;
+}
+
+.bracket-week ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bracket-week li {
+  font-size: 0.87rem;
+  color: var(--text);
+  padding: 2px 0;
+}
+
+.awards-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.award-chip {
+  background: linear-gradient(135deg, var(--brand-dark), var(--brand));
+  color: white;
+  border-radius: 100px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-top: 8px;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.whatsapp-btn:hover {
+  background: #1ebe5a;
+  transform: translateY(-1px);
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 600px) {
+  main { padding: 12px 10px 80px; }
+
+  .bracket-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .standings-table { font-size: 0.72em; }
+  .col-team        { width: 30% !important; }
+
+  th, td { padding: 5px 3px; }
+
+  .fixtures-table td,
+  .fixtures-table th { padding: 4px 2px !important; }
+
+  .game-row td { font-size: 0.82rem !important; }
+
+  .game-row td:nth-child(2),
+  .fixtures-table th:nth-child(2) {
+    width: 70px !important;
+    font-size: 0.75rem !important;
+    white-space: nowrap;
+  }
+
+  .week-title-row th {
+    font-size: 1rem !important;
+    padding: 8px !important;
+  }
+
+  .date-header-row th {
+    font-size: 0.85rem !important;
+    padding: 5px !important;
+  }
+
+  .hero h2 { font-size: 1.8rem; }
+
+  .info-grid { grid-template-columns: 1fr; }
 }

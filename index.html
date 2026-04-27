@@ -1,155 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="refresh" content="21600">
-        <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-33SEFYBZ3E"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-33SEFYBZ3E');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="./images/favicon.png" type="image/png">
-    <title>RSL</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-33SEFYBZ3E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-33SEFYBZ3E');
+  </script>
+  <meta http-equiv="refresh" content="21600">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Respect Soccer League (RSL) — 2026 Season. Fixtures, standings, rules, and team info for the RSL in Whitehall, PA.">
+  <title>RSL — Respect Soccer League</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="./images/favicon.png" type="image/png">
 </head>
-<script src="nav.js"></script>  
+
+<!-- nav.js injects the nav into <header> automatically -->
+<script src="nav.js"></script>
+
 <body>
-    <header>
-        <h1>Respect Soccer League</h1>
-        <button class="menu-toggle" id="menuToggle">
-            ☰ <span>Menu</span> ⚽
-        </button>
-        <nav>
-            <ul>
-                <li class="always-show"><a href="./">🏠 HOME</a></li>
+  <header>
+    <h1>Respect Soccer League</h1>
+    <!-- nav injected by nav.js -->
+  </header>
 
-                <li class="menu-only"><a href="./rules">📜 RULES</a></li>
+  <main>
 
-                <li class="always-show"><a href="./fixtures">📅 FIXTURES</a></li>
+    <!-- ── HERO ───────────────────────────────────── -->
+    <div class="hero">
+      <h2>⚽ RSL 2026 Season</h2>
+      <p>8 teams. 9 regular-season weeks. One champion.<br>Whitehall, PA — Tuesdays, Wednesdays & Thursdays</p>
+    </div>
 
-                <li class="menu-only"><a href="./league_points">🏆 POINTS</a></li>
+    <!-- ── QUICK INFO CARDS ────────────────────────── -->
+    <div class="info-grid">
+      <div class="info-card">
+        <span class="card-icon">⏱️</span>
+        <h3>Game Times</h3>
+        <p><strong>Tuesday:</strong> 8:30–9:30 PM &amp; 9:30–10:30 PM</p>
+        <p><strong>Wednesday:</strong> 10:00–11:00 PM</p>
+        <p><strong>Thursday:</strong> 10:00–11:00 PM</p>
+      </div>
+      <div class="info-card">
+        <span class="card-icon">📍</span>
+        <h3>Location</h3>
+        <p>St. Luke's Metro Field</p>
+        <p><a href="https://maps.google.com/?q=3323+Seventh+St,+Whitehall,+PA+18052" target="_blank" rel="noopener">3323 Seventh St<br>Whitehall, PA 18052</a></p>
+      </div>
+      <div class="info-card">
+        <span class="card-icon">🏆</span>
+        <h3>Points System</h3>
+        <p>🟢 Win = <strong>3 pts</strong></p>
+        <p>🟡 Draw = <strong>1 pt</strong></p>
+        <p>🔴 Loss = <strong>0 pts</strong></p>
+      </div>
+      <div class="info-card">
+        <span class="card-icon">💬</span>
+        <h3>Community</h3>
+        <p>Stay up to date with match reminders, lineup info, and league news.</p>
+        <a class="whatsapp-btn" href="https://chat.whatsapp.com/EWwjr1f79zW0HqxTsPFNQQ" target="_blank" rel="noopener">
+          Join WhatsApp Group
+        </a>
+      </div>
+    </div>
 
-                <li class="menu-only"><a href="./teams">👥 TEAMS</a></li>
+    <!-- ── LEAGUE FORMAT ───────────────────────────── -->
+    <div class="section-card">
+      <h2>📋 2026 League Format</h2>
+      <ul>
+        <li>🎯 <strong>Goal:</strong> Get together, compete, and have fun — this league is for everyone!</li>
+        <li>📅 <strong>Regular Season:</strong> 8 games per team, round-robin format.</li>
+        <li>🏅 After the regular season, teams split into <strong>Division A (Top 4)</strong> and <strong>Division B (5th–8th)</strong> for playoffs.</li>
+      </ul>
 
-                <li class="menu-only">
-                    <select id="myDropdown">
-                        <option value="" selected disabled>🗂️ ARCHIVE</option>
+      <!-- Playoff bracket -->
+      <div style="margin-top: 20px;">
+        <h3 style="font-family:'Barlow Condensed',Arial,sans-serif; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:var(--brand-dark); font-size:1.15rem; margin-bottom:12px;">🏆 Playoff Format — 2 Weeks</h3>
+        <div class="bracket-grid">
+          <div class="bracket-division">
+            <h4>🔵 Division A — Top 4</h4>
+            <div class="bracket-week">
+              <h5>Week 1 · Semifinals</h5>
+              <ul>
+                <li>1st vs 4th</li>
+                <li>2nd vs 3rd</li>
+              </ul>
+            </div>
+            <div class="bracket-week">
+              <h5>Week 2 · Finals</h5>
+              <ul>
+                <li>🥇 Winners → Championship</li>
+                <li>🥉 Losers → 3rd Place Game</li>
+              </ul>
+            </div>
+          </div>
+          <div class="bracket-division">
+            <h4>⚪ Division B — 5th–8th</h4>
+            <div class="bracket-week">
+              <h5>Week 1 · Semifinals</h5>
+              <ul>
+                <li>5th vs 8th</li>
+                <li>6th vs 7th</li>
+              </ul>
+            </div>
+            <div class="bracket-week">
+              <h5>Week 2 · Finals</h5>
+              <ul>
+                <li>🥇 Winners → Div B Championship</li>
+                <li>🥉 Losers → 3rd Place Game</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-                        <optgroup label="Archive - 2024">
-                          <option value="./archive/2024_league_points">League</option>
-                          <option value="./archive/2024_group_a_points">Group A</option>
-                          <option value="./archive/2024_group_b_points">Group B</option>
-                        </optgroup>
-                        
-                        <optgroup label="Archive - 2023">
-                          <option value="./archive/2023">League</option>
-                        </optgroup>
-                    </select>
-                </li>            
-            </ul>
-        </nav>
-    </header>
+        <div class="awards-row">
+          <span class="award-chip">🏆 Div A &amp; B Champions get custom trophies</span>
+          <span class="award-chip">🥇🥈🥉 Top 3 in each division get medals</span>
+        </div>
+      </div>
+    </div>
 
-    <main>
-        <section class="teams">
-            <h2>RSL News</h2>
-            <p>RSL 2026 FORMAT</p>
-            <ul>
-                <li>Before anything, we are just trying to gather people to get to know each other and have fun!!</li>
-                <br>
-                <li><strong>League Structure:</strong>
-                    <ul>
-                        <li>7 Regular Season Games.</li>
-                        <li>Points System: 3 pts for a Win | 1 pt for a Draw | 0 pts for a Loss.</li>
-                        <li>Post-Season: We will have a playoff system.</li>
-                        <div class="playoff-format">
-                        <h3>Playoff Format</h3>
-                        <p>
-                            After league games, the playoffs will take place over <strong>2 weeks</strong>.
-                        </p>
+    <!-- ── RESPONSIBILITIES ────────────────────────── -->
+    <div class="section-card">
+      <h2>📣 Responsibilities</h2>
+      <ul>
+        <li>Make sure you are in your <strong>team's WhatsApp group</strong>. Contact your team lead for access.</li>
+        <li>Arrive at least <strong>10 minutes before your game</strong>.</li>
+        <li>Bring one <strong>black</strong> and one <strong>white</strong> T-shirt (no gray!).</li>
+        <li>Read the full <a href="/rules" style="color:var(--brand); font-weight:600;">game rules →</a></li>
+      </ul>
+    </div>
 
-                        <div class="division">
-                            <h4>Division A (Top 4 Teams)</h4>
+  </main>
 
-                            <div class="week">
-                            <h5>Week 1 - Semifinals</h5>
-                            <ul>
-                                <li>1st vs 4th</li>
-                                <li>2nd vs 3rd</li>
-                            </ul>
-                            </div>
-
-                            <div class="week">
-                            <h5>Week 2 - Finals</h5>
-                            <ul>
-                                <li>Winners → Championship Game (1st Place)</li>
-                                <li>Losers → 3rd Place Game</li>
-                            </ul>
-                            </div>
-                        </div>
-
-                        <div class="division">
-                            <h4>Division B (5th–8th Place Teams)</h4>
-
-                            <div class="week">
-                            <h5>Week 1 - Semifinals</h5>
-                            <ul>
-                                <li>5th vs 8th</li>
-                                <li>6th vs 7th</li>
-                            </ul>
-                            </div>
-
-                            <div class="week">
-                            <h5>Week 2 - Finals</h5>
-                            <ul>
-                                <li>Winners → Division B Final (1st Place)</li>
-                                <li>Losers → 3rd Place Game</li>
-                            </ul>
-                            </div>
-                        </div>
-                        </div>
-
-                        <div class="awards">
-                        <h3>Awards</h3>
-                        <ul>
-                            <li>Division A Champion & Division B Champion receive customized trophies</li>
-                            <li>Top 3 teams in each division receive medals</li>
-                        </ul>
-                        </div>
-                    </ul>
-                </li>
-            </ul>
-
-            <br>
-
-            <p>INFO</p>
-            <ul>
-                <li>⏱️ <strong>Games will be held on:</strong>
-                    <br>• Tuesday: 8:30-9:30 PM & 9:30-10:30 PM
-                    <br>• Wednesday: 10:00-11:00 PM
-                    <br>• Thursday: 10:00-11:00 PM
-                </li>
-                <br>
-                <li>📍<strong>Game location:</strong> 3323 Seventh St, Whitehall, PA 18052</li>
-                <br>
-                <li>💬 Join our RSL WhatsApp Community: <a href="https://chat.whatsapp.com/EWwjr1f79zW0HqxTsPFNQQ">WhatsApp Community</a></li>
-                <br>
-            </ul>
-
-            <h2>Responsibilities of Individuals</h2>
-            <ul>
-                <li>Please make sure you are in your TEAMS WhatsApp group. Contact your team lead for further information!</li>
-            </ul>
-        </section>
-    </main>
-
-    <footer>
-        <p> Respect Soccer League (RSL) <a class="disclaimer" href="./disclaimer"> DISCLAIMER</a></p>
-    </footer>
+  <footer>
+    <p>Respect Soccer League (RSL) &nbsp;|&nbsp; <a class="disclaimer" href="/disclaimer">Disclaimer</a></p>
+  </footer>
 </body>
 </html>
