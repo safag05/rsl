@@ -337,38 +337,38 @@ th {
   font-size: 0.85em;
 }
 
-/* Rank # */
+/* Rank # — tiny */
 .standings-table th:nth-child(1),
 .standings-table td:nth-child(1) {
-  width: 4%;
+  width: 5%;
   text-align: center !important;
   padding: 8px 2px;
   font-weight: bold;
   color: #7f8c8d;
 }
 
-/* Team name — wide, wraps onto 2 lines if needed */
+/* Team name — dominant column, never breaks mid-word */
 .col-team, .team-cell,
 .standings-table th:nth-child(2),
 .standings-table td:nth-child(2) {
-  width: 32%;
+  width: 40%;
   text-align: left !important;
-  padding-left: 6px !important;
+  padding-left: 8px !important;
   font-weight: bold;
-  white-space: normal;
-  word-break: break-word;
-  overflow: visible;
-  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* 8 stat columns share the remaining ~64% equally = 8% each */
+/* 8 stat columns squeeze into remaining 55% */
 .col-stat,
 .standings-table th:nth-child(n+3),
 .standings-table td:nth-child(n+3) {
-  width: 8%;
+  width: 6.875%;
   text-align: center;
   white-space: nowrap;
   padding: 8px 1px;
+  font-size: 0.9em;
 }
 
 /* ── STATUS CLASSES (fixtures page) ─────────────────────── */
@@ -662,27 +662,27 @@ footer a.disclaimer:hover {
 
   /* Standings on mobile */
   .standings-table {
-    font-size: 0.73em;
+    font-size: 0.68em;
   }
   /* Rank # */
   .standings-table th:nth-child(1),
   .standings-table td:nth-child(1) {
-    width: 4% !important;
+    width: 5% !important;
     padding: 5px 1px !important;
   }
-  /* Team name: large enough to show full name, wraps if needed */
+  /* Team name: wide enough for longest name on one line */
   .standings-table th:nth-child(2),
   .standings-table td:nth-child(2) {
-    width: 32% !important;
+    width: 40% !important;
     padding-left: 4px !important;
-    white-space: normal !important;
-    word-break: break-word !important;
-    line-height: 1.3 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
   }
-  /* 8 stat columns share remaining 64% = 8% each */
+  /* 8 stat columns share the remaining 55% */
   .standings-table th:nth-child(n+3),
   .standings-table td:nth-child(n+3) {
-    width: 8% !important;
+    width: 6.875% !important;
     padding: 5px 1px !important;
     white-space: nowrap !important;
   }
