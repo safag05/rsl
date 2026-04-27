@@ -331,44 +331,49 @@ th {
 }
 
 /* ── STANDINGS TABLE ─────────────────────────────────────── */
-.standings-table {
-  table-layout: fixed;
-  width: 100%;
-  font-size: 0.85em;
+
+/* Wrapper: scroll horizontally on small screens */
+.standings-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius);
 }
 
-/* Rank # — tiny */
+.standings-table {
+  table-layout: auto;   /* let content drive column widths */
+  width: 100%;
+  min-width: 520px;     /* never squish below this — scroll instead */
+  font-size: 0.9em;
+  border-collapse: collapse;
+}
+
+/* Rank # */
 .standings-table th:nth-child(1),
 .standings-table td:nth-child(1) {
-  width: 5%;
   text-align: center !important;
-  padding: 8px 2px;
+  padding: 10px 8px;
   font-weight: bold;
   color: #7f8c8d;
+  white-space: nowrap;
 }
 
-/* Team name — dominant column, never breaks mid-word */
+/* Team name — as wide as it needs to be */
 .col-team, .team-cell,
 .standings-table th:nth-child(2),
 .standings-table td:nth-child(2) {
-  width: 40%;
   text-align: left !important;
-  padding-left: 8px !important;
+  padding: 10px 12px !important;
   font-weight: bold;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
-/* 8 stat columns squeeze into remaining 55% */
+/* All 8 stat columns — compact, equal, no wrapping */
 .col-stat,
 .standings-table th:nth-child(n+3),
 .standings-table td:nth-child(n+3) {
-  width: 6.875%;
   text-align: center;
   white-space: nowrap;
-  padding: 8px 1px;
-  font-size: 0.9em;
+  padding: 10px 8px;
 }
 
 /* ── STATUS CLASSES (fixtures page) ─────────────────────── */
@@ -660,31 +665,14 @@ footer a.disclaimer:hover {
 
   .bracket-grid { grid-template-columns: 1fr; }
 
-  /* Standings on mobile */
+  /* Standings on mobile — scroll horizontally, never squish */
+  .standings-wrapper {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
   .standings-table {
-    font-size: 0.68em;
-  }
-  /* Rank # */
-  .standings-table th:nth-child(1),
-  .standings-table td:nth-child(1) {
-    width: 5% !important;
-    padding: 5px 1px !important;
-  }
-  /* Team name: wide enough for longest name on one line */
-  .standings-table th:nth-child(2),
-  .standings-table td:nth-child(2) {
-    width: 40% !important;
-    padding-left: 4px !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-  }
-  /* 8 stat columns share the remaining 55% */
-  .standings-table th:nth-child(n+3),
-  .standings-table td:nth-child(n+3) {
-    width: 6.875% !important;
-    padding: 5px 1px !important;
-    white-space: nowrap !important;
+    font-size: 0.85em;
+    min-width: 520px !important;
   }
 
   th, td { padding: 6px 2px; }
