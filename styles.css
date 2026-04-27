@@ -332,27 +332,41 @@ th {
 
 /* ── STANDINGS TABLE ─────────────────────────────────────── */
 .standings-table {
-  table-layout: auto !important;
+  table-layout: fixed;
   width: 100%;
 }
 
-.col-team, .team-cell {
-  width: 35%;
-  text-align: left !important;
-  padding-left: 12px !important;
+/* # rank column */
+.standings-table th:nth-child(1),
+.standings-table td:nth-child(1) {
+  width: 6%;
+  text-align: center !important;
+  padding: 8px 2px;
   font-weight: bold;
+  color: #7f8c8d;
 }
 
-.col-stat {
-  width: 7%;
-  font-size: 0.85em;
+/* Team name — gets the most space */
+.col-team, .team-cell,
+.standings-table th:nth-child(2),
+.standings-table td:nth-child(2) {
+  width: 30%;
+  text-align: left !important;
+  padding-left: 8px !important;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.standings-table td:first-child {
-  text-align: left !important;
-  padding-left: 15px !important;
-  font-size: 0.9em;
+/* All stat columns — equal width, no wrapping */
+.col-stat,
+.standings-table th:nth-child(n+3),
+.standings-table td:nth-child(n+3) {
+  width: 8%;
+  text-align: center;
+  white-space: nowrap;
+  padding: 8px 2px;
 }
 
 /* ── STATUS CLASSES (fixtures page) ─────────────────────── */
@@ -625,23 +639,48 @@ footer a.disclaimer:hover {
   transform: translateY(-1px);
 }
 
+/* ── FIXTURES FONT SIZES (desktop) ───────────────────────── */
+.game-row td {
+  font-size: 1rem;
+}
+
+.week-title-row th {
+  font-size: 1.3rem;
+}
+
+.date-header-row th {
+  font-size: 1.05rem;
+}
+
 /* ── RESPONSIVE ──────────────────────────────────────────── */
 @media (max-width: 600px) {
   main { padding: 12px 10px 80px; }
 
-  .bracket-grid {
-    grid-template-columns: 1fr;
+  .bracket-grid { grid-template-columns: 1fr; }
+
+  /* Standings: readable on mobile without squishing */
+  .standings-table {
+    font-size: 0.78em;
+  }
+  .standings-table th:nth-child(2),
+  .standings-table td:nth-child(2) {
+    width: 28% !important;
+  }
+  .standings-table th:nth-child(1),
+  .standings-table td:nth-child(1) {
+    width: 5% !important;
   }
 
-  .standings-table { font-size: 0.72em; }
-  .col-team        { width: 30% !important; }
+  th, td { padding: 6px 2px; }
 
-  th, td { padding: 5px 3px; }
-
+  /* Fixtures padding */
   .fixtures-table td,
-  .fixtures-table th { padding: 4px 2px !important; }
+  .fixtures-table th { padding: 6px 3px !important; }
 
-  .game-row td { font-size: 0.82rem !important; }
+  /* Fixtures font size — bigger than before */
+  .game-row td { font-size: 0.9rem !important; }
+
+  .score { font-size: 0.95rem !important; }
 
   /* On mobile, give more room to team names, shrink score column */
   .fixtures-table thead tr:not(.week-title-row) th:nth-child(1),
@@ -654,21 +693,18 @@ footer a.disclaimer:hover {
   .fixtures-table thead tr:not(.week-title-row) th:nth-child(2),
   .game-row td:nth-child(2) {
     width: 20% !important;
-    font-size: 0.75rem !important;
-    white-space: nowrap;
   }
 
   .week-title-row th {
-    font-size: 1rem !important;
-    padding: 8px !important;
+    font-size: 1.05rem !important;
+    padding: 10px !important;
   }
 
   .date-header-row th {
-    font-size: 0.85rem !important;
-    padding: 5px !important;
+    font-size: 0.9rem !important;
+    padding: 6px !important;
   }
 
   .hero h2 { font-size: 1.8rem; }
-
   .info-grid { grid-template-columns: 1fr; }
 }
