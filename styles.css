@@ -254,6 +254,22 @@ th {
   width: 100%;
   border-collapse: collapse;
   margin: 0;
+  table-layout: fixed; /* Force equal column widths */
+}
+
+/* Lock all three columns to equal thirds */
+.fixtures-table col.col-home,
+.fixtures-table col.col-score,
+.fixtures-table col.col-away,
+.fixtures-table thead tr:not(.week-title-row) th:nth-child(1),
+.fixtures-table thead tr:not(.week-title-row) th:nth-child(2),
+.fixtures-table thead tr:not(.week-title-row) th:nth-child(3),
+.game-row td:nth-child(1),
+.game-row td:nth-child(2),
+.game-row td:nth-child(3) {
+  width: 33.33%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .week-title-row th {
@@ -627,9 +643,17 @@ footer a.disclaimer:hover {
 
   .game-row td { font-size: 0.82rem !important; }
 
-  .game-row td:nth-child(2),
-  .fixtures-table th:nth-child(2) {
-    width: 70px !important;
+  /* On mobile, give more room to team names, shrink score column */
+  .fixtures-table thead tr:not(.week-title-row) th:nth-child(1),
+  .fixtures-table thead tr:not(.week-title-row) th:nth-child(3),
+  .game-row td:nth-child(1),
+  .game-row td:nth-child(3) {
+    width: 40% !important;
+  }
+
+  .fixtures-table thead tr:not(.week-title-row) th:nth-child(2),
+  .game-row td:nth-child(2) {
+    width: 20% !important;
     font-size: 0.75rem !important;
     white-space: nowrap;
   }
