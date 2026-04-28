@@ -399,6 +399,9 @@ th {
   .standings-table th.col-team,
   .standings-table td.team-cell {
     padding: 6px 6px !important;
+    width: 35% !important;
+    text-align: left !important;
+    padding-left: 12px !important;
   }
   .standings-table th.col-stat:not(:first-child),
   .standings-table td.col-stat:not(:first-child) {
