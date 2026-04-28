@@ -332,25 +332,25 @@ th {
 
 /* ═══════════════════════════════════════════════════════════
    STANDINGS TABLE — fully isolated, does not affect other tables
-   Classes used by standings.js:
-     table:  .standings-table
-     col 1:  .col-stat  (#)
-     col 2:  .col-team / .team-cell  (Team name)
-     col 3+: .col-stat  (P W D L GF GA GD PTS)
    ═══════════════════════════════════════════════════════════ */
 
 /* Base table */
 .standings-table {
-  table-layout: fixed !important;
+  table-layout: auto !important; /* Let the browser fit columns to their content naturally */
   width: 100% !important;
   border-collapse: collapse !important;
   font-size: 0.84em;
 }
 
+/* Reset any widths inherited from the fixtures table */
+.standings-table th,
+.standings-table td {
+  width: auto !important;
+}
+
 /* ── Column 1: # rank ── */
 .standings-table th.col-stat:first-child,
 .standings-table td.col-stat:first-child {
-  width: 5% !important; 
   text-align: center !important;
   padding: 8px 4px !important;
   font-weight: bold;
@@ -358,46 +358,35 @@ th {
   white-space: nowrap;
 }
 
-/* ── Column 2: Team name — fills available space ── */
+/* ── Column 2: Team name ── */
 .standings-table th.col-team,
 .standings-table td.team-cell {
-  width: 47% !important; 
   text-align: left !important;
-  padding-left: 12px !important;
+  padding-left: 8px !important;
   font-weight: bold;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: nowrap; /* Keeps the name on one line without the ... */
 }
 
 /* ── Columns 3–10: stat columns (P W D L GF GA GD PTS) ── */
 .standings-table th.col-stat:not(:first-child),
 .standings-table td.col-stat:not(:first-child) {
-  width: 6% !important; /* 8 columns * 6% = 48%. Total: 5% + 47% + 48% = 100% */
   text-align: center !important;
-  padding: 8px 2px !important;
+  padding: 8px 4px !important;
   white-space: nowrap;
 }
 
 /* Mobile adjustments */
 @media (max-width: 600px) {
   .standings-table {
-    font-size: 0.72em;
+    font-size: 0.75em; /* Slightly smaller font to ensure all columns fit on narrow screens */
   }
-  .standings-table th.col-stat:first-child,
-  .standings-table td.col-stat:first-child {
-    width: 6% !important; 
-    padding: 6px 1px !important;
+  .standings-table th,
+  .standings-table td {
+    padding: 6px 3px !important;
   }
   .standings-table th.col-team,
   .standings-table td.team-cell {
-    width: 46% !important; 
-    padding: 6px 4px !important;
-  }
-  .standings-table th.col-stat:not(:first-child),
-  .standings-table td.col-stat:not(:first-child) {
-    width: 6% !important; /* 8 columns * 6% = 48%. Total: 6% + 46% + 48% = 100% */
-    padding: 6px 1px !important;
+    padding-left: 6px !important;
   }
 }
 
