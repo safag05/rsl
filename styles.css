@@ -378,32 +378,15 @@ th {
 /* Mobile adjustments */
 @media (max-width: 600px) {
   .standings-table {
-    font-size: 0.72em; /* Slightly smaller base font for mobile */
+    font-size: 0.75em; /* Slightly smaller font to ensure all columns fit on narrow screens */
   }
-
   .standings-table th,
   .standings-table td {
-    padding: 6px 2px !important; /* Tighten general horizontal padding */
+    padding: 6px 3px !important;
   }
-
-  /* ── Specifically squeeze the # column ── */
-  .standings-table th.col-stat:first-child,
-  .standings-table td.col-stat:first-child {
-    width: 15px !important;      /* Force it to be very narrow */
-    padding-left: 2px !important;
-    padding-right: 2px !important;
-    text-align: center !important;
-  }
-
-  /* ── Ensure the Team cell still has a tiny bit of space from the rank ── */
+  .standings-table th.col-team,
   .standings-table td.team-cell {
-    padding-left: 4px !important;
-  }
-
-  /* ── Tighten the stat columns (W, D, L, etc.) ── */
-  .standings-table th.col-stat,
-  .standings-table td.col-stat {
-    min-width: 18px !important; /* Ensures columns stay consistent but small */
+    padding-left: 6px !important;
   }
 }
 
