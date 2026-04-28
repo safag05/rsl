@@ -721,3 +721,78 @@ footer a.disclaimer:hover {
   .hero h2 { font-size: 1.8rem; }
   .info-grid { grid-template-columns: 1fr; }
 }
+
+/* ── LEAGUE POINTS TABLE STYLING ───────────────────────── */
+.standings-wrapper {
+  width: 100%;
+  overflow-x: auto; /* Adds horizontal scroll ONLY if it absolutely can't fit */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+#standings-container table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  white-space: nowrap; /* Prevents stats from dropping to a new line */
+}
+
+/* Subtle border under the header */
+#standings-container thead {
+  border-bottom: 2px solid var(--brand-pale);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* Alternating row colors or subtle borders for readability */
+#standings-container tbody tr {
+  border-bottom: 1px solid var(--brand-pale);
+}
+
+#standings-container tbody tr:last-child {
+  border-bottom: none;
+}
+
+/* ── MOBILE LEAGUE POINTS FIXES ───────────────────────── */
+  
+  #standings-container table {
+    font-size: 0.8rem; /* Shrink overall text size for mobile */
+  }
+
+  #standings-container th,
+  #standings-container td {
+    padding: 8px 3px; /* Very tight horizontal padding */
+  }
+
+  /* Make the 'Team' column (assumed 2nd column) flexible */
+  #standings-container th:nth-child(2),
+  #standings-container td:nth-child(2) {
+    text-align: left;
+    width: 100%; /* Forces team name to take up remaining space */
+    max-width: 110px; /* Adjust this limit based on your phone */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds the "..." to long team names */
+  }
+
+  /* Flexbox to align team logo and text perfectly */
+  #standings-container td:nth-child(2) {
+    display: flex;
+    align-items: center;
+    gap: 6px; /* Space between logo and name */
+  }
+
+  /* Target team logos if your JS injects them */
+  #standings-container td img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+  }
+
+  /* Highlight the Points column (assumed 8th column) */
+  #standings-container th:nth-child(8),
+  #standings-container td:nth-child(8) {
+    font-weight: 700;
+    color: var(--brand-dark);
+  }
