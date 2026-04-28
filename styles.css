@@ -331,49 +331,51 @@ th {
 }
 
 /* ── STANDINGS TABLE ─────────────────────────────────────── */
-
-/* Wrapper: scroll horizontally on small screens */
 .standings-wrapper {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow-x: visible;
   border-radius: var(--radius);
 }
 
 .standings-table {
-  table-layout: auto;   /* let content drive column widths */
+  table-layout: fixed;
   width: 100%;
-  min-width: 520px;     /* never squish below this — scroll instead */
-  font-size: 0.9em;
   border-collapse: collapse;
+  font-size: 0.88em;
 }
 
-/* Rank # */
+/* # — just wide enough for 1-2 digits */
 .standings-table th:nth-child(1),
 .standings-table td:nth-child(1) {
+  width: 5%;
   text-align: center !important;
-  padding: 10px 8px;
+  padding: 8px 4px;
   font-weight: bold;
   color: #7f8c8d;
   white-space: nowrap;
 }
 
-/* Team name — as wide as it needs to be */
+/* Team — dominant, gets all leftover space */
 .col-team, .team-cell,
 .standings-table th:nth-child(2),
 .standings-table td:nth-child(2) {
+  width: 30%;
   text-align: left !important;
-  padding: 10px 12px !important;
+  padding: 8px 6px !important;
   font-weight: bold;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* All 8 stat columns — compact, equal, no wrapping */
+/* P column — same compact size as other stats */
+/* W D L GF GA GD PTS — 8 columns sharing remaining 65% */
 .col-stat,
 .standings-table th:nth-child(n+3),
 .standings-table td:nth-child(n+3) {
+  width: 8.125%;
   text-align: center;
   white-space: nowrap;
-  padding: 10px 8px;
+  padding: 8px 2px;
 }
 
 /* ── STATUS CLASSES (fixtures page) ─────────────────────── */
@@ -665,14 +667,24 @@ footer a.disclaimer:hover {
 
   .bracket-grid { grid-template-columns: 1fr; }
 
-  /* Standings on mobile — scroll horizontally, never squish */
-  .standings-wrapper {
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-  }
+  /* Standings on mobile — everything fits on one screen */
   .standings-table {
-    font-size: 0.85em;
-    min-width: 520px !important;
+    font-size: 0.7em;
+  }
+  .standings-table th:nth-child(1),
+  .standings-table td:nth-child(1) {
+    width: 4% !important;
+    padding: 6px 2px !important;
+  }
+  .standings-table th:nth-child(2),
+  .standings-table td:nth-child(2) {
+    width: 28% !important;
+    padding: 6px 4px !important;
+  }
+  .standings-table th:nth-child(n+3),
+  .standings-table td:nth-child(n+3) {
+    width: 8.5% !important;
+    padding: 6px 1px !important;
   }
 
   th, td { padding: 6px 2px; }
