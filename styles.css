@@ -330,66 +330,75 @@ th {
   font-size: 0.95rem;
 }
 
-/* ── STANDINGS TABLE ─────────────────────────────────────── */
-.standings-wrapper {
-  overflow-x: visible;
-  border-radius: var(--radius);
-}
+/* ═══════════════════════════════════════════════════════════
+   STANDINGS TABLE — fully isolated, does not affect other tables
+   Classes used by standings.js:
+     table:  .standings-table
+     col 1:  .col-stat  (#)
+     col 2:  .col-team / .team-cell  (Team name)
+     col 3+: .col-stat  (P W D L GF GA GD PTS)
+   ═══════════════════════════════════════════════════════════ */
 
-/* Desktop */
+/* Base table */
 .standings-table {
-  table-layout: fixed;
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.88em;
+  table-layout: fixed !important;
+  width: 100% !important;
+  border-collapse: collapse !important;
+  font-size: 0.84em;
 }
 
-/* # col — single digit, tiny */
-.standings-table th:nth-child(1),
-.standings-table td:nth-child(1) {
-  width: 4%;
+/* ── Column 1: # rank — just wide enough for 1–2 digits ── */
+.standings-table th.col-stat:first-child,
+.standings-table td.col-stat:first-child {
+  width: 20px !important;
+  min-width: 20px !important;
+  max-width: 28px !important;
   text-align: center !important;
-  padding: 8px 2px;
+  padding: 8px 4px !important;
   font-weight: bold;
   color: #7f8c8d;
   white-space: nowrap;
 }
 
-/* Team — wide, full name visible */
-.col-team, .team-cell,
-.standings-table th:nth-child(2),
-.standings-table td:nth-child(2) {
-  width: 44%;
+/* ── Column 2: Team name — fills available space ── */
+.standings-table th.col-team,
+.standings-table td.team-cell {
   text-align: left !important;
-  padding: 8px 6px !important;
+  padding: 8px 8px !important;
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* 8 stat cols (P W D L GF GA GD PTS) share remaining 52% = 6.5% each */
-.col-stat,
-.standings-table th:nth-child(n+3),
-.standings-table td:nth-child(n+3) {
-  width: 6.5%;
-  text-align: center;
+/* ── Columns 3–10: stat columns (P W D L GF GA GD PTS) ── */
+.standings-table th.col-stat:not(:first-child),
+.standings-table td.col-stat:not(:first-child) {
+  width: 28px !important;
+  min-width: 24px !important;
+  max-width: 36px !important;
+  text-align: center !important;
+  padding: 8px 2px !important;
   white-space: nowrap;
-  padding: 8px 1px;
+  font-size: 0.95em;
 }
 
-/* Mobile — shrink font so everything still fits */
+/* Mobile adjustments */
 @media (max-width: 600px) {
   .standings-table {
     font-size: 0.72em;
   }
-  .standings-table th,
-  .standings-table td {
-    padding: 6px 1px !important;
+  .standings-table th.col-stat:first-child,
+  .standings-table td.col-stat:first-child {
+    padding: 6px 2px !important;
   }
-  .standings-table th:nth-child(2),
-  .standings-table td:nth-child(2) {
-    padding: 6px 4px !important;
+  .standings-table th.col-team,
+  .standings-table td.team-cell {
+    padding: 6px 6px !important;
+  }
+  .standings-table th.col-stat:not(:first-child),
+  .standings-table td.col-stat:not(:first-child) {
+    padding: 6px 1px !important;
   }
 }
 
@@ -682,7 +691,7 @@ footer a.disclaimer:hover {
 
   .bracket-grid { grid-template-columns: 1fr; }
 
-  /* standings mobile handled above */
+
 
   th, td { padding: 6px 2px; }
 
@@ -721,79 +730,3 @@ footer a.disclaimer:hover {
   .hero h2 { font-size: 1.8rem; }
   .info-grid { grid-template-columns: 1fr; }
 }
-
-/* ── LEAGUE POINTS TABLE STYLING ───────────────────────── */
-.standings-wrapper {
-  width: 100%;
-  overflow-x: auto; /* Adds horizontal scroll ONLY if it absolutely can't fit */
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-  background: var(--white);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-
-#standings-container table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: center;
-  white-space: nowrap; /* Prevents stats from dropping to a new line */
-}
-
-/* Subtle border under the header */
-#standings-container thead {
-  border-bottom: 2px solid var(--brand-pale);
-  color: var(--text-muted);
-  font-size: 0.85rem;
-}
-
-/* Alternating row colors or subtle borders for readability */
-#standings-container tbody tr {
-  border-bottom: 1px solid var(--brand-pale);
-}
-
-#standings-container tbody tr:last-child {
-  border-bottom: none;
-}
-
-/* ── MOBILE LEAGUE POINTS FIXES ───────────────────────── */
-  
-  #standings-container table {
-    font-size: 0.8rem; /* Shrink overall text size for mobile */
-  }
-
-  #standings-container th,
-  #standings-container td {
-    padding: 8px 3px; /* Very tight horizontal padding */
-  }
-
-  /* Make the 'Team' column flexible and fill the empty space */
-  #standings-container th:nth-child(2),
-  #standings-container td:nth-child(2) {
-    text-align: left;
-    width: 100%; /* Tells it to take all available leftover space */
-    max-width: 0; /* The magic trick that allows ellipsis to work fluidly in a table */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  /* Flexbox to align team logo and text perfectly */
-  #standings-container td:nth-child(2) {
-    display: flex;
-    align-items: center;
-    gap: 6px; /* Space between logo and name */
-  }
-
-  /* Target team logos if your JS injects them */
-  #standings-container td img {
-    width: 18px;
-    height: 18px;
-    object-fit: contain;
-  }
-
-  /* Highlight the Points column (assumed 8th column) */
-  #standings-container th:nth-child(8),
-  #standings-container td:nth-child(8) {
-    font-weight: 700;
-    color: var(--brand-dark);
-  }
