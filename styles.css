@@ -350,7 +350,8 @@ th {
 /* ── Column 1: # rank — just wide enough for 1–2 digits ── */
 .standings-table th.col-stat:first-child,
 .standings-table td.col-stat:first-child {
-  width: 20px !important;
+  width: 7%; 
+  font-size: 0.85em;
   min-width: 20px !important;
   max-width: 28px !important;
   text-align: center !important;
@@ -363,8 +364,9 @@ th {
 /* ── Column 2: Team name — fills available space ── */
 .standings-table th.col-team,
 .standings-table td.team-cell {
+  width: 35% !important;
   text-align: left !important;
-  padding: 8px 8px !important;
+  padding-left: 12px !important;
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;
@@ -374,13 +376,13 @@ th {
 /* ── Columns 3–10: stat columns (P W D L GF GA GD PTS) ── */
 .standings-table th.col-stat:not(:first-child),
 .standings-table td.col-stat:not(:first-child) {
-  width: 28px !important;
+  width: 7%; 
+  font-size: 0.85em;
   min-width: 24px !important;
   max-width: 36px !important;
   text-align: center !important;
   padding: 8px 2px !important;
   white-space: nowrap;
-  font-size: 0.95em;
 }
 
 /* Mobile adjustments */
@@ -391,6 +393,8 @@ th {
   .standings-table th.col-stat:first-child,
   .standings-table td.col-stat:first-child {
     padding: 6px 2px !important;
+    width: 7%; 
+    font-size: 0.85em;
   }
   .standings-table th.col-team,
   .standings-table td.team-cell {
@@ -399,6 +403,8 @@ th {
   .standings-table th.col-stat:not(:first-child),
   .standings-table td.col-stat:not(:first-child) {
     padding: 6px 1px !important;
+    width: 7%; 
+    font-size: 0.85em;
   }
 }
 
