@@ -766,14 +766,15 @@ footer a.disclaimer:hover {
     padding: 8px 3px; /* Very tight horizontal padding */
   }
 
-  /* Make the 'Team' column (assumed 2nd column) flexible */
+  /* Make the 'Team' column flexible and fill the empty space */
   #standings-container th:nth-child(2),
   #standings-container td:nth-child(2) {
     text-align: left;
-    width: 100%; /* Forces team name to take up remaining space */
-    max-width: 110px; /* Adjust this limit based on your phone */
+    width: 100%; /* Tells it to take all available leftover space */
+    max-width: 0; /* The magic trick that allows ellipsis to work fluidly in a table */
+    white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis; /* Adds the "..." to long team names */
+    text-overflow: ellipsis;
   }
 
   /* Flexbox to align team logo and text perfectly */
