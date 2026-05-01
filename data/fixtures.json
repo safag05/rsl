@@ -226,24 +226,19 @@
           ]
         },
         {
-          "dateHeader": "Wednesday - 05/06/2026",
-          "games": [
-            {
-              "home": "💫 JEI FC",
-              "homeScore": "10:00 PM",
-              "awayScore": "TBD",
-              "away": "🦅 AL-HATEM FC"
-            }
-          ]
-        },
-        {
           "dateHeader": "Thursday - 05/07/2026",
           "games": [
             {
               "home": "🐬 BLUE DOLPHINS FC",
-              "homeScore": "10:00 PM",
+              "homeScore": "8:30 PM",
               "awayScore": "TBD",
               "away": "☪️ TEAM BABO FC"
+            },
+            {
+              "home": "💫 JEI FC",
+              "homeScore": "9:30 PM",
+              "awayScore": "TBD",
+              "away": "🦅 AL-HATEM FC"
             },
             {
               "home": "🟢 GREEN KNIGHTS FC",
