@@ -36,22 +36,46 @@ def get_colors(home_raw, away_raw):
     elif home == "GREEN KNIGHTS FC" and away == "TIGERS FC":
         home_col = "*Green*"
         away_col = "*Red*"
-        
+
+    # Special Case: Tigers play Blue Dolphins
+    elif home == "TIGERS FC" and away == "BLUE DOLPHINS FC":
+        home_col = "*Red*"
+        away_col = "*Blue*"
+    elif home == "BLUE DOLPHINS FC" and away == "TIGERS FC":
+        home_col = "*Blue*"
+        away_col = "*Red*"
+
+    # Special Case: Green Knights play Blue Dolphins
+    elif home == "GREEN KNIGHTS FC" and away == "BLUE DOLPHINS FC":
+        home_col = "*Green*"
+        away_col = "*Blue*"
+    elif home == "BLUE DOLPHINS FC" and away == "GREEN KNIGHTS FC":
+        home_col = "*Blue*"
+        away_col = "*Green*"
+
     # Tigers play any other team
     elif home == "TIGERS FC":
         home_col = "*Red*"
-        away_col = "*White*"  # Opponent wears white
+        away_col = "*White*"
     elif away == "TIGERS FC":
         away_col = "*Red*"
-        home_col = "*White*"  # Opponent wears white
-        
+        home_col = "*White*"
+
     # Green Knights play any other team
     elif home == "GREEN KNIGHTS FC":
         home_col = "*Green*"
-        away_col = "*Black*"  # Opponent wears black
+        away_col = "*Black*"
     elif away == "GREEN KNIGHTS FC":
         away_col = "*Green*"
-        home_col = "*Black*"  # Opponent wears black
+        home_col = "*Black*"
+
+    # Blue Dolphins play any other team
+    elif home == "BLUE DOLPHINS FC":
+        home_col = "*Blue*"
+        away_col = "*White*"
+    elif away == "BLUE DOLPHINS FC":
+        away_col = "*Blue*"
+        home_col = "*White*"
 
     return home_col, away_col
 
