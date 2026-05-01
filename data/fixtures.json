@@ -111,14 +111,14 @@
           "games": [
             {
               "home": "🦅 AL-HATEM FC",
-              "homeScore": "8:30 PM",
-              "awayScore": "TBD",
+              "homeScore": "0",
+              "awayScore": "10",
               "away": "🇪🇬 EGYPT FC"
             },
             {
               "home": "🟢 GREEN KNIGHTS FC",
-              "homeScore": "9:30 PM",
-              "awayScore": "TBD",
+              "homeScore": "8",
+              "awayScore": "5",
               "away": "🐅 TIGERS FC"
             }
           ]
@@ -128,8 +128,8 @@
           "games": [
             {
               "home": "🐊 ATLANTIC FC",
-              "homeScore": "10:00 PM",
-              "awayScore": "TBD",
+              "homeScore": "7",
+              "awayScore": "6",
               "away": "💫 JEI FC"
             }
           ]
@@ -139,8 +139,8 @@
           "games": [
             {
               "home": "👵 BIBI FC",
-              "homeScore": "10:00 PM",
-              "awayScore": "TBD",
+              "homeScore": "6",
+              "awayScore": "13",
               "away": "☪️ TEAM BABO FC"
             },
             {
@@ -155,20 +155,21 @@
     },
     {
       "week": "Week 4",
+      "announcement": "",
       "days": [
         {
           "dateHeader": "Tuesday - 04/28/2026",
           "games": [
             {
               "home": "🦅 AL-HATEM FC",
-              "homeScore": "8:30 PM",
-              "awayScore": "TBD",
+              "homeScore": "7",
+              "awayScore": "6",
               "away": "🐊 ATLANTIC FC"
             },
             {
               "home": "👵 BIBI FC",
-              "homeScore": "9:30 PM",
-              "awayScore": "TBD",
+              "homeScore": "7",
+              "awayScore": "10",
               "away": "🟢 GREEN KNIGHTS FC"
             }
           ]
@@ -178,8 +179,8 @@
           "games": [
             {
               "home": "🐅 TIGERS FC",
-              "homeScore": "10:00 PM",
-              "awayScore": "TBD",
+              "homeScore": "17",
+              "awayScore": "0",
               "away": "🐬 BLUE DOLPHINS FC"
             }
           ]
@@ -189,8 +190,8 @@
           "games": [
             {
               "home": "☪️ TEAM BABO FC",
-              "homeScore": "10:00 PM",
-              "awayScore": "TBD",
+              "homeScore": "2",
+              "awayScore": "5",
               "away": "🇪🇬 EGYPT FC"
             },
             {
@@ -256,6 +257,7 @@
     },
     {
       "week": "Week 6",
+      "announcement": "",
       "days": [
         {
           "dateHeader": "Tuesday - 05/12/2026",
@@ -306,6 +308,7 @@
     },
     {
       "week": "Week 7",
+      "announcement": "",
       "days": [
         {
           "dateHeader": "Tuesday - 05/19/2026",
@@ -407,6 +410,7 @@
     },
     {
       "week": "Week 9",
+      "announcement": "",
       "days": [
         {
           "dateHeader": "Tuesday - 06/09/2026",
@@ -466,15 +470,15 @@
             {
               "label": "",
               "home": "1st Place",
-              "homeScore": "1",
-              "awayScore": "2",
+              "homeScore": "TBD",
+              "awayScore": "TBD",
               "away": "4th Place"
             },
             {
               "label": "",
               "home": "2nd Place",
-              "homeScore": "5",
-              "awayScore": "2",
+              "homeScore": "TBD",
+              "awayScore": "TBD",
               "away": "3rd Place"
             }
           ],
@@ -509,17 +513,17 @@
           "dateHeader": "Division A Finals",
           "games": [
             {
-              "label": "🏆 CHAMPIONSHIP GAME 🏆",
+              "label": "🏆 CHAMPIONSHIP GAME",
               "home": "Div A Semis 1 Winner",
-              "homeScore": "2",
-              "awayScore": "1",
+              "homeScore": "TBD",
+              "awayScore": "TBD",
               "away": "Div A Semis 2 Winner"
             },
             {
               "label": "🥉 3rd Place Match",
               "home": "Div A Semis 1 Loser",
-              "homeScore": "1",
-              "awayScore": "9",
+              "homeScore": "TBD",
+              "awayScore": "TBD",
               "away": "Div A Semis 2 Loser"
             }
           ],
