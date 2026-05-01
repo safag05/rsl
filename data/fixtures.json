@@ -211,27 +211,28 @@
         {
           "dateHeader": "Tuesday - 05/01/2026",
           "games": [
+            
             {
-              "home": "🐅 TIGERS FC",
-              "homeScore": "4:00 PM",
-              "awayScore": "TBD",
-              "away": "🐬 BLUE DOLPHINS FC"
-            },
-            {
-              "home": "🐬 BLUE DOLPHINS FC",
-              "homeScore": "4:30 PM",
+              "home": "🟢 GREEN KNIGHTS FC",
+              "homeScore": "6:00 PM",
               "awayScore": "TBD",
               "away": "🐅 TIGERS FC"
             },
             {
-              "home": "🐬 BLUE DOLPHINS FC",
-              "homeScore": "5:00 PM",
+              "home": "🐅 TIGERS FC",
+              "homeScore": "6:30 PM",
               "awayScore": "TBD",
               "away": "🟢 GREEN KNIGHTS FC"
             },
             {
-              "home": "🟢 GREEN KNIGHTS FC",
-              "homeScore": "5:30 PM",
+              "home": "🐬 BLUE DOLPHINS FC",
+              "homeScore": "7:00 PM",
+              "awayScore": "TBD",
+              "away": "🇪🇬 EGYPT FC"
+            },
+            {
+              "home": "🇪🇬 EGYPT FC",
+              "homeScore": "7:30 PM",
               "awayScore": "TBD",
               "away": "🐬 BLUE DOLPHINS FC"
             }
