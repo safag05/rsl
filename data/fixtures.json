@@ -444,17 +444,17 @@
           "games": [
             {
               "label": "",
-              "home": "1st Place",
+              "home": "2nd Place",
               "homeScore": "8:30 PM",
               "awayScore": "TBD",
-              "away": "4th Place"
+              "away": "3rd Place"
             },
             {
               "label": "",
-              "home": "2nd Place",
+              "home": "1st Place",
               "homeScore": "9:30 PM",
               "awayScore": "TBD",
-              "away": "3rd Place"
+              "away": "4th Place"
             }
           ]
         },
@@ -463,17 +463,17 @@
           "games": [
             {
               "label": "",
-              "home": "5th Place",
+              "home": "6th Place",
               "homeScore": "8:30 PM",
               "awayScore": "TBD",
-              "away": "8th Place"
+              "away": "7th Place"
             },
             {
               "label": "",
-              "home": "6th Place",
+              "home": "5th Place",
               "homeScore": "9:30 PM",
               "awayScore": "TBD",
-              "away": "7th Place"
+              "away": "8th Place"
             }
           ]
         }
